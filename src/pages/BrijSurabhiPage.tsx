@@ -29,7 +29,7 @@ const BrijSurabhiPage = () => {
           </Reveal>
           <Reveal variant="fade-left" delay={200} className="lg:col-span-7 relative">
             <div className="relative z-10 aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm shadow-xl">
-              <img alt="Marigold flowers for processing" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=800&q=80" />
+              <img alt="Marigold flowers for processing" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?w=800&q=80" />
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/60 to-transparent">
                 <p className="text-card font-display italic text-lg text-right">Serving the sacred land of Brij.</p>
               </div>
