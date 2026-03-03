@@ -31,7 +31,7 @@ const CampaignsPage = () => {
         <section className="group pt-12">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
             <Reveal variant="fade-right" className="lg:w-5/12 pt-8">
-              <span className="inline-block bg-secondary text-secondary-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter I : Empowerment</span>
+              {/* <span className="inline-block bg-secondary text-secondary-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter I : Empowerment</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Shakti Ek Adhaar:<br />Foundations of Strength
               </h2>
@@ -41,12 +41,12 @@ const CampaignsPage = () => {
               <p className="text-base font-sans mt-6 text-muted-foreground">
                 We focus on maternal health, child nutrition, and skill development, recognizing that the health of a community is directly proportional to the strength of its smallest units.
               </p>
-              <div className="mt-10 pt-8 border-t border-border">
+              {/* <div className="mt-10 pt-8 border-t border-border">
                 <a className="group/link inline-flex items-center gap-3 text-primary font-display text-xl italic hover:text-accent transition-colors" href="#">
                   Explore the Narrative
                   <ArrowRight className="transition-transform group-hover/link:translate-x-1 text-accent" size={20} />
                 </a>
-              </div>
+              </div> */}
             </Reveal>
             <Reveal variant="fade-left" delay={200} className="lg:w-7/12 relative">
               <div className="relative aspect-[4/3] w-full overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500">
@@ -64,7 +64,7 @@ const CampaignsPage = () => {
         <section className="group relative">
           <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-24 items-start">
             <Reveal variant="fade-left" className="lg:w-5/12 pt-8">
-              <span className="inline-block bg-primary text-primary-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter II : Service</span>
+              {/* <span className="inline-block bg-primary text-primary-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter II : Service</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Brij-Seva:<br />Reviving the Landscape
               </h2>
@@ -88,12 +88,12 @@ const CampaignsPage = () => {
                   <span className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Food Distribution</span>
                 </div>
               </div>
-              <div className="mt-10 pt-8">
+              {/* <div className="mt-10 pt-8">
                 <a className="group/link inline-flex items-center gap-3 text-primary font-display text-xl italic hover:text-accent transition-colors" href="#">
                   View Impact Report
                   <ArrowRight className="transition-transform group-hover/link:translate-x-1 text-accent" size={20} />
                 </a>
-              </div>
+              </div> */}
             </Reveal>
             <Reveal variant="fade-right" delay={200} className="lg:w-7/12 relative mt-12 lg:mt-0">
               <div className="relative aspect-[3/4] md:aspect-[4/3] w-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
@@ -141,11 +141,11 @@ const CampaignsPage = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-12">
+              {/* <div className="mt-12">
                 <a className="inline-block border border-foreground text-foreground px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" href="#">
                   Access Directory
                 </a>
-              </div>
+              </div> */}
             </Reveal>
           </div>
         </section>
@@ -154,7 +154,7 @@ const CampaignsPage = () => {
         <section className="group">
           <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-24">
             <Reveal variant="fade-left" className="lg:w-5/12 pt-8">
-              <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter IV : Relief</span>
+              {/* <span className="inline-block bg-blue-100 text-blue-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter IV : Relief</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Jal Seva Campaign:<br />Quenching Brij Heat
               </h2>
@@ -164,12 +164,12 @@ const CampaignsPage = () => {
               <p className="text-base font-sans mt-6 text-muted-foreground">
                 We set up water kiosks at strategic pilgrim paths and crowded intersections, providing clean drinking water, buttermilk, and sharbat to thousands daily during the peak summer months.
               </p>
-              <div className="mt-10 pt-8 border-t border-border">
+              {/* <div className="mt-10 pt-8 border-t border-border">
                 <a className="group/link inline-flex items-center gap-3 text-primary font-display text-xl italic hover:text-accent transition-colors" href="#">
                   View Hydration Points
                   <ArrowRight className="transition-transform group-hover/link:translate-x-1 text-accent" size={20} />
                 </a>
-              </div>
+              </div> */}
             </Reveal>
             <Reveal variant="fade-right" delay={200} className="lg:w-7/12 relative">
               <div className="relative aspect-[16/9] w-full overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500">
@@ -187,7 +187,7 @@ const CampaignsPage = () => {
         <section className="group">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
             <Reveal variant="fade-right" className="lg:w-5/12 pt-8">
-              <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter V : Giving</span>
+              {/* <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter V : Giving</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Daan Utsav:<br />The Festival of Giving
               </h2>
@@ -221,7 +221,7 @@ const CampaignsPage = () => {
         <section className="group relative">
           <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-24 items-center">
             <Reveal variant="fade-left" className="lg:w-5/12 pt-8">
-              <span className="inline-block bg-green-100 text-green-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter VI : Ecology</span>
+              {/* <span className="inline-block bg-green-100 text-green-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter VI : Ecology</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Plantation Drive:<br />Rooting for Green
               </h2>
@@ -233,11 +233,11 @@ const CampaignsPage = () => {
               <p className="text-muted-foreground font-serif leading-relaxed text-lg">
                 Twice a year, we mobilize volunteers to plant 51 trees per drive, focusing on native species that support local biodiversity. This initiative is our pledge to future generations for a cleaner, greener environment.
               </p>
-              <div className="mt-10">
+              {/* <div className="mt-10">
                 <a className="inline-block border-b-2 border-green-600 text-foreground pb-1 text-sm font-bold uppercase tracking-widest hover:text-green-600 transition-colors" href="#">
                   Volunteer for Next Drive
                 </a>
-              </div>
+              </div> */}
             </Reveal>
             <Reveal variant="fade-right" delay={200} className="lg:w-7/12 w-full">
               <div className="grid grid-cols-2 gap-4">
@@ -256,7 +256,7 @@ const CampaignsPage = () => {
         <section className="group">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
             <Reveal variant="fade-right" className="lg:w-5/12 pt-8">
-              <span className="inline-block bg-red-100 text-red-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter VII : Health</span>
+              {/* <span className="inline-block bg-red-100 text-red-800 px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter VII : Health</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Raktdan Shivir:<br />Culture of Solidarity
               </h2>
@@ -282,7 +282,7 @@ const CampaignsPage = () => {
         <section className="group relative">
           <div className="flex flex-col lg:flex-row-reverse gap-12 lg:gap-24">
             <Reveal variant="fade-left" className="lg:w-5/12 pt-8">
-              <span className="inline-block bg-muted text-muted-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter VIII : Crisis</span>
+              {/* <span className="inline-block bg-muted text-muted-foreground px-3 py-1 text-[10px] font-bold uppercase tracking-widest mb-6">Chapter VIII : Crisis</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-8 leading-tight">
                 Mask Distribution:<br />Guardian of Frontlines
               </h2>
@@ -324,7 +324,7 @@ const CampaignsPage = () => {
               </div>
             </Reveal>
             <Reveal variant="fade-left" delay={150} className="lg:col-span-5 lg:pl-12">
-              <span className="block text-accent font-bold tracking-[0.2em] text-[10px] uppercase mb-4">Chapter IX : Awareness</span>
+              {/* <span className="block text-accent font-bold tracking-[0.2em] text-[10px] uppercase mb-4">Chapter IX : Awareness</span> */}
               <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6 leading-none">
                 Breaking the Silence
               </h2>
@@ -332,10 +332,10 @@ const CampaignsPage = () => {
               <p className="text-muted-foreground text-lg font-serif leading-relaxed mb-8">
                 We are dismantling age-old taboos through education. Conducting health sessions in schools and colleges, we empower young women with knowledge about menstrual health, hygiene management, and the confidence to speak up.
               </p>
-              <a className="inline-flex items-center gap-2 border-b-2 border-accent text-accent font-bold uppercase text-xs tracking-widest pb-1 hover:text-accent/70 hover:border-accent/70 transition-colors" href="#">
+              {/* <a className="inline-flex items-center gap-2 border-b-2 border-accent text-accent font-bold uppercase text-xs tracking-widest pb-1 hover:text-accent/70 hover:border-accent/70 transition-colors" href="#">
                 Partner with Schools
                 <ArrowRight size={14} />
-              </a>
+              </a> */}
             </Reveal>
           </div>
         </section>
