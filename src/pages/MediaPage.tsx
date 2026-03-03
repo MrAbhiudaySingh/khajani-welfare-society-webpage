@@ -1,26 +1,29 @@
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
-import { Newspaper, FileText, Rss, Megaphone, BookOpen, Radio, ArrowRight, Download, Mail } from "lucide-react";
+import { Newspaper, Download, Mail } from "lucide-react";
 
-const iconMap: Record<string, React.ReactNode> = {
-  newspaper: <Newspaper size={28} />,
-  article: <FileText size={28} />,
-  feed: <Rss size={28} />,
-  campaign: <Megaphone size={28} />,
-  history_edu: <BookOpen size={28} />,
-  podcasts: <Radio size={28} />,
-};
+const newsClippings = [
+  { image: "/images/media/news-clipping-1.jpg", source: "A Sipru / Dainik Jagran", desc: "Coverage of Khajani Welfare Society's initiatives for women empowerment and skill training in the Brij region.", date: "July 2021" },
+  { image: "/images/media/news-clipping-2.jpg", source: "Amar Ujala / Dainik Jagran", desc: "Feature coverage on EduDaksh program launch and society's impact on rural communities.", date: "2023" },
+  { image: "/images/media/news-clipping-3.jpg", source: "Regional Press", desc: "Multi-article compilation covering awards, cultural programs, and community outreach activities.", date: "2022" },
+  { image: "/images/media/news-clipping-4.jpg", source: "Live Hindustan / Amar Ujala", desc: "Feature stories on women's skill training programs and Khajani's impact across 18,000+ beneficiaries.", date: "2021-2022" },
+  { image: "/images/media/news-clipping-5.jpg", source: "Amar Ujala", desc: "Reporting on KWS programs reaching 800+ women with skill training across 5,000 villages.", date: "2018" },
+  { image: "/images/media/news-clipping-6.jpg", source: "Amar Ujala / A Sipru", desc: "Coverage of sanitary napkin vending machine installation serving 2,000+ women and community welfare activities.", date: "2022" },
+  { image: "/images/media/news-clipping-7.jpg", source: "A Sipru", desc: "Reporting on Digital literacy programs and EduDaksh remedial education initiative launch.", date: "Dec 2021" },
+  { image: "/images/media/news-clipping-8.jpg", source: "A Sipru / Dainik Jagran", desc: "Coverage of Jal Seva camps, skill training programs, and Brij-Anshuman inmate training initiative.", date: "2021-2022" },
+  { image: "/images/media/news-clipping-9.jpg", source: "Regional Press", desc: "Multi-article compilation covering society registrations, women's day celebrations, and training milestones.", date: "2021-2023" },
+];
+
+const pressReviews = [
+  { image: "/images/media/press-review-1.jpg", title: "Dainik Jagran Feature" },
+  { image: "/images/media/press-review-2.jpg", title: "Regional Coverage" },
+  { image: "/images/media/press-review-3.jpg", title: "Award Ceremony" },
+  { image: "/images/media/press-review-4.jpg", title: "Community Impact" },
+  { image: "/images/media/press-review-5.jpg", title: "Skill Training" },
+  { image: "/images/media/press-review-6.jpg", title: "Women Empowerment" },
+];
 
 const MediaPage = () => {
-  const articles = [
-    { source: "Times of India", category: "Education", date: "Oct 15, 2023", title: '"Khajani Society Launches New Skill Hub for Rural Youth in Lucknow"', desc: "The Times of India covers our latest initiative to bridge the urban-rural divide.", page: "Pg. 04, Lucknow Ed.", icon: "newspaper" },
-    { source: "Dainik Jagran", category: "Women Empowerment", date: "Aug 22, 2023", title: '"आत्मनिर्भर भारत: Women Artisans Find Global Market through Local NGO"', desc: "A feature story on how 500+ women artisans are exporting their handmade crafts.", page: "Pg. 02, Feature", icon: "article" },
-    { source: "Amar Ujala", category: "Healthcare", date: "Jun 10, 2023", title: '"Mega Health Camp Serves Over 2,000 Villagers in Unnao District"', desc: "Coverage of our annual health drive providing free checkups and cataract surgeries.", page: "Pg. 05, Regional", icon: "feed" },
-    { source: "Hindustan Times", category: "Awards", date: "Mar 08, 2023", title: '"Khajani Welfare Society Honored with Best NGO Award for 2022"', desc: "Recognition at the State NGO Summit. Award presented by the Honorable Chief Minister.", page: "Pg. 01, Main", icon: "campaign" },
-    { source: "The Hindu", category: "Policy", date: "Jan 12, 2023", title: '"Policy Advocacy: NGO Panel Discusses Rural Development Roadmap"', desc: "Roundtable discussion led by Khajani Welfare Society influencing policy changes.", page: "Pg. 07, Op-Ed", icon: "history_edu" },
-    { source: "All India Radio", category: "Community Radio", date: "Nov 05, 2022", title: '"Voice of the People: Radio Feature on Khajani\'s Impact"', desc: "A special broadcast highlighting success stories of beneficiaries.", page: "11:00 AM Slot", icon: "podcasts" },
-  ];
-
   return (
     <Layout>
       {/* Hero */}
@@ -40,51 +43,65 @@ const MediaPage = () => {
         </Reveal>
       </header>
 
-      {/* Articles Grid */}
+      {/* News Clippings Gallery */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <Reveal variant="fade-up">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-border pb-4">
             <div>
               <h2 className="text-4xl font-display font-bold text-foreground mb-2">In The News</h2>
-              <p className="text-muted-foreground italic font-display text-lg">Curated articles and press clippings.</p>
+              <p className="text-muted-foreground italic font-display text-lg">Actual press clippings and newspaper coverage.</p>
             </div>
-            <div className="mt-4 md:mt-0 flex gap-2">
-              {["All", "Print", "Digital", "Awards"].map((filter, i) => (
-                <button key={filter} className={`px-4 py-2 text-sm font-bold transition ${i === 0 ? "text-primary-foreground bg-primary rounded" : "text-muted-foreground hover:text-primary"}`}>
-                  {filter}
-                </button>
-              ))}
+            <div className="mt-4 md:mt-0 flex items-center gap-2 text-muted-foreground">
+              <Newspaper size={20} />
+              <span className="text-sm font-bold uppercase tracking-wider">{newsClippings.length} Articles</span>
             </div>
           </div>
         </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article, i) => (
+          {newsClippings.map((clipping, i) => (
             <Reveal key={i} variant="fade-up" delay={i % 3 * 100}>
-              <article className="bg-card p-8 rounded-lg shadow-sm hover:shadow-xl border border-border transition-all duration-300 group flex flex-col h-full relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-1 h-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="flex justify-between items-start mb-6">
-                  <div className="bg-muted p-3 rounded-lg border border-border text-muted-foreground group-hover:text-primary transition-colors">
-                    {iconMap[article.icon]}
+              <article className="bg-card rounded-lg shadow-sm hover:shadow-xl border border-border transition-all duration-300 group flex flex-col h-full overflow-hidden">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={clipping.image}
+                    alt={`News coverage - ${clipping.source}`}
+                    className="w-full aspect-[4/5] object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="px-3 py-1 bg-muted text-muted-foreground text-xs font-bold uppercase tracking-wider rounded-sm">{clipping.source}</span>
+                    <span className="text-xs text-muted-foreground">{clipping.date}</span>
                   </div>
-                  <span className="px-3 py-1 bg-muted text-muted-foreground text-xs font-bold uppercase tracking-wider rounded-sm">{article.source}</span>
-                </div>
-                <div className="mb-3 flex items-center text-xs text-muted-foreground font-medium uppercase tracking-wide">
-                  <span className="text-accent">{article.category}</span>
-                  <span className="mx-2 text-border">|</span>
-                  <span>{article.date}</span>
-                </div>
-                <h3 className="text-2xl font-display font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-6 font-light flex-1">{article.desc}</p>
-                <div className="mt-auto pt-6 border-t border-border flex justify-between items-center">
-                  <span className="text-xs text-muted-foreground font-mono">{article.page}</span>
-                  <a className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transform translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" href="#">
-                    <ArrowRight size={14} />
-                  </a>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">{clipping.desc}</p>
                 </div>
               </article>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Press Reviews Strip */}
+        <Reveal variant="fade-up">
+          <div className="mt-24 mb-8">
+            <h3 className="text-3xl font-display font-bold text-foreground mb-2">Press Reviews & Coverage</h3>
+            <p className="text-muted-foreground italic font-display text-lg mb-8">Individual article clippings and reviews from various publications.</p>
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {pressReviews.map((review, i) => (
+            <Reveal key={i} variant="fade-up" delay={i * 80}>
+              <div className="bg-card border border-border rounded-lg overflow-hidden group hover:shadow-lg transition-shadow cursor-pointer">
+                <img
+                  src={review.image}
+                  alt={review.title}
+                  className="w-full aspect-[3/4] object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="p-3 text-center">
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{review.title}</span>
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -116,7 +133,7 @@ const MediaPage = () => {
                   <div className="border-2 border-dashed border-border rounded-lg p-8 text-center bg-muted">
                     <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-display font-bold text-2xl mx-auto mb-4 shadow-md">K</div>
                     <p className="text-primary font-bold text-lg mb-1">Khajani Welfare Society</p>
-                    <p className="text-muted-foreground text-xs uppercase tracking-widest font-semibold">Official Brand Assets 2023</p>
+                    <p className="text-muted-foreground text-xs uppercase tracking-widest font-semibold">Official Brand Assets 2024</p>
                   </div>
                 </div>
               </div>

@@ -10,7 +10,7 @@ const EdudakshPage = () => {
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXql9RdkitHOHeAujlfYawEDA9h4wgmTtI6NssP9RrRCxla34gE5kyqIKkW2VRN9i-eB5IKtYefXyihheR73R2I1dcSv_Oyzol1MWqXi_rB2UcAh66nIdukJcTZIU1WL12LOEr5hZBahNe7uTCB4I2mqFiMS8SN7aTZf9VXFqkgzjYtLzdAjb_F1qGaFr3MaQ0VeuO77UywmCP87EJmB8MV3XkJNiNUgfwXj5snOCZkTJLOuWy9su8yY5V44L6wT2dd213bmPGv_c')" }}
+          style={{ backgroundImage: "url('/images/projects/edudaksh-classroom.jpg')" }}
         />
         <Reveal variant="fade-up" className="relative z-20 text-center px-6 max-w-5xl mx-auto mt-12">
           <h1 className="text-primary-foreground font-display text-5xl md:text-7xl font-bold leading-tight drop-shadow-lg">
@@ -117,7 +117,7 @@ const EdudakshPage = () => {
             <div className="absolute inset-0 bg-primary/30 mix-blend-multiply z-10" />
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
-              style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXql9RdkitHOHeAujlfYawEDA9h4wgmTtI6NssP9RrRCxla34gE5kyqIKkW2VRN9i-eB5IKtYefXyihheR73R2I1dcSv_Oyzol1MWqXi_rB2UcAh66nIdukJcTZIU1WL12LOEr5hZBahNe7uTCB4I2mqFiMS8SN7aTZf9VXFqkgzjYtLzdAjb_F1qGaFr3MaQ0VeuO77UywmCP87EJmB8MV3XkJNiNUgfwXj5snOCZkTJLOuWy9su8yY5V44L6wT2dd213bmPGv_c')" }}
+              style={{ backgroundImage: "url('/images/projects/edudaksh-training.jpg')" }}
             />
           </Reveal>
         </div>
