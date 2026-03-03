@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { Reveal } from "@/components/Reveal";
 
 const categories = ["All Projects", "Vocational", "Education", "Health", "Environment", "Culture"] as const;
 
@@ -102,7 +103,7 @@ const ProjectsPage = () => {
     <Layout>
       {/* Hero */}
       <section className="bg-background pt-20 pb-16 text-center">
-        <div className="max-w-4xl mx-auto px-4">
+        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4">
           <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
             Our Impact Portfolio
           </span>
@@ -115,68 +116,69 @@ const ProjectsPage = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             Exploring our cornerstone initiatives dedicated to fostering sustainable growth, preserving cultural heritage, and empowering the communities of the Brij region.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Category Tabs */}
-      <section className="bg-background pb-8">
-        <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full transition-all border ${
-                activeCategory === cat
-                  ? "bg-accent text-accent-foreground border-accent shadow-md"
-                  : "bg-card text-muted-foreground border-border hover:border-accent hover:text-accent"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </section>
+      <Reveal variant="fade-up" delay={100}>
+        <section className="bg-background pb-8">
+          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full transition-all border ${
+                  activeCategory === cat
+                    ? "bg-accent text-accent-foreground border-accent shadow-md"
+                    : "bg-card text-muted-foreground border-border hover:border-accent hover:text-accent"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </section>
+      </Reveal>
 
       {/* Project Grid */}
       <section className="bg-background pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((project) => (
-              <div
-                key={project.title}
-                className="bg-card border border-border group hover:shadow-xl transition-all duration-300 overflow-hidden"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest px-3 py-1">
-                    {project.category}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-display font-bold text-primary mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
-                    {project.description}
-                  </p>
-                  {project.link ? (
-                    <Link
-                      to={project.link}
-                      className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all gap-1"
-                    >
-                      View Project
-                    </Link>
-                  ) : (
-                    <span className="inline-flex items-center text-muted-foreground text-xs font-bold uppercase tracking-widest gap-1 cursor-default">
-                      Coming Soon
+            {filtered.map((project, i) => (
+              <Reveal key={project.title} variant="fade-up" delay={i % 3 * 100}>
+                <div className="bg-card border border-border group hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <span className="absolute top-4 left-4 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest px-3 py-1">
+                      {project.category}
                     </span>
-                  )}
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-display font-bold text-primary mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+                      {project.description}
+                    </p>
+                    {project.link ? (
+                      <Link
+                        to={project.link}
+                        className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all gap-1"
+                      >
+                        View Project
+                      </Link>
+                    ) : (
+                      <span className="inline-flex items-center text-muted-foreground text-xs font-bold uppercase tracking-widest gap-1 cursor-default">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -185,7 +187,7 @@ const ProjectsPage = () => {
       {/* CTA */}
       <section className="bg-primary py-24 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
-        <div className="max-w-4xl mx-auto px-4 relative z-10">
+        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4 relative z-10">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground mb-4 leading-tight">
             Want to partner on a<br />
             <span className="text-secondary italic">Specific Initiative?</span>
@@ -207,7 +209,7 @@ const ProjectsPage = () => {
               Download Project Brochure
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );

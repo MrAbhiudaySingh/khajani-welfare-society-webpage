@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { Reveal } from "@/components/Reveal";
 
 const CollaborationsPage = () => {
   return (
@@ -6,7 +7,7 @@ const CollaborationsPage = () => {
       {/* Hero */}
       <div className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
+          <Reveal variant="fade-left" className="max-w-3xl">
             <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-6 block">Institutional Framework</span>
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-display font-bold text-primary leading-[0.95] mb-8">
               Government & Global<br /><span className="text-accent">Collaborations</span>
@@ -16,7 +17,7 @@ const CollaborationsPage = () => {
                 "We build sustainable pathways for empowerment through strategic institutional partnerships and certified training frameworks."
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
         <div className="absolute top-0 right-0 w-1/3 h-full bg-muted opacity-50 -z-10 hidden lg:block"></div>
       </div>
@@ -25,7 +26,7 @@ const CollaborationsPage = () => {
       <section className="py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 lg:order-2">
+            <Reveal variant="fade-left" delay={100} className="lg:col-span-5 lg:order-2">
               <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase rounded-full">State Partnership</span>
               <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6 mt-4 leading-tight">Uttar Pradesh Skill Development Mission (UPSDM)</h2>
               <p className="drop-cap text-muted-foreground text-lg leading-relaxed mb-8">
@@ -36,13 +37,13 @@ const CollaborationsPage = () => {
                 <h4 className="font-bold text-accent text-xs uppercase tracking-[0.2em] mb-3">Key Outcome</h4>
                 <p className="text-2xl font-display leading-tight">125 participants successfully certified and placed in commercial units.</p>
               </div>
-            </div>
-            <div className="lg:col-span-7 lg:order-1 relative">
+            </Reveal>
+            <Reveal variant="fade-right" className="lg:col-span-7 lg:order-1 relative">
               <div className="relative z-10">
                 <img alt="Women in tailoring workshop" className="w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9hZDnntvgH_WPuMdr87McMaaw74SHCnL-Ec2ly-jX43KsLz7UkRkISWRCtUK-I3aoS0yxDF21Cjq4zKaTwdAXpAqHtW3YejP5_4IAdul0rmZTOsZkC4Sm2UBaj4UGTmLJ9mkk--GOw19QfxItE8chamyzUrpNpHifR9AjvLer_l1hugnz59jdoHobfCtGRaeLwSO4Qnk1gsw8oIhnYWFmls35Oic0qNbaYyUtnX7oCw8nIK4NUEyZJwX2eJZmBv5-_npy53yHJmg" />
               </div>
               <div className="absolute -bottom-6 -left-6 w-full h-full bg-primary -z-10"></div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -50,25 +51,29 @@ const CollaborationsPage = () => {
       {/* MSME */}
       <section className="py-24 bg-primary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Central Government</span>
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-primary-foreground mb-6">Ministry of MSME</h2>
-            <p className="text-primary-foreground/60 text-lg leading-relaxed">
-              Preserving cultural heritage while ensuring economic viability through partnership with the Ministry of Micro, Small & Medium Enterprises.
-            </p>
-          </div>
+          <Reveal variant="fade-up">
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Central Government</span>
+              <h2 className="text-4xl md:text-6xl font-display font-bold text-primary-foreground mb-6">Ministry of MSME</h2>
+              <p className="text-primary-foreground/60 text-lg leading-relaxed">
+                Preserving cultural heritage while ensuring economic viability through partnership with the Ministry of Micro, Small & Medium Enterprises.
+              </p>
+            </div>
+          </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {[
               { icon: "brush", title: "Royal Sanjhi Art", desc: "Training women in the intricate, centuries-old paper cutting art of Sanjhi, indigenous to Mathura and Vrindavan." },
               { icon: "storefront", title: "Digital Marketing", desc: "Equipping artisans with digital literacy and marketing skills to sell their goods on e-commerce platforms." },
-            ].map((item) => (
-              <div key={item.title} className="bg-primary-foreground/5 p-10 border-t-4 border-accent group hover:bg-primary-foreground/10 transition duration-300">
-                <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition duration-300">
-                  <span className="material-symbols-outlined text-primary-foreground">{item.icon}</span>
+            ].map((item, i) => (
+              <Reveal key={item.title} variant="fade-up" delay={i * 150}>
+                <div className="bg-primary-foreground/5 p-10 border-t-4 border-accent group hover:bg-primary-foreground/10 transition duration-300">
+                  <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition duration-300">
+                    <span className="material-symbols-outlined text-primary-foreground">{item.icon}</span>
+                  </div>
+                  <h3 className="font-display text-3xl text-primary-foreground mb-4">{item.title}</h3>
+                  <p className="text-primary-foreground/60 leading-relaxed font-light">{item.desc}</p>
                 </div>
-                <h3 className="font-display text-3xl text-primary-foreground mb-4">{item.title}</h3>
-                <p className="text-primary-foreground/60 leading-relaxed font-light">{item.desc}</p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -78,7 +83,7 @@ const CollaborationsPage = () => {
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-            <div>
+            <Reveal variant="fade-right">
               <span className="text-accent font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Global Initiative</span>
               <h2 className="text-5xl md:text-6xl font-display font-bold text-primary mb-8 leading-none">World Bank<br /> Pro-Poor Tourism</h2>
               <div className="w-20 h-1 bg-primary mb-8"></div>
@@ -88,8 +93,8 @@ const CollaborationsPage = () => {
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Under the UP Pro-Poor Tourism Development Project funded by the World Bank, Khajani Welfare Society implemented a comprehensive artisan development program focusing on design intervention, quality control, and direct market linkages.
               </p>
-            </div>
-            <div className="flex flex-col justify-center">
+            </Reveal>
+            <Reveal variant="fade-left" delay={150} className="flex flex-col justify-center">
               <div className="bg-card p-10 shadow-xl border border-border relative overflow-hidden">
                 <span className="absolute -right-4 -bottom-8 text-[12rem] font-display font-bold text-muted/30 pointer-events-none select-none">125</span>
                 <div className="relative z-10">
@@ -100,22 +105,24 @@ const CollaborationsPage = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Partners */}
-      <section className="py-20 border-t border-border bg-card">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="text-xs font-bold text-muted-foreground tracking-[0.3em] uppercase mb-16">Institutional Partners</h3>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 hover:opacity-100 transition duration-500">
-            {["UPSDM", "MSME", "WORLD BANK", "SIDBI", "NSDC"].map((p) => (
-              <span key={p} className="font-display font-bold text-3xl text-primary">{p}</span>
-            ))}
+      <Reveal variant="fade">
+        <section className="py-20 border-t border-border bg-card">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 className="text-xs font-bold text-muted-foreground tracking-[0.3em] uppercase mb-16">Institutional Partners</h3>
+            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 hover:opacity-100 transition duration-500">
+              {["UPSDM", "MSME", "WORLD BANK", "SIDBI", "NSDC"].map((p) => (
+                <span key={p} className="font-display font-bold text-3xl text-primary">{p}</span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
     </Layout>
   );
 };

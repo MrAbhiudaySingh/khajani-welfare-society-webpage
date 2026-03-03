@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { Reveal } from "@/components/Reveal";
 
 const HomePage = () => {
   return (
@@ -8,7 +9,7 @@ const HomePage = () => {
       <section className="relative bg-background overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <div className="lg:w-1/2 text-center lg:text-left">
+            <Reveal variant="fade-left" className="lg:w-1/2 text-center lg:text-left">
               <div className="inline-block px-4 py-1.5 rounded-full bg-accent/10 text-accent text-xs font-bold uppercase tracking-widest mb-6 border border-accent/20">
                 Est. 2007 • Empowering Lives
               </div>
@@ -37,8 +38,8 @@ const HomePage = () => {
                   <span className="material-symbols-outlined mr-2 group-hover:text-accent transition-colors">play_circle</span> Our Story
                 </Link>
               </div>
-            </div>
-            <div className="lg:w-1/2 relative w-full flex justify-center lg:justify-end">
+            </Reveal>
+            <Reveal variant="fade-right" delay={200} className="lg:w-1/2 relative w-full flex justify-center lg:justify-end">
               <div className="absolute top-10 right-10 w-64 h-64 bg-secondary/20 rounded-full blur-3xl opacity-50 -z-10"></div>
               <div className="absolute bottom-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl opacity-50 -z-10"></div>
               <div className="relative w-full max-w-lg aspect-square">
@@ -59,55 +60,61 @@ const HomePage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Partners Section */}
-      <section className="py-12 bg-card border-y border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.2em] mb-8">Trusted Partners & Supporters</h3>
-          <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 items-center">
-            {["UPSDM", "MSME", "SIDBI", "NSDC"].map((partner) => (
-              <div key={partner} className="flex flex-col items-center gap-2 group">
-                <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center font-bold text-sm text-muted-foreground shadow-inner group-hover:bg-card group-hover:shadow-md transition">
-                  {partner}
+      <Reveal variant="fade">
+        <section className="py-12 bg-card border-y border-border">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 className="text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.2em] mb-8">Trusted Partners & Supporters</h3>
+            <div className="flex flex-wrap justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 items-center">
+              {["UPSDM", "MSME", "SIDBI", "NSDC"].map((partner) => (
+                <div key={partner} className="flex flex-col items-center gap-2 group">
+                  <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center font-bold text-sm text-muted-foreground shadow-inner group-hover:bg-card group-hover:shadow-md transition">
+                    {partner}
+                  </div>
+                  <span className="font-display font-semibold text-xs text-muted-foreground group-hover:text-primary mt-1">{partner}</span>
                 </div>
-                <span className="font-display font-semibold text-xs text-muted-foreground group-hover:text-primary mt-1">{partner}</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
 
       {/* Impact Stats */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-accent rounded-full opacity-10 blur-3xl"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-block px-4 py-1 bg-primary-foreground/10 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 text-secondary border border-primary-foreground/20">
-              Real-Time Impact 2024
+          <Reveal variant="fade-up">
+            <div className="text-center mb-16">
+              <div className="inline-block px-4 py-1 bg-primary-foreground/10 rounded-full text-[10px] font-bold tracking-widest uppercase mb-6 text-secondary border border-primary-foreground/20">
+                Real-Time Impact 2024
+              </div>
+              <h2 className="text-6xl md:text-8xl font-display font-bold text-secondary mb-4">
+                50,000<span className="text-primary-foreground font-light">+</span>
+              </h2>
+              <p className="text-2xl text-primary-foreground/70 font-light max-w-xl mx-auto">
+                Families impacted across the Brij Region through our integrated welfare programs.
+              </p>
             </div>
-            <h2 className="text-6xl md:text-8xl font-display font-bold text-secondary mb-4">
-              50,000<span className="text-primary-foreground font-light">+</span>
-            </h2>
-            <p className="text-2xl text-primary-foreground/70 font-light max-w-xl mx-auto">
-              Families impacted across the Brij Region through our integrated welfare programs.
-            </p>
-          </div>
+          </Reveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {[
               { num: "152+", label: "Villages Served" },
               { num: "8K+", label: "Lives Touched Yearly" },
               { num: "20K+", label: "Women Empowered" },
               { num: "12+", label: "Years of Legacy" },
-            ].map((stat) => (
-              <div key={stat.label} className="text-center group">
-                <h3 className="text-4xl md:text-5xl font-bold text-accent mb-2 font-display group-hover:text-primary-foreground transition-colors duration-300">{stat.num}</h3>
-                <div className="h-0.5 w-8 bg-primary-foreground/20 mx-auto mb-3"></div>
-                <p className="text-primary-foreground/60 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
-              </div>
+            ].map((stat, i) => (
+              <Reveal key={stat.label} variant="fade-up" delay={i * 100}>
+                <div className="text-center group">
+                  <h3 className="text-4xl md:text-5xl font-bold text-accent mb-2 font-display group-hover:text-primary-foreground transition-colors duration-300">{stat.num}</h3>
+                  <div className="h-0.5 w-8 bg-primary-foreground/20 mx-auto mb-3"></div>
+                  <p className="text-primary-foreground/60 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -116,39 +123,43 @@ const HomePage = () => {
       {/* Network Section */}
       <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-xs font-bold tracking-[0.2em] text-accent uppercase mb-3">Collaborators in Progress</h2>
-            <p className="text-4xl md:text-5xl font-display font-bold text-primary italic">The strategic network behind our impact</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-border bg-card shadow-xl">
-            {[
-              { num: "1", title: "Gov Outreach", desc: "Strategic alignment for health infrastructure and rural medical licensing." },
-              { num: "2", title: "Eco-Systems Inc", desc: "Technical partnership for sustainable water filtration across 50 villages." },
-              { num: "3", title: "Health Trust", desc: "Direct funding for essential medicine distribution and specialist fees." },
-            ].map((item) => (
-              <div key={item.num} className="p-10 border-b lg:border-b-0 lg:border-r border-border hover:bg-muted transition duration-300 text-center flex flex-col items-center">
-                <div className="w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold font-serif mb-6 shadow-lg rounded-sm">{item.num}</div>
-                <h4 className="font-bold text-primary mb-3 uppercase tracking-wider text-xs">{item.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-            <div className="p-10 bg-primary text-primary-foreground flex flex-col justify-center items-center text-center relative overflow-hidden group">
-              <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-              <div className="relative z-10">
-                <h4 className="font-display italic text-3xl mb-4">Join the Network</h4>
-                <Link to="/collaborations" className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary group-hover:text-primary-foreground transition flex items-center justify-center gap-2">
-                  Apply for Partnership <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
+          <Reveal variant="fade-up">
+            <div className="text-center mb-16">
+              <h2 className="text-xs font-bold tracking-[0.2em] text-accent uppercase mb-3">Collaborators in Progress</h2>
+              <p className="text-4xl md:text-5xl font-display font-bold text-primary italic">The strategic network behind our impact</p>
+            </div>
+          </Reveal>
+          <Reveal variant="scale" delay={150}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-border bg-card shadow-xl">
+              {[
+                { num: "1", title: "Gov Outreach", desc: "Strategic alignment for health infrastructure and rural medical licensing." },
+                { num: "2", title: "Eco-Systems Inc", desc: "Technical partnership for sustainable water filtration across 50 villages." },
+                { num: "3", title: "Health Trust", desc: "Direct funding for essential medicine distribution and specialist fees." },
+              ].map((item) => (
+                <div key={item.num} className="p-10 border-b lg:border-b-0 lg:border-r border-border hover:bg-muted transition duration-300 text-center flex flex-col items-center">
+                  <div className="w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold font-serif mb-6 shadow-lg rounded-sm">{item.num}</div>
+                  <h4 className="font-bold text-primary mb-3 uppercase tracking-wider text-xs">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+              <div className="p-10 bg-primary text-primary-foreground flex flex-col justify-center items-center text-center relative overflow-hidden group">
+                <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="relative z-10">
+                  <h4 className="font-display italic text-3xl mb-4">Join the Network</h4>
+                  <Link to="/collaborations" className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary group-hover:text-primary-foreground transition flex items-center justify-center gap-2">
+                    Apply for Partnership <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="bg-primary py-32 relative overflow-hidden text-center">
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h2 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-6 leading-tight">
             The Future is a<br />
             <span className="text-secondary italic">Collective Canvas.</span>
@@ -162,7 +173,7 @@ const HomePage = () => {
           >
             Get Involved
           </Link>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );
