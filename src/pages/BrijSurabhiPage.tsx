@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
+import { Reveal } from "@/components/Reveal";
 
 const BrijSurabhiPage = () => {
   return (
@@ -7,7 +8,7 @@ const BrijSurabhiPage = () => {
       {/* Hero */}
       <header className="relative pt-32 pb-20 px-4 sm:px-8 overflow-hidden bg-background">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="lg:col-span-5 relative z-10 pt-8">
+          <Reveal variant="fade-right" className="lg:col-span-5 relative z-10 pt-8">
             <div className="inline-block border-b border-secondary pb-1 mb-8">
               <span className="text-[10px] tracking-[0.3em] font-bold uppercase text-secondary">Special Edition — 2024</span>
             </div>
@@ -24,8 +25,8 @@ const BrijSurabhiPage = () => {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="lg:col-span-7 relative">
+          </Reveal>
+          <Reveal variant="fade-left" delay={200} className="lg:col-span-7 relative">
             <div className="relative z-10 aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm shadow-xl">
               <img alt="Marigold flowers for processing" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGrhC1N5LGvedUS_DoTJwzqc3BUdiVyxhpci1Nc67fL3KuPJsj4ZN-CPi6cn5AdqicdpYOVSOnaYqGxx9KaAEDf_46FyVLq1LB5NsGYm0MBRTykuqTbdbcbe6qmWUg92vvia7MeeXhPnr0PBJLILP41IUWr-eUQeulobgepROhzf4SyxmLUdZDYvRpQlkQ1sOWP7WPRZOTTtotjZk68HuQeaQF6M5kmo5N3ZyL67NsgYB9twKFiRc5-RAuT5vljHGkUgoNOGVbOis" />
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/60 to-transparent">
@@ -33,37 +34,39 @@ const BrijSurabhiPage = () => {
               </div>
             </div>
             <div className="absolute -z-10 -top-12 -right-12 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
-          </div>
+          </Reveal>
         </div>
       </header>
 
       {/* Quote Section */}
-      <section className="py-24 px-4 sm:px-8 bg-card relative">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
-          <div className="w-full md:w-1/3 relative">
-            <div className="aspect-[3/4] overflow-hidden rounded-t-[100px] border border-secondary/30 p-2">
-              <img alt="Mrs. Hema Malini" className="w-full h-full object-cover rounded-t-[90px] grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQc4YnqsKnanrDOkYNwK_0Syfu9QX4Qc_x0eP84DdlzgVFe60LRD92OAvLBANWiAavEXVUdx2iYujvROMck21yQCIIZ2RNI3WTF5spsSl0mvBdYJrS28w0XT6zBLvnCLrCPRSsIEyI6JNLLToITRRBNl8DeKeTgsa8J4lWawvNXBDw_BDW1irm-TRjS67ps0H1IwWD7WN8HWlQP9g7FCHh1rv4zfN0tPzuihP54bH7G-BK1VexRqu__VGDT4SV9jE_RoqRsXJQdk" />
+      <Reveal variant="fade-up">
+        <section className="py-24 px-4 sm:px-8 bg-card relative">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div className="w-full md:w-1/3 relative">
+              <div className="aspect-[3/4] overflow-hidden rounded-t-[100px] border border-secondary/30 p-2">
+                <img alt="Mrs. Hema Malini" className="w-full h-full object-cover rounded-t-[90px] grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQc4YnqsKnanrDOkYNwK_0Syfu9QX4Qc_x0eP84DdlzgVFe60LRD92OAvLBANWiAavEXVUdx2iYujvROMck21yQCIIZ2RNI3WTF5spsSl0mvBdYJrS28w0XT6zBLvnCLrCPRSsIEyI6JNLLToITRRBNl8DeKeTgsa8J4lWawvNXBDw_BDW1irm-TRjS67ps0H1IwWD7WN8HWlQP9g7FCHh1rv4zfN0tPzuihP54bH7G-BK1VexRqu__VGDT4SV9jE_RoqRsXJQdk" />
+              </div>
+              <div className="text-center mt-4">
+                <h3 className="font-display font-bold text-xl text-primary">Mrs. Hema Malini</h3>
+                <p className="text-xs uppercase tracking-widest text-secondary mt-1">Visionary Mentor</p>
+              </div>
             </div>
-            <div className="text-center mt-4">
-              <h3 className="font-display font-bold text-xl text-primary">Mrs. Hema Malini</h3>
-              <p className="text-xs uppercase tracking-widest text-secondary mt-1">Visionary Mentor</p>
+            <div className="w-full md:w-2/3">
+              <span className="text-6xl text-secondary opacity-40 font-display">"</span>
+              <p className="text-3xl md:text-4xl font-display leading-tight text-primary mb-8">
+                Brij-Surabhi is not just a project; it is an <span className="text-secondary italic">offering to the divine</span>.
+              </p>
+              <p className="text-muted-foreground font-light">Under the gracious patronage of Mrs. Hema Malini, Member of Parliament (Mathura), we strive to restore the pristine glory of the Brij region by turning waste into wealth.</p>
             </div>
           </div>
-          <div className="w-full md:w-2/3">
-            <span className="text-6xl text-secondary opacity-40 font-display">"</span>
-            <p className="text-3xl md:text-4xl font-display leading-tight text-primary mb-8">
-              Brij-Surabhi is not just a project; it is an <span className="text-secondary italic">offering to the divine</span>.
-            </p>
-            <p className="text-muted-foreground font-light">Under the gracious patronage of Mrs. Hema Malini, Member of Parliament (Mathura), we strive to restore the pristine glory of the Brij region by turning waste into wealth.</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
 
       {/* Cow Dung Products */}
       <section className="py-32 px-4 sm:px-8 bg-background">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-5 order-2 lg:order-1">
+            <Reveal variant="fade-right" className="lg:col-span-5 order-2 lg:order-1">
               <span className="bg-secondary text-card px-3 py-1 text-[10px] font-bold tracking-widest uppercase inline-block mb-4">Chapter I : Gau-Dhan</span>
               <h2 className="text-5xl font-display font-bold text-primary mb-6">Cow Dung <br />Products</h2>
               <div className="drop-cap text-muted-foreground text-lg leading-relaxed mb-8 font-light">
@@ -85,16 +88,16 @@ const BrijSurabhiPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="lg:col-span-7 order-1 lg:order-2 relative group cursor-pointer">
+            </Reveal>
+            <Reveal variant="fade-left" delay={200} className="lg:col-span-7 order-1 lg:order-2 relative group cursor-pointer">
               <div className="overflow-hidden shadow-2xl">
-                <img alt="Cow Dung Logs" className="w-full aspect-square md:aspect-[16/11] object-cover transition-all duration-700 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZVlqtq9yXth8m2gPU7d6TbLCov3kmt-D747mMi607VUUmjG1Zpfy-CJXbEFN4WL_bfNvc92b6kKR4DevViZ1zn9Au83EHM6AbPiAam2LeCa5N6XQl214AEwaGlZdzAJJngB0qK2qr57IDf0MNAJ4UJD9fv23_cGk2tzBu1N7g5ZEpxd8kMNdYtpg8W-4bBYo9DKgQfANHL3mjR4CEkN0rxtLX0y0PpLxsMugsEJThmdAmcxBgc4yqjTnv8hnY8TGTFabrQl-jFvY" />
+                <img alt="Cow Dung Logs" className="w-full aspect-square md:aspect-[16/11] object-cover transition-all duration-700 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZVlqtq9yXth8m2gPU7d6TbLCov3kmt-D747mMi607WUUmjG1Zpfy-CJXbEFN4WL_bfNvc92b6kKR4DevViZ1zn9Au83EHM6AbPiAam2LeCa5N6XQl214AEwaGlZdzAJJngB0qK2qr57IDf0MNAJ4UJD9fv23_cGk2tzBu1N7g5ZEpxd8kMNdYtpg8W-4bBYo9DKgQfANHL3mjR4CEkN0rxtLX0y0PpLxsMugsEJThmdAmcxBgc4yqjTnv8hnY8TGTFabrQl-jFvY" />
               </div>
               <div className="absolute bottom-0 right-0 bg-primary text-primary-foreground p-8 translate-y-4 translate-x-4 lg:translate-x-8 lg:translate-y-8 z-10 w-64 text-center">
                 <span className="block text-xs font-bold tracking-widest uppercase mb-1 opacity-70">Division 01</span>
                 <span className="font-display text-2xl italic">Gau-Kasht</span>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -103,7 +106,7 @@ const BrijSurabhiPage = () => {
       <section className="py-32 px-4 sm:px-8 bg-card">
         <div className="max-w-[1400px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7 relative group">
+            <Reveal variant="fade-right" className="lg:col-span-7 relative group">
               <div className="relative z-10 shadow-2xl overflow-hidden">
                 <img alt="Temple Flowers Processing" className="w-full aspect-[4/3] object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtz9-gfRy133bW4G_GuQA4k095cjYxPEEjYTjhxTmKpqwWS9QKz3L36jgLvLtGMHvylGeD6QdBs6Q8sS2ym-VihFuk3G_LPwWbyTPDJrcSwZHjetpOSsEbPrhmcaEtvuU5oDYWadb5zYIwqreUdYAolj1_i_YDDb87URjUzgxmpxWNYiuWye5utmw2C1Nl1rv4RFXhqCt_6zN1C0lE88l8NBg6Q2MG7w-TxP0c0e3621duggwG9NjI4ZX4wKi7740heInursxKjQY" />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-card opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-12 text-center">
@@ -111,8 +114,8 @@ const BrijSurabhiPage = () => {
                   <h3 className="font-display text-3xl italic">From Waste to Fragrance</h3>
                 </div>
               </div>
-            </div>
-            <div className="lg:col-span-5">
+            </Reveal>
+            <Reveal variant="fade-left" delay={150} className="lg:col-span-5">
               <span className="bg-primary text-primary-foreground px-3 py-1 text-[10px] font-bold tracking-widest uppercase inline-block mb-4">Chapter II : Pushp-Seva</span>
               <h2 className="text-5xl font-display font-bold text-primary mb-6">Floral Waste <br />to Fragrance</h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-10 font-light">
@@ -132,14 +135,14 @@ const BrijSurabhiPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Stats */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10 text-center">
+        <Reveal variant="fade-up" className="max-w-[1400px] mx-auto px-4 sm:px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-display mb-16">
             The Future is a <br /><span className="text-secondary italic">Collective Canvas.</span>
           </h2>
@@ -159,7 +162,7 @@ const BrijSurabhiPage = () => {
           <div className="mt-20">
             <Link to="/donate" className="inline-block bg-accent text-accent-foreground px-10 py-4 rounded-full font-bold text-sm tracking-widest uppercase hover:bg-card hover:text-accent transition-colors duration-300">Get Involved</Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </Layout>
   );
