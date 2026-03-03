@@ -100,6 +100,13 @@ const projects: Project[] = [
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAyXzr7tOBdf68nAnwCHcFFGMMFu4cLl3erehmbgH5AsERQI7C07eqD1VeIZq2cXuoAUSw8ob4tBIztMadd1xkVcdu38X7i_zJr-Y1HcSEzTV2qGA-nTHXatgxEie9ojvSex8LFM8uc4Tw3CIAB7EXdg6ryt8zbRU6MkCHFMpOn3dTWTQYH4xxg5MYD9RdnVGLqpYd294k7T3gCLcv3Ab1jyWu2UvVj9kKlMO0eclSmew_ilu0q_RA_kQp8_g_ZxlkiSlOAVjE82dg",
     link: "/projects/radha-krishna-poshak",
   },
+  {
+    title: "Royal Sanjhi Art Training",
+    description: "Reviving the royal heritage of Brij stencil art through specialized MSME training programs in fashion, apparel, and interior design.",
+    category: "Culture",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7n3EdyUcgRoAnoe_NProYhibM8mwlSBf6rBKdEThGTVmK5PgFzU5ZFCnt7J7ontoELcBNskyiVB1KFJfSUkRLLI5BGw5NOfVst5M1aA2bVUaM5nUXBa57libIw0Z5rKyYEIXdnH1FaoGKbm4CZtXcfqdXKq3x9MioLnztjvSEE8To2zXkvtMCBIsDhiNqqrhW87vAp5-8apU0LeAb0HTVsjwYczjZeUjpSiBwY1owbqXkgsrqQ6il4HRvXbp6fobh9zw9cn5b4Yg",
+    link: "/projects/royal-sanjhi",
+  },
 ];
 
 const ProjectsPage = () => {

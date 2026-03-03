@@ -19,6 +19,7 @@ import BrijSanginiPage from "./pages/BrijSanginiPage";
 import BrijSevaPage from "./pages/BrijSevaPage";
 import ShaktiEkAdhaarPage from "./pages/ShaktiEkAdhaarPage";
 import RadhaKrishnaPoshakPage from "./pages/RadhaKrishnaPoshakPage";
+import RoyalSanjhiPage from "./pages/RoyalSanjhiPage";
 import MediaPage from "./pages/MediaPage";
 import CampaignsPage from "./pages/CampaignsPage";
 import CollaborationsPage from "./pages/CollaborationsPage";
@@ -50,6 +51,7 @@ const App = () => (
           <Route path="/projects/brij-seva" element={<BrijSevaPage />} />
           <Route path="/projects/shakti-ek-adhaar" element={<ShaktiEkAdhaarPage />} />
           <Route path="/projects/radha-krishna-poshak" element={<RadhaKrishnaPoshakPage />} />
+          <Route path="/projects/royal-sanjhi" element={<RoyalSanjhiPage />} />
           <Route path="/media" element={<MediaPage />} />
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/collaborations" element={<CollaborationsPage />} />
