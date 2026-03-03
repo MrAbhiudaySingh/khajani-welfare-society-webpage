@@ -107,6 +107,27 @@ const projects: Project[] = [
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB7n3EdyUcgRoAnoe_NProYhibM8mwlSBf6rBKdEThGTVmK5PgFzU5ZFCnt7J7ontoELcBNskyiVB1KFJfSUkRLLI5BGw5NOfVst5M1aA2bVUaM5nUXBa57libIw0Z5rKyYEIXdnH1FaoGKbm4CZtXcfqdXKq3x9MioLnztjvSEE8To2zXkvtMCBIsDhiNqqrhW87vAp5-8apU0LeAb0HTVsjwYczjZeUjpSiBwY1owbqXkgsrqQ6il4HRvXbp6fobh9zw9cn5b4Yg",
     link: "/projects/royal-sanjhi",
   },
+  {
+    title: "SHGs & Brij Surbhi Federation",
+    description: "Empowering women through organized Self Help Groups, building sustainable livelihoods across 10 active SHGs with 120 women.",
+    category: "Vocational",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC_xvQ4xPq8hpCF3v-KuxKMBmmZxS7Iz0eq-oeBCWSYhYc1BcW9vE4wvBk7N36Gt6OKG2F4YHB849pnRy9pkXi0KYrOw377Lmk45EslYdYPYRaPfjBwri7GA3bU6Fkd4YUzgTFrZVxJh_Zr1fQZ9JGIpeLnuZhDb49jAg5aLQiMZX-wKjkBsX4vmcdekikCE0ins3wi3KdaPPmF-GYLSdXKNgJbfB3UN5CXp1hpXr9ciTh2nleIaLv_J7NW_rJrwCBpHRmi4nDNAwQ",
+    link: "/projects/shg-federation",
+  },
+  {
+    title: "UPSDM Certified Training",
+    description: "Government-backed skill development programs in tailoring and beauty therapy, producing industry-ready professionals.",
+    category: "Vocational",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA3mVW_d8whlvLoRFww93gL58v7rzAuyndWIu-RiiF3kZtqUGzy1hZrCkMoU8fENm-G2dlPa3IJL2iry5p1o6XJoHzM-0vCM03oZ8Tz0uDp-hNFBPtPq4Ff6fDrra1oKzm4vuHBGqVgx0D_L818v6KWvEmwPfhTt-h9H-xdKrCGCoOo8JKlEm7B8arm7rN9wF4g9TnPF7qGw_yWRy-eA5u4bXISzlRT5mBS9xifovjugkXkqTRajTF6gEWKWH_s498objmUR-FlcV8",
+    link: "/projects/upsdm-training",
+  },
+  {
+    title: "Sanitary Napkin Initiative",
+    description: "Ensuring dignity in education through sanitary napkin vending machines, health education, and safe disposal across 152 villages.",
+    category: "Health",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAhLszVNC1ME5_uV4vVZ3Jb-7H-6GNx2YimQcXV4n5XR9Ws8HoqXlU86lNiwpEWnFll84x-aBdAP7LygLsx095lxNnrdwiispC0XohyLfc7GOyCD98VvI6O5b6JqTkpqtepS9lnRbvbDah2q7VgTb6KB4BHP-oVetfL1GtZUfLSaTdGgy-tphh-scn28LLRu95LrNnqlGi4wG6Xat5mm9Cu8CB_eTdXDv-Staj_laW9jA6vDcvsX0CijuEXNLG03FkmoRHXlroKW6s",
+    link: "/projects/sanitary-napkin",
+  },
 ];
 
 const ProjectsPage = () => {
