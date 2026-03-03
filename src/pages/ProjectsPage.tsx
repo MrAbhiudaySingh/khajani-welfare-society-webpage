@@ -169,7 +169,6 @@ const ProjectsPage = () => {
                       className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all gap-1"
                     >
                       View Project
-                      <span className="material-symbols-outlined text-sm">arrow_forward</span>
                     </Link>
                   ) : (
                     <span className="inline-flex items-center text-muted-foreground text-xs font-bold uppercase tracking-widest gap-1 cursor-default">
