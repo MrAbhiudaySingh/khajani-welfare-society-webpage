@@ -2,10 +2,6 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
 import { PlayCircle, Users, ArrowRight } from "lucide-react";
-import upsdmLogo from "@/assets/partners/upsdm.png";
-import msmeLogo from "@/assets/partners/msme.png";
-import sidbiLogo from "@/assets/partners/sidbi.png";
-import nsdcLogo from "@/assets/partners/nsdc.png";
 
 const HomePage = () => {
   return (
@@ -75,20 +71,9 @@ const HomePage = () => {
         <section className="py-12 bg-card border-y border-border">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-center text-muted-foreground text-[10px] font-bold uppercase tracking-[0.2em] mb-8">Trusted Partners & Supporters</h3>
-            <div className="flex flex-wrap justify-center gap-12 md:gap-24 items-center">
-              {[
-                { name: "UPSDM", logo: upsdmLogo },
-                { name: "MSME", logo: msmeLogo },
-                { name: "SIDBI", logo: sidbiLogo },
-                { name: "NSDC", logo: nsdcLogo },
-              ].map((partner) => (
-                <div key={partner.name} className="flex items-center justify-center group">
-                  <img
-                    src={partner.logo}
-                    alt={partner.name}
-                    className="h-12 md:h-16 object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500"
-                  />
-                </div>
+            <div className="flex flex-wrap justify-center gap-12 md:gap-24 items-center opacity-40 hover:opacity-100 transition duration-500">
+              {["UPSDM", "MSME", "SIDBI", "NSDC"].map((name) => (
+                <span key={name} className="font-display font-bold text-2xl md:text-3xl text-primary tracking-wide">{name}</span>
               ))}
             </div>
           </div>

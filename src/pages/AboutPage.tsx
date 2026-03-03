@@ -141,7 +141,7 @@ const AboutPage = () => {
             <div className="lg:col-span-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { name: "Dr. Anjali Sharma", role: "Founder & President", desc: "A PhD in Sociology with 25 years of field experience.", img: "https://images.unsplash.com/photo-1594824476967-48c8b964f137?w=300&q=80" },
+                  { name: "Dr. Anjali Sharma", role: "Founder & President", desc: "A PhD in Sociology with 25 years of field experience.", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&q=80" },
                   { name: "Mr. Rajesh Verma", role: "Director of Ops", desc: "Former civil servant bringing administrative rigor.", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
                   { name: "Mrs. Sunita Gupta", role: "Head of Training", desc: "Expert in textile design and skill development.", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" },
                 ].map((person, i) => (
