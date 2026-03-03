@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
-import { Handshake, Users, ShieldCheck, BadgeCheck, QrCode, Copy } from "lucide-react";
+import { Handshake, Users, FileCheck, Award, Building2, Briefcase, GraduationCap, BookOpen, Landmark } from "lucide-react";
 
 const AboutPage = () => {
   return (
@@ -203,6 +203,48 @@ const AboutPage = () => {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+      {/* Registrations & Certifications */}
+      <section className="py-24 bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal variant="fade-up">
+            <div className="text-center mb-20 max-w-3xl mx-auto">
+              <span className="bg-primary text-primary-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-6">Chapter 5: Credentials</span>
+              <h2 className="text-5xl md:text-7xl font-display font-medium text-primary mb-6">Registrations &<br />Certifications</h2>
+              <p className="text-muted-foreground italic font-serif text-xl">"Transparency and accountability are the pillars of trust."</p>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: FileCheck, title: "12AA Registration", desc: "Tax exemption under Section 12AA of the Income Tax Act.", id: "AADTK2215NE2021001" },
+              { icon: Award, title: "80G Registration", desc: "Donors eligible for tax benefits under Section 80G.", id: "AADTK2215NF20168" },
+              { icon: Building2, title: "NGO DARPAN", desc: "Registered on the NITI Aayog NGO DARPAN portal.", id: "UP/2020/0249575" },
+              { icon: Briefcase, title: "CSR Registration", desc: "Eligible for Corporate Social Responsibility funding.", id: "CSR00005014" },
+              { icon: GraduationCap, title: "NSDC Impanelment", desc: "National Skill Development Corporation training partner since 15/12/2018.", id: "TP 015247" },
+              { icon: BookOpen, title: "Seekho aur Kamao", desc: "Registered under the Ministry of Minority Affairs scheme for skill development." },
+              { icon: Landmark, title: "Nai Roshni Scheme", desc: "Registered under the Government welfare scheme for women's leadership development." },
+            ].map((cert, i) => (
+              <Reveal key={cert.title} variant="fade-up" delay={i * 80}>
+                <div className="group border border-border bg-background p-8 hover:border-accent hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 flex items-center justify-center bg-muted group-hover:bg-accent/10 transition-colors rounded-sm">
+                      <cert.icon className="text-accent" size={24} />
+                    </div>
+                    <h3 className="font-display text-lg font-bold text-foreground">{cert.title}</h3>
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed flex-1">{cert.desc}</p>
+                  {cert.id && (
+                    <div className="mt-4 pt-4 border-t border-border">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">ID: </span>
+                      <span className="text-xs font-mono text-primary">{cert.id}</span>
+                    </div>
+                  )}
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </Layout>
