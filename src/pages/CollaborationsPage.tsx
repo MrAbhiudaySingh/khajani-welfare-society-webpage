@@ -121,9 +121,11 @@ const CollaborationsPage = () => {
         <section className="py-20 border-t border-border bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 className="text-xs font-bold text-muted-foreground tracking-[0.3em] uppercase mb-16">Institutional Partners</h3>
-            <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 hover:opacity-100 transition duration-500">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
               {["UPSDM", "MSME", "WORLD BANK", "SIDBI", "NSDC"].map((p) => (
-                <span key={p} className="font-display font-bold text-3xl text-primary">{p}</span>
+                <div key={p} className="px-6 py-4 border border-border bg-background hover:border-accent hover:shadow-md transition-all duration-300 group">
+                  <span className="font-display font-bold text-xl md:text-2xl text-muted-foreground group-hover:text-primary transition-colors">{p}</span>
+                </div>
               ))}
             </div>
           </div>
