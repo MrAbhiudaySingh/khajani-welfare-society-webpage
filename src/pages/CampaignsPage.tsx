@@ -50,7 +50,7 @@ const CampaignsPage = () => {
             </Reveal>
             <Reveal variant="fade-left" delay={200} className="lg:w-7/12 relative">
               <div className="relative aspect-[4/3] w-full overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                <img alt="Shakti Ek Adhaar" className="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy3rTu_soF2Aw8RiHeFaeKpVTVg8sfRliFtM3kSJZESUH1PK6kfWHwFeOh8wicDJ3VdT6SnBjadCJ40gtypt4IuMHtWaKhSqBR5ZfDmpS7i2DTGa91oewksftrZHGNQ36VnfUlc9IDZcrLMWpRGxkMNa2_TFvQ-zMJ6d7jXrYUlGNx8SsI_d5sYyV3hVX7xZBb6OMW1xEdiIvNMNpgWo1gM9h4b-X20yhbPc3WwMAHcZ8cDcNJFYymdt3OaYo_pQMRJ6Loc5zbmKM" />
+                <img alt="Shakti Ek Adhaar" className="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0" src="https://images.unsplash.com/photo-1604881991720-f91add269bed?w=800&q=80" />
                 <div className="absolute bottom-0 left-0 bg-card p-6 max-w-xs shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-2">Latest Event</span>
                   <span className="font-display text-lg font-bold text-foreground">International Women's Day 2024</span>
@@ -91,7 +91,7 @@ const CampaignsPage = () => {
             </Reveal>
             <Reveal variant="fade-right" delay={200} className="lg:w-7/12 relative mt-12 lg:mt-0">
               <div className="relative aspect-[3/4] md:aspect-[4/3] w-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
-                <img alt="Brij-Seva" className="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmcqKyuFnUb8Doh7mMIC9c1l5hgIHRcfQxMx6u0i4hpIaTx9_AvLXQsDVjiiRz3b7_vqSiihiGbPwaMFk2WEbyjgBwbJBmv-ocWuMJqiY1yI0ZZ7nL8mrebql3-VDgFGBWZGMrXjVq8B6UVFZO8J8ifmyehdIAgrAoSQlnYkX5cnc23E_yO1X8T9e-_AU3y2Yg-SfKNTFzcFtL6Qhhy2QCO1lK15Dyu7JGaZV6s9x8feKMyNjOWJo4M7jVp7tVRJwDY1TM_AEuvAE" />
+                <img alt="Brij-Seva" className="w-full h-full object-cover object-center" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&q=80" />
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
               </div>
             </Reveal>
@@ -104,7 +104,7 @@ const CampaignsPage = () => {
             <Reveal variant="fade-right" className="lg:col-span-7 relative order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-[3/4] relative overflow-hidden mt-12">
-                  <img alt="Artisan" className="absolute inset-0 w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuKNcltRg1g0bg83gp5lp_L2-MQt0Rjl3h_OQr5kftMoqOSMooGeM5KJrTl2_Agw2jSDQShOBNNOCS76-qkGwVlaXeLonpjLFcm791VvefIbtnS3JTmo4barphpfTN6xToO0L_Y3Z8upPecGF6UGVxG8bPIaGgqn6--r33luLLEXBdlg6qOoC3R8nEA7ZN5Dl4xaDZ29Jctwf7HbWfxA5C1uoR6812EIV_MwyGlnG0CNAwu4hgI1rK-ziLrt9zp0FUC1vudP7v1EY" />
+                  <img alt="Artisan" className="absolute inset-0 w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition duration-500" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80" />
                 </div>
                 <div className="aspect-[3/4] relative overflow-hidden bg-muted flex items-center justify-center p-8 text-center">
                   <div className="border border-border p-8 h-full w-full flex flex-col items-center justify-center">

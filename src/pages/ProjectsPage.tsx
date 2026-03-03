@@ -20,14 +20,14 @@ const projects: Project[] = [
     title: "Project Brij-Hunar",
     description: "Empowering rural women through advanced pottery and rural training, connecting local artisans directly to urban markets to ensure…",
     category: "Vocational",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBKvGlYjpEeKctCyTLWUUZugCYE0j1Qft8SF2pCMN9hXCbM1WzeORo4yKbU3pU4xFnBOknhdrY7lzQFlqiLJEmqgSHLK-YpWqhFnvCDoAfybVFtqWTWRrYm9RUOn4we-LrEcuuCF_cqkkbi-QedqUbx4r905ZBJIh39tlUQ92srTh15PPWB2823Xc99a-uqUd1ustBjuB9EA-h1fPHdDMTUAscpahKSCyrjufvfTanaYFu8h7CcNf9MYgPlL6K_okiZjK_Khu-pRh0",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
     link: "/projects/brij-hunar",
   },
   {
     title: "Brij-Surabhi",
     description: "Preserving and promoting the cultural heritage of Brij through traditional arts, music, and craftsmanship programs across villages.",
     category: "Culture",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBy3rTu_soF2Aw8RiHeFaeKpVTVg8sfRliFtM3kSJZESUH1PK6kfWHwFeOh8wicDJ3VdT6SnBjadCJ40gtypt4IuMHtWaKhSqBR5ZfDmpS7i2DTGa91oewksftrZHGNQ36VnfUlc9IDZcrLMWpRGxkMNa2_TFvQ-zMJ6d7jXrYUlGNx8SsI_d5sYyV3hVX7xZBb6OMW1xEdiIvNMNpgWo1gM9h4b-X20yhbPc3WwMAHcZ8cDcNJFYymdt3OaYo_pQMRJ6Loc5zbmKM",
+    image: "https://images.unsplash.com/photo-1604881991720-f91add269bed?w=600&q=80",
     link: "/projects/brij-surabhi",
   },
   {

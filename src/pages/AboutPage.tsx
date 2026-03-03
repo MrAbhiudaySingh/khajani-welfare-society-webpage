@@ -21,7 +21,7 @@ const AboutPage = () => {
             </Reveal>
             <Reveal variant="fade-right" delay={200} className="lg:col-span-5 relative">
               <div className="relative aspect-[4/5] overflow-hidden group">
-                <img alt="Woman looking forward" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQDQLp5OBF7RViJn-D-bGkmn_QwH4CmiHx4xSO-pYkMLNK9ek73-R_cgVVDi7x02ay_CRSY7mEYm0cMaYwHp0f0tSJhRcm11LzNyZ8zbgPH6q3hzTypNrnHFWefTcS5UCMF8iQY_Wz5uDgByCwtNM68GpvVnVcQLbVF3IakwomluSHcRtKmpID5sKrwQOkv5itWoH536VAhRa9UHGsv4MjbD5HMd7I4Aj7YMh0UWloUom3o3zyCiiwWvAZzDQl1_bWwXm7r7fzz0o" />
+                <img alt="Woman looking forward" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" />
                 <div className="absolute bottom-0 left-0 bg-card p-4 max-w-[80%] border-t-4 border-accent">
                   <p className="font-display text-primary italic text-lg leading-tight">Since 2006, bridging rural potential and modern opportunity.</p>
                 </div>
@@ -45,7 +45,7 @@ const AboutPage = () => {
             <div className="lg:col-span-9">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                 <Reveal variant="fade-up">
-                  <img alt="Empowering women in rural India" className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700 mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9pRcl8wSWxn68CXLXXLGiqNdWUcFH6Qs7D01pONPTUBvxsCI-9QizzF-ZHbaLgcrWwSF4nNlliSDJcrnGJUXnv2vpSlRDo0zwgd5GlSMUYMYLLEl3OeVxmM8wL_GWS8ulQuDxHKiGA5ZKD8r_GRVt0uFvTXBrr241YxfTkcfBq2z0_xIzzh55nnG_7sjTE_C9tmAOppeGglqOQR587zQrSsGad95Y17vnbPvP_I64mx1rfEzop--vSRXpGsakBDqanMbinnTEBLQ" />
+                  <img alt="Empowering women in rural India" className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700 mb-6" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80" />
                 </Reveal>
                 <Reveal variant="fade-up" delay={150} className="flex flex-col justify-center">
                   <p className="text-lg text-foreground leading-relaxed drop-cap font-serif">
@@ -141,9 +141,9 @@ const AboutPage = () => {
             <div className="lg:col-span-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { name: "Dr. Anjali Sharma", role: "Founder & President", desc: "A PhD in Sociology with 25 years of field experience.", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDFLkeOXW_xNl_Ttlfo0qEDDEpJd0z2Iuv2rZK5OVsDBsiFHHyCvB7djxwR2f56iTv-Mm3EurExzfDhGE7MHSona7dNu2wyCr7sxjuy5hvvHVrE5x4WxBdzdnom4UrA0B_xxrlnZ0b4MVNiKaz6jrdkTKU3TjULs82TKbHldWfl7ZSmepFJ-yP7f2c1dSFTJVXnM16wWCsRliykZDt8Vcyhqy30ANZsDCXGWcdBj7LfXyjZRpxWA2eQgY_2z04Z0QL5Obk_6QS4Of0" },
-                  { name: "Mr. Rajesh Verma", role: "Director of Ops", desc: "Former civil servant bringing administrative rigor.", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBISlAFLX4NktcEtXDRf2jmNKLs7WZwLthhAp3iPCvaBIxHCKRMlJ-KZWrSeLYzQH-SLbXHgoDXhJE6xwBTs2Kds2j-XS3Mn6hVw9rPE8dwC17e_bSS0amLiGmRTlgxQ3FJepf4PvqPvLkTuCZt3ACf-ZP2BY1eZ58vBpHghAcs_i5-o9bZKXwg4hpKFFfJgXussGoiAlY5ISZIiC5tk8KNPmkFyFN05eF98OnjWpagJhEm6OATpmkdYOxkvlibIMr9FshL0laOaNg" },
-                  { name: "Mrs. Sunita Gupta", role: "Head of Training", desc: "Expert in textile design and skill development.", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDBOoBavBsKnt69IYS6g3vqXInyzJAtEbKqvpxym8jI4TXT9Wk1w3DQ4OLm3X-mUYsO0PafJwYp3ReoESapyEps_55bnQ9kPATc_sRg0VEDw5J1QB6Ao7X39ZzxpYgM4_R2b9HkH0N4x7HNOnXaQNqXMrDbiq317u9ryGpeVSj-b7uO60ZYUtn5Z7748oQNewcX6da_MmCsLkrofTkQD6LpNOMZYvfcgCWFpsDy2L04GQylF_m3yjnU6sZzjVi39AaQS_XTPW6IxBg" },
+                  { name: "Dr. Anjali Sharma", role: "Founder & President", desc: "A PhD in Sociology with 25 years of field experience.", img: "https://images.unsplash.com/photo-1594824476967-48c8b964f137?w=300&q=80" },
+                  { name: "Mr. Rajesh Verma", role: "Director of Ops", desc: "Former civil servant bringing administrative rigor.", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
+                  { name: "Mrs. Sunita Gupta", role: "Head of Training", desc: "Expert in textile design and skill development.", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" },
                 ].map((person, i) => (
                   <Reveal key={person.name} variant="fade-up" delay={i * 150}>
                     <div className="text-center group">
@@ -177,7 +177,7 @@ const AboutPage = () => {
           <Reveal variant="scale">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-border bg-card shadow-xl">
               <div className="relative h-[600px] w-full bg-muted overflow-hidden group">
-                <img alt="Map of Brij Region presence" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ZWvbrS0EybNfS-uPl_eHgJeywysa7rccpBcehzxMHcK8_IhEfXxwNV26RqGXgpA06x7pZx17y2LTD873cTR2YTB1ic0YDY_zoZz5h_-1OH09Ic9B5jsABxvCYrMkI-f5r8tA4_luyNYde5cA82reXY4HW4u9Mx72Wr_hwbb3tmC_e60EyCVq0fax3rG2NhiuuZEYm4vIAg_kqHFkWHozkSnNFR43GxhwCeFd1l3eZ1uYf73SwYbqpq4NiWO620xtfaIzXScGwkc" />
+                <img alt="Map of Brij Region presence" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" />
                 <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                   <div className="w-4 h-4 bg-accent rounded-full animate-ping absolute"></div>
                   <div className="w-4 h-4 bg-accent rounded-full border-2 border-card shadow-md relative z-10"></div>
