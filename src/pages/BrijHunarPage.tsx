@@ -28,7 +28,7 @@ const BrijHunarPage = () => {
             </Reveal>
             <Reveal variant="fade-left" delay={200} className="order-1 lg:order-2 relative">
               <div className="aspect-[4/5] overflow-hidden relative">
-                <img alt="Vocational training session" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" />
+                <img alt="Vocational training session" className="w-full h-full object-cover" src="/images/projects/brij-hunar-training.jpg" />
               </div>
               <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-accent rounded-full flex items-center justify-center text-accent-foreground shadow-xl z-10">
                 <ArrowUpRight size={36} className="transform rotate-0" />
@@ -46,7 +46,7 @@ const BrijHunarPage = () => {
               <span className="bg-secondary text-secondary-foreground px-3 py-1 text-xs font-bold uppercase absolute -top-3 left-0 z-10">Chapter I: Skills</span>
               <h2 className="text-4xl font-display font-bold text-primary mb-8 mt-4 leading-tight">Craftsmanship as a <br />Human Foundation</h2>
               <div className="aspect-[4/3] bg-muted overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out shadow-lg">
-                <img alt="Woman working on electronics" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" />
+                <img alt="Skills training in progress" className="w-full h-full object-cover" src="/images/projects/brij-hunar-class.jpg" />
               </div>
             </div>
           </Reveal>

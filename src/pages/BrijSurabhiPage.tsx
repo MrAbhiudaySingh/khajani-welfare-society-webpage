@@ -29,7 +29,7 @@ const BrijSurabhiPage = () => {
           </Reveal>
           <Reveal variant="fade-left" delay={200} className="lg:col-span-7 relative">
             <div className="relative z-10 aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm shadow-xl">
-              <img alt="Marigold flowers for processing" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?w=800&q=80" />
+              <img alt="Brij Surabhi project activities" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" src="/images/projects/brij-surabhi-cow.jpg" />
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/60 to-transparent">
                 <p className="text-card font-display italic text-lg text-right">Serving the sacred land of Brij.</p>
               </div>
@@ -92,7 +92,7 @@ const BrijSurabhiPage = () => {
             </Reveal>
             <Reveal variant="fade-left" delay={200} className="lg:col-span-7 order-1 lg:order-2 relative group cursor-pointer">
               <div className="overflow-hidden shadow-2xl">
-                <img alt="Cow Dung Logs" className="w-full aspect-square md:aspect-[16/11] object-cover transition-all duration-700 grayscale hover:grayscale-0" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" />
+                <img alt="Cow Dung Products" className="w-full aspect-square md:aspect-[16/11] object-cover transition-all duration-700 grayscale hover:grayscale-0" src="/images/projects/brij-surabhi-cow.jpg" />
               </div>
               <div className="absolute bottom-0 right-0 bg-primary text-primary-foreground p-8 translate-y-4 translate-x-4 lg:translate-x-8 lg:translate-y-8 z-10 w-64 text-center">
                 <span className="block text-xs font-bold tracking-widest uppercase mb-1 opacity-70">Division 01</span>
@@ -109,7 +109,7 @@ const BrijSurabhiPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <Reveal variant="fade-right" className="lg:col-span-7 relative group">
               <div className="relative z-10 shadow-2xl overflow-hidden">
-                <img alt="Temple Flowers Processing" className="w-full aspect-[4/3] object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?w=800&q=80" />
+                <img alt="Temple Flowers Processing" className="w-full aspect-[4/3] object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" src="/images/projects/brij-surabhi-temple.jpg" />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-card opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-12 text-center">
                   <Flower2 className="text-secondary mb-4" size={40} />
                   <h3 className="font-display text-3xl italic">From Waste to Fragrance</h3>
