@@ -50,7 +50,7 @@ const CampaignsPage = () => {
             </Reveal>
             <Reveal variant="fade-left" delay={200} className="lg:w-7/12 relative">
               <div className="relative aspect-[4/3] w-full overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-500">
-                <img alt="Shakti Ek Adhaar" className="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy3rTu_soF2Aw8RiHeFaeKpVTVg8sfRliFtM3kSJZESUH1PK6kfWHwFeOh8wicDJ3VdT6SnBjadCJ40gtypt4IuMHtWaKhSqBR5ZfDmpS7i2DTGa91oewksftrZHGNQ36VnfUlc9IDZcrLMWpRGxkMNa2_TFvQ-zMJ6d7jXrYUlGNx8SsI_d5sYyV3hVX7xZBb6OMW1xEdiIvNMNpgWo1gM9h4b-X20yhbPc3WwMAHcZ8cDcNJFYymdt3OaYo_pQMRJ6Loc5zbmKM" />
+                <img alt="Shakti Ek Adhaar" className="w-full h-full object-cover transition duration-1000 transform group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0" src="/images/projects/shakti-ek-adhaar.jpg" />
                 <div className="absolute bottom-0 left-0 bg-card p-6 max-w-xs shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="block text-xs font-bold uppercase tracking-widest text-accent mb-2">Latest Event</span>
                   <span className="font-display text-lg font-bold text-foreground">International Women's Day 2024</span>

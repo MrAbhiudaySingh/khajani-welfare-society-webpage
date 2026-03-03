@@ -46,7 +46,7 @@ const CollaborationsPage = () => {
             </Reveal>
             <Reveal variant="fade-right" className="lg:col-span-7 lg:order-1 relative">
               <div className="relative z-10">
-                <img alt="Women in tailoring workshop" className="w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition duration-700" src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80" />
+                <img alt="Women in tailoring workshop" className="w-full h-[500px] object-cover shadow-2xl grayscale hover:grayscale-0 transition duration-700" src="/images/about/collab-upsdm.jpg" />
               </div>
               <div className="absolute -bottom-6 -left-6 w-full h-full bg-primary -z-10"></div>
             </Reveal>
