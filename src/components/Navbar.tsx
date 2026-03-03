@@ -63,7 +63,6 @@ const Navbar = () => {
                 }`}
               >
                 Projects
-                <span className={`material-symbols-outlined text-sm transition-transform ${projectsOpen ? "rotate-180" : ""}`}>expand_more</span>
               </button>
               {projectsOpen && (
                 <div className="absolute top-full mt-2 left-0 bg-card border border-border rounded-lg shadow-xl py-2 min-w-[180px] z-50">
