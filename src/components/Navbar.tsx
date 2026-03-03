@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -20,7 +21,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
-            <span className="text-xl font-bold tracking-tight group-hover:scale-105 transition-transform">Khajani Welfare Society</span>
+            <img src={logo} alt="Khajani Welfare Society" className="h-16 object-contain group-hover:scale-105 transition-transform" />
           </Link>
 
           <nav className="hidden lg:flex space-x-6 items-center h-full">

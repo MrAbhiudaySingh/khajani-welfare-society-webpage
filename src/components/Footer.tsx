@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
           <div className="lg:col-span-2 space-y-8">
             <div className="flex items-center gap-3">
-              <span className="text-lg font-bold tracking-tight">Khajani Welfare Society</span>
+              <img src={logo} alt="Khajani Welfare Society" className="h-12 object-contain" />
             </div>
             <p className="text-sm opacity-70 leading-relaxed max-w-sm font-serif italic">
               A chronicle of change, a legacy of welfare. Documenting our journey towards a sustainable and healthy Braj since 2007.
