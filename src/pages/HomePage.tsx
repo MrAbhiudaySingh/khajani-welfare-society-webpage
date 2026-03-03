@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { PlayCircle, Users, ArrowRight } from "lucide-react";
 
 const HomePage = () => {
   return (
@@ -35,7 +36,7 @@ const HomePage = () => {
                   to="/about"
                   className="flex items-center justify-center px-8 py-4 border-2 border-border text-base font-bold rounded-full text-primary hover:border-accent hover:text-accent bg-card transition-all group"
                 >
-                  <span className="material-symbols-outlined mr-2 group-hover:text-accent transition-colors">play_circle</span> Our Story
+                  <PlayCircle className="mr-2 group-hover:text-accent transition-colors" size={20} /> Our Story
                 </Link>
               </div>
             </Reveal>
@@ -52,7 +53,7 @@ const HomePage = () => {
                 </div>
                 <div className="absolute bottom-8 -left-4 lg:-left-12 bg-card p-6 rounded-2xl shadow-xl border border-border z-20 flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
                   <div className="bg-primary/5 p-3 rounded-full">
-                    <span className="material-symbols-outlined text-primary text-2xl">diversity_1</span>
+                    <Users className="text-primary" size={24} />
                   </div>
                   <div>
                     <h3 className="text-3xl font-display font-bold text-primary leading-none">20,000+</h3>
@@ -147,7 +148,7 @@ const HomePage = () => {
                 <div className="relative z-10">
                   <h4 className="font-display italic text-3xl mb-4">Join the Network</h4>
                   <Link to="/collaborations" className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary group-hover:text-primary-foreground transition flex items-center justify-center gap-2">
-                    Apply for Partnership <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    Apply for Partnership <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>

@@ -1,5 +1,15 @@
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { Newspaper, FileText, Rss, Megaphone, BookOpen, Radio, ArrowRight, Download, Mail } from "lucide-react";
+
+const iconMap: Record<string, React.ReactNode> = {
+  newspaper: <Newspaper size={28} />,
+  article: <FileText size={28} />,
+  feed: <Rss size={28} />,
+  campaign: <Megaphone size={28} />,
+  history_edu: <BookOpen size={28} />,
+  podcasts: <Radio size={28} />,
+};
 
 const MediaPage = () => {
   const articles = [
@@ -54,8 +64,8 @@ const MediaPage = () => {
               <article className="bg-card p-8 rounded-lg shadow-sm hover:shadow-xl border border-border transition-all duration-300 group flex flex-col h-full relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-1 h-full bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="flex justify-between items-start mb-6">
-                  <div className="bg-muted p-3 rounded-lg border border-border">
-                    <span className="material-symbols-outlined text-3xl text-muted-foreground group-hover:text-primary transition-colors">{article.icon}</span>
+                  <div className="bg-muted p-3 rounded-lg border border-border text-muted-foreground group-hover:text-primary transition-colors">
+                    {iconMap[article.icon]}
                   </div>
                   <span className="px-3 py-1 bg-muted text-muted-foreground text-xs font-bold uppercase tracking-wider rounded-sm">{article.source}</span>
                 </div>
@@ -71,7 +81,7 @@ const MediaPage = () => {
                 <div className="mt-auto pt-6 border-t border-border flex justify-between items-center">
                   <span className="text-xs text-muted-foreground font-mono">{article.page}</span>
                   <a className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground transform translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" href="#">
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <ArrowRight size={14} />
                   </a>
                 </div>
               </article>
@@ -92,11 +102,11 @@ const MediaPage = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-5">
                   <a className="bg-secondary text-secondary-foreground hover:bg-card hover:text-primary transition-all px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-3 shadow-lg" href="#">
-                    <span className="material-symbols-outlined">download</span>
+                    <Download size={18} />
                     Download Press Kit
                   </a>
                   <a className="bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors px-8 py-4 rounded-lg font-semibold flex items-center justify-center gap-3" href="#">
-                    <span className="material-symbols-outlined">mail</span>
+                    <Mail size={18} />
                     Contact PR Team
                   </a>
                 </div>

@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
@@ -50,9 +51,7 @@ const Navbar = () => {
               className="lg:hidden p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <span className="material-symbols-outlined text-foreground text-2xl">
-                {mobileMenuOpen ? "close" : "menu"}
-              </span>
+              {mobileMenuOpen ? <X className="text-foreground" size={24} /> : <Menu className="text-foreground" size={24} />}
             </button>
           </div>
         </div>

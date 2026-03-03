@@ -1,5 +1,11 @@
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { Paintbrush, Store } from "lucide-react";
+
+const iconMap: Record<string, React.ReactNode> = {
+  brush: <Paintbrush size={22} />,
+  storefront: <Store size={22} />,
+};
 
 const CollaborationsPage = () => {
   return (
@@ -67,8 +73,8 @@ const CollaborationsPage = () => {
             ].map((item, i) => (
               <Reveal key={item.title} variant="fade-up" delay={i * 150}>
                 <div className="bg-primary-foreground/5 p-10 border-t-4 border-accent group hover:bg-primary-foreground/10 transition duration-300">
-                  <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition duration-300">
-                    <span className="material-symbols-outlined text-primary-foreground">{item.icon}</span>
+                  <div className="w-12 h-12 bg-primary-foreground/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent transition duration-300 text-primary-foreground">
+                    {iconMap[item.icon]}
                   </div>
                   <h3 className="font-display text-3xl text-primary-foreground mb-4">{item.title}</h3>
                   <p className="text-primary-foreground/60 leading-relaxed font-light">{item.desc}</p>
