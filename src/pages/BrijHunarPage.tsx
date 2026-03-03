@@ -28,7 +28,7 @@ const BrijHunarPage = () => {
             </Reveal>
             <Reveal variant="fade-left" delay={200} className="order-1 lg:order-2 relative">
               <div className="aspect-[4/5] overflow-hidden relative">
-                <img alt="Vocational training session" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKvGlYjpEeKctCyTLWUUZugCYE0j1Qft8SF2pCMN9hXCbM1WzeORo4yKbU3pU4xFnBOknhdrY7lzQFlqiLJEmqgSHLK-YpWqhFnvCDoAfybVFtqWTWRrYm9RUOn4we-LrEcuuCF_cqkkbi-QedqUbx4r905ZBJIh39tlUQ92srTh15PPWB2823Xc99a-uqUd1ustBjuB9EA-h1fPHdDMTUAscpahKSCyrjufvfTanaYFu8h7CcNf9MYgPlL6K_okiZjK_Khu-pRh0" />
+                <img alt="Vocational training session" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" />
               </div>
               <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-accent rounded-full flex items-center justify-center text-accent-foreground shadow-xl z-10">
                 <ArrowUpRight size={36} className="transform rotate-0" />
@@ -46,7 +46,7 @@ const BrijHunarPage = () => {
               <span className="bg-secondary text-secondary-foreground px-3 py-1 text-xs font-bold uppercase absolute -top-3 left-0 z-10">Chapter I: Skills</span>
               <h2 className="text-4xl font-display font-bold text-primary mb-8 mt-4 leading-tight">Craftsmanship as a <br />Human Foundation</h2>
               <div className="aspect-[4/3] bg-muted overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out shadow-lg">
-                <img alt="Woman working on electronics" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGGB_uiiBnOuEi8GSfI7MLKyU5fJx1dcOR3XItcgZvQIELENi7sxuyqbnbySal955h60G6YjU66pKeqL8hhC0fCx1KMKFOngZlig9Rqm0mC53sYifzPHJ63GcvtyfFqhZPO_c8GlvuM02G3POEU1wBKoChgjAuAzhOtmE0qquKfKL5wLQgWtlKKesBamBqCW8zh3pvEKmEZNDCgavPLbGtQVFvuSPZjVAJ3C-s1HLr0lOGeFDssbvP6aKNpR68wzxHNj0erla5GBg" />
+                <img alt="Woman working on electronics" className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&q=80" />
               </div>
             </div>
           </Reveal>
@@ -137,8 +137,8 @@ const BrijHunarPage = () => {
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {[
-            { quote: "Before joining the Brij-Hunar project, I had never touched a computer. Today, I work as a Data Entry Operator in a reputed logistics firm.", name: "Amit Kumar", batch: "Batch 2021 • Logistics", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBh7si28PH3YvrFlxXJUthmj_alN7WM9Z5qR7UKYVkoCaoXjUmsvVpmLt-q9xsLDXWjPTFia31nTduEft2rUnMiUfOyebPZP5c185RjDVWb4o4wRQRGFNnwGyabDbu1ZaQKvJ7Wy9GCy7lHimuszD1WqO202swZAK-Hj9ZrFC8wk7TUrW0kP_Dan8q6smtDtvOVJdamNgI90qdOmcejIyY8XwQDLS56-Dymwwr5Q3Y-qVWv52pqABE1V9R673grVj6D2DwTzr3Z1To" },
-            { quote: "My family was hesitant about me working. The counseling team convinced my parents. I learned sewing and tailoring, and now I run my own boutique from home.", name: "Priya Singh", batch: "Batch 2022 • Apparel", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA176dVFBMEaJc_Sw39HFApba6J3OeOFqklQ9NljJPjVA8dMgFyU4S4qjxuLg5RZNdKU5ucY_ahec1Y0yR0d___AEUBMlxs1uvwD23zMVvALvhrxYIX0iBCyHEZUgQXvntQgesp_uY7JyHNyw4eUMNFOUogvedKNYnGdZnIUgKcLRff9blO1Mrf6yAFFgFct09MsFjlV_GiIHzXbJi6Lk3WcYzMBBTc6YmWtdxOP90iP3dD_Qm3kZp0VwixKTyWofdn-Z8VfeIMr98" },
+            { quote: "Before joining the Brij-Hunar project, I had never touched a computer. Today, I work as a Data Entry Operator in a reputed logistics firm.", name: "Amit Kumar", batch: "Batch 2021 • Logistics", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&q=80" },
+            { quote: "My family was hesitant about me working. The counseling team convinced my parents. I learned sewing and tailoring, and now I run my own boutique from home.", name: "Priya Singh", batch: "Batch 2022 • Apparel", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&q=80" },
           ].map((t, i) => (
             <Reveal key={t.name} variant="fade-up" delay={i * 150}>
               <div className="bg-card p-10 border border-border hover:shadow-xl transition-shadow relative h-full">

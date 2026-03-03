@@ -29,7 +29,7 @@ const BrijSurabhiPage = () => {
           </Reveal>
           <Reveal variant="fade-left" delay={200} className="lg:col-span-7 relative">
             <div className="relative z-10 aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-sm shadow-xl">
-              <img alt="Marigold flowers for processing" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGrhC1N5LGvedUS_DoTJwzqc3BUdiVyxhpci1Nc67fL3KuPJsj4ZN-CPi6cn5AdqicdpYOVSOnaYqGxx9KaAEDf_46FyVLq1LB5NsGYm0MBRTykuqTbdbcbe6qmWUg92vvia7MeeXhPnr0PBJLILP41IUWr-eUQeulobgepROhzf4SyxmLUdZDYvRpQlkQ1sOWP7WPRZOTTtotjZk68HuQeaQF6M5kmo5N3ZyL67NsgYB9twKFiRc5-RAuT5vljHGkUgoNOGVbOis" />
+              <img alt="Marigold flowers for processing" className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105" src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=800&q=80" />
               <div className="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black/60 to-transparent">
                 <p className="text-card font-display italic text-lg text-right">Serving the sacred land of Brij.</p>
               </div>
@@ -45,7 +45,7 @@ const BrijSurabhiPage = () => {
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
             <div className="w-full md:w-1/3 relative">
               <div className="aspect-[3/4] overflow-hidden rounded-t-[100px] border border-secondary/30 p-2">
-                <img alt="Mrs. Hema Malini" className="w-full h-full object-cover rounded-t-[90px] grayscale contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXQc4YnqsKnanrDOkYNwK_0Syfu9QX4Qc_x0eP84DdlzgVFe60LRD92OAvLBANWiAavEXVUdx2iYujvROMck21yQCIIZ2RNI3WTF5spsSl0mvBdYJrS28w0XT6zBLvnCLrCPRSsIEyI6JNLLToITRRBNl8DeKeTgsa8J4lWawvNXBDw_BDW1irm-TRjS67ps0H1IwWD7WN8HWlQP9g7FCHh1rv4zfN0tPzuihP54bH7G-BK1VexRqu__VGDT4SV9jE_RoqRsXJQdk" />
+                <img alt="Mrs. Hema Malini" className="w-full h-full object-cover rounded-t-[90px] grayscale contrast-125" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80" />
               </div>
               <div className="text-center mt-4">
                 <h3 className="font-display font-bold text-xl text-primary">Mrs. Hema Malini</h3>
@@ -92,7 +92,7 @@ const BrijSurabhiPage = () => {
             </Reveal>
             <Reveal variant="fade-left" delay={200} className="lg:col-span-7 order-1 lg:order-2 relative group cursor-pointer">
               <div className="overflow-hidden shadow-2xl">
-                <img alt="Cow Dung Logs" className="w-full aspect-square md:aspect-[16/11] object-cover transition-all duration-700 grayscale hover:grayscale-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZVlqtq9yXth8m2gPU7d6TbLCov3kmt-D747mMi607WUUmjG1Zpfy-CJXbEFN4WL_bfNvc92b6kKR4DevViZ1zn9Au83EHM6AbPiAam2LeCa5N6XQl214AEwaGlZdzAJJngB0qK2qr57IDf0MNAJ4UJD9fv23_cGk2tzBu1N7g5ZEpxd8kMNdYtpg8W-4bBYo9DKgQfANHL3mjR4CEkN0rxtLX0y0PpLxsMugsEJThmdAmcxBgc4yqjTnv8hnY8TGTFabrQl-jFvY" />
+                <img alt="Cow Dung Logs" className="w-full aspect-square md:aspect-[16/11] object-cover transition-all duration-700 grayscale hover:grayscale-0" src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80" />
               </div>
               <div className="absolute bottom-0 right-0 bg-primary text-primary-foreground p-8 translate-y-4 translate-x-4 lg:translate-x-8 lg:translate-y-8 z-10 w-64 text-center">
                 <span className="block text-xs font-bold tracking-widest uppercase mb-1 opacity-70">Division 01</span>
@@ -109,7 +109,7 @@ const BrijSurabhiPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <Reveal variant="fade-right" className="lg:col-span-7 relative group">
               <div className="relative z-10 shadow-2xl overflow-hidden">
-                <img alt="Temple Flowers Processing" className="w-full aspect-[4/3] object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtz9-gfRy133bW4G_GuQA4k095cjYxPEEjYTjhxTmKpqwWS9QKz3L36jgLvLtGMHvylGeD6QdBs6Q8sS2ym-VihFuk3G_LPwWbyTPDJrcSwZHjetpOSsEbPrhmcaEtvuU5oDYWadb5zYIwqreUdYAolj1_i_YDDb87URjUzgxmpxWNYiuWye5utmw2C1Nl1rv4RFXhqCt_6zN1C0lE88l8NBg6Q2MG7w-TxP0c0e3621duggwG9NjI4ZX4wKi7740heInursxKjQY" />
+                <img alt="Temple Flowers Processing" className="w-full aspect-[4/3] object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" src="https://images.unsplash.com/photo-1457530378978-8bac673b8062?w=800&q=80" />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-card opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-12 text-center">
                   <Flower2 className="text-secondary mb-4" size={40} />
                   <h3 className="font-display text-3xl italic">From Waste to Fragrance</h3>

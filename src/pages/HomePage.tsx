@@ -52,7 +52,7 @@ const HomePage = () => {
                   <img
                     alt="Women working on pottery"
                     className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy3rTu_soF2Aw8RiHeFaeKpVTVg8sfRliFtM3kSJZESUH1PK6kfWHwFeOh8wicDJ3VdT6SnBjadCJ40gtypt4IuMHtWaKhSqBR5ZfDmpS7i2DTGa91oewksftrZHGNQ36VnfUlc9IDZcrLMWpRGxkMNa2_TFvQ-zMJ6d7jXrYUlGNx8SsI_d5sYyV3hVX7xZBb6OMW1xEdiIvNMNpgWo1gM9h4b-X20yhbPc3WwMAHcZ8cDcNJFYymdt3OaYo_pQMRJ6Loc5zbmKM"
+                    src="https://images.unsplash.com/photo-1604881991720-f91add269bed?w=800&q=80"
                   />
                 </div>
                 <div className="absolute bottom-8 -left-4 lg:-left-12 bg-card p-6 rounded-2xl shadow-xl border border-border z-20 flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
