@@ -64,7 +64,7 @@ const projects: Project[] = [
     title: "Nirmal Jal",
     description: "Installing community water filtration plants in arsenic-affected villages to provide safe, clean drinking water and reduce waterborne diseases.",
     category: "Health",
-    image: "https://images.unsplash.com/photo-1581093458791-4b041a98425f?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=600&q=80",
   },
   {
     title: "Digital Sakshar",
