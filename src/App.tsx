@@ -9,6 +9,15 @@ import AboutPage from "./pages/AboutPage";
 import BrijSurabhiPage from "./pages/BrijSurabhiPage";
 import BrijHunarPage from "./pages/BrijHunarPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import KLAPage from "./pages/KLAPage";
+import DigiShalaPage from "./pages/DigiShalaPage";
+import EdudakshPage from "./pages/EdudakshPage";
+import BrijAnshumanPage from "./pages/BrijAnshumanPage";
+import BrijSurabhiCowWelfarePage from "./pages/BrijSurabhiCowWelfarePage";
+import BrijSurabhiTempleWastePage from "./pages/BrijSurabhiTempleWastePage";
+import BrijSanginiPage from "./pages/BrijSanginiPage";
+import BrijSevaPage from "./pages/BrijSevaPage";
+import ShaktiEkAdhaarPage from "./pages/ShaktiEkAdhaarPage";
 import MediaPage from "./pages/MediaPage";
 import CampaignsPage from "./pages/CampaignsPage";
 import CollaborationsPage from "./pages/CollaborationsPage";
@@ -30,6 +39,15 @@ const App = () => (
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/brij-surabhi" element={<BrijSurabhiPage />} />
           <Route path="/projects/brij-hunar" element={<BrijHunarPage />} />
+          <Route path="/projects/kla" element={<KLAPage />} />
+          <Route path="/projects/digi-shala" element={<DigiShalaPage />} />
+          <Route path="/projects/edudaksh" element={<EdudakshPage />} />
+          <Route path="/projects/brij-anshuman" element={<BrijAnshumanPage />} />
+          <Route path="/projects/brij-surabhi-cow-welfare" element={<BrijSurabhiCowWelfarePage />} />
+          <Route path="/projects/brij-surabhi-temple-waste" element={<BrijSurabhiTempleWastePage />} />
+          <Route path="/projects/brij-sangini" element={<BrijSanginiPage />} />
+          <Route path="/projects/brij-seva" element={<BrijSevaPage />} />
+          <Route path="/projects/shakti-ek-adhaar" element={<ShaktiEkAdhaarPage />} />
           <Route path="/media" element={<MediaPage />} />
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/collaborations" element={<CollaborationsPage />} />
