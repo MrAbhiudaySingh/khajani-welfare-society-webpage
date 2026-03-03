@@ -37,7 +37,6 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <Reveal variant="fade-right" className="lg:col-span-3 hidden lg:block">
               <div className="sticky top-32">
-                <span className="bg-secondary text-secondary-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-4">Chapter 1: Vision</span>
                 <h3 className="font-display text-3xl text-primary font-bold mb-4">The Human Foundation</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">Our philosophy centers on the belief that geography should not dictate destiny.</p>
               </div>
@@ -82,7 +81,6 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="fade-up">
             <div className="text-center mb-24 max-w-3xl mx-auto">
-              <span className="bg-primary text-primary-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-6">Chapter 2: History</span>
               <h2 className="text-5xl md:text-7xl font-display font-medium text-primary mb-6">17 Years of Impact</h2>
               <p className="text-muted-foreground italic font-serif text-xl">"A chronicle of change, a legacy of welfare."</p>
             </div>
@@ -132,7 +130,6 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <Reveal variant="fade-right" className="lg:col-span-4">
-              <span className="text-secondary font-bold text-xs tracking-[0.2em] uppercase block mb-4">Chapter 3: People</span>
               <h2 className="text-5xl font-display font-medium mb-6">Leadership</h2>
               <p className="text-primary-foreground/70 text-lg leading-relaxed font-light mb-8">
                 Guided by visionaries with decades of experience in social work, public administration, and education.
@@ -168,7 +165,6 @@ const AboutPage = () => {
           <Reveal variant="fade-up">
             <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between border-b border-border pb-8">
               <div>
-                <span className="bg-card border border-border text-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-4 shadow-sm">Chapter 4: Geography</span>
                 <h2 className="text-5xl font-display font-medium text-primary">Presence in Brij</h2>
               </div>
               <p className="text-muted-foreground max-w-md text-right mt-4 md:mt-0 italic font-serif">"Serving over 100 villages within a 50km radius."</p>
@@ -210,7 +206,6 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="fade-up">
             <div className="text-center mb-20 max-w-3xl mx-auto">
-              <span className="bg-primary text-primary-foreground px-3 py-1 text-xs font-bold uppercase tracking-widest inline-block mb-6">Chapter 5: Credentials</span>
               <h2 className="text-5xl md:text-7xl font-display font-medium text-primary mb-6">Registrations &<br />Certifications</h2>
               <p className="text-muted-foreground italic font-serif text-xl">"Transparency and accountability are the pillars of trust."</p>
             </div>
@@ -237,7 +232,7 @@ const AboutPage = () => {
                   <p className="text-muted-foreground text-sm leading-relaxed flex-1">{cert.desc}</p>
                   {cert.id && (
                     <div className="mt-4 pt-4 border-t border-border">
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">ID: </span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">ID: </span> 
                       <span className="text-xs font-mono text-primary">{cert.id}</span>
                     </div>
                   )}
