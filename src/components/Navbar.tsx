@@ -1,19 +1,34 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setProjectsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
 
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About Us" },
     { to: "/campaigns", label: "Campaigns" },
-    { to: "/projects/brij-surabhi", label: "Brij-Surabhi" },
-    { to: "/projects/brij-hunar", label: "Brij-Hunar" },
     { to: "/collaborations", label: "Collaborations" },
     { to: "/media", label: "Media" },
+  ];
+
+  const projectLinks = [
+    { to: "/projects/brij-surabhi", label: "Brij-Surabhi" },
+    { to: "/projects/brij-hunar", label: "Brij-Hunar" },
   ];
 
   return (
@@ -25,7 +40,49 @@ const Navbar = () => {
           </Link>
 
           <nav className="hidden lg:flex space-x-6 items-center h-full">
-            {navLinks.map((link) => (
+            {navLinks.slice(0, 3).map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`text-xs font-bold uppercase tracking-widest transition-colors ${
+                  location.pathname === link.to
+                    ? "text-accent border-b-2 border-accent pb-1"
+                    : "text-foreground hover:text-accent"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setProjectsOpen(!projectsOpen)}
+                className={`text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-1 ${
+                  location.pathname.startsWith("/projects")
+                    ? "text-accent border-b-2 border-accent pb-1"
+                    : "text-foreground hover:text-accent"
+                }`}
+              >
+                Projects
+                <span className={`material-symbols-outlined text-sm transition-transform ${projectsOpen ? "rotate-180" : ""}`}>expand_more</span>
+              </button>
+              {projectsOpen && (
+                <div className="absolute top-full mt-2 left-0 bg-card border border-border rounded-lg shadow-xl py-2 min-w-[180px] z-50">
+                  {projectLinks.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      onClick={() => setProjectsOpen(false)}
+                      className={`block px-4 py-2 text-xs font-bold uppercase tracking-widest transition-colors ${
+                        location.pathname === link.to ? "text-accent bg-accent/5" : "text-foreground hover:text-accent hover:bg-muted"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+            {navLinks.slice(3).map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
@@ -61,7 +118,34 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden pb-6 border-t border-border">
             <div className="flex flex-col space-y-4 pt-4">
-              {navLinks.map((link) => (
+              {navLinks.slice(0, 3).map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm font-bold uppercase tracking-widest transition-colors px-2 py-1 ${
+                    location.pathname === link.to ? "text-accent" : "text-foreground hover:text-accent"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="px-2">
+                <p className="text-sm font-bold uppercase tracking-widest text-muted-foreground py-1">Projects</p>
+                {projectLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`block text-sm font-bold uppercase tracking-widest transition-colors pl-4 py-1 ${
+                      location.pathname === link.to ? "text-accent" : "text-foreground hover:text-accent"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+              {navLinks.slice(3).map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
