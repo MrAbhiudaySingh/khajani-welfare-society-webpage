@@ -93,6 +93,13 @@ const projects: Project[] = [
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA2tPVkze6FJmnjTzSn8342hvK_Ehfdc6tHF9bcB_aZfoz8fO4eFoNmoZArIbbUi011aEPGnG_itb5sLKFwhysPNodf74HInklGvIUa5knOm374zmqHo7TiTg-6nXgETF2L2XJn9PiM61Y_myqUmLOU2PLQoV_XVVf4QtXvuLAl5KJPn2cG7RtWajP0knACtgmugzfFyYiZJM92uyeLvcQqAdmeUlcra4oGyb6KqMnpH9flbFOLOOvLPr9F7M3rLVbirCeluBdYuMo",
     link: "/projects/shakti-ek-adhaar",
   },
+  {
+    title: "Radha Krishna Poshak Training",
+    description: "Preserving the sacred art of deity garment making through specialized artisan training in partnership with the World Bank aided UP Pro-Poor Tourism project.",
+    category: "Culture",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAyXzr7tOBdf68nAnwCHcFFGMMFu4cLl3erehmbgH5AsERQI7C07eqD1VeIZq2cXuoAUSw8ob4tBIztMadd1xkVcdu38X7i_zJr-Y1HcSEzTV2qGA-nTHXatgxEie9ojvSex8LFM8uc4Tw3CIAB7EXdg6ryt8zbRU6MkCHFMpOn3dTWTQYH4xxg5MYD9RdnVGLqpYd294k7T3gCLcv3Ab1jyWu2UvVj9kKlMO0eclSmew_ilu0q_RA_kQp8_g_ZxlkiSlOAVjE82dg",
+    link: "/projects/radha-krishna-poshak",
+  },
 ];
 
 const ProjectsPage = () => {
