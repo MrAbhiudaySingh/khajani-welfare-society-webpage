@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import BrijSurabhiPage from "./pages/BrijSurabhiPage";
 import BrijHunarPage from "./pages/BrijHunarPage";
+import ProjectsPage from "./pages/ProjectsPage";
 import MediaPage from "./pages/MediaPage";
 import CampaignsPage from "./pages/CampaignsPage";
 import CollaborationsPage from "./pages/CollaborationsPage";
@@ -24,6 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/projects/brij-surabhi" element={<BrijSurabhiPage />} />
           <Route path="/projects/brij-hunar" element={<BrijHunarPage />} />
           <Route path="/media" element={<MediaPage />} />
