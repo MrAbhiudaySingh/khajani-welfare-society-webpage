@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -20,13 +21,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           <Link to="/" className="flex-shrink-0 flex items-center gap-3 group cursor-pointer">
-            <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold font-display text-2xl shadow-md group-hover:scale-110 transition-transform">
-              K
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-2xl tracking-wide text-primary leading-none">KHAJANI</span>
-              <span className="font-sans text-[10px] tracking-[0.2em] text-muted-foreground uppercase">Welfare Society</span>
-            </div>
+            <img src={logo} alt="Khajani Welfare Society" className="h-16 object-contain group-hover:scale-105 transition-transform" />
           </Link>
 
           <nav className="hidden lg:flex space-x-6 items-center h-full">
