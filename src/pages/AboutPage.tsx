@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { Handshake, Users, ShieldCheck, BadgeCheck, QrCode, Copy } from "lucide-react";
 
 const AboutPage = () => {
   return (
@@ -54,14 +55,14 @@ const AboutPage = () => {
                     <h4 className="font-display text-2xl text-primary font-bold mb-3">Core Values</h4>
                     <ul className="space-y-4">
                       <li className="flex items-start gap-4">
-                        <span className="material-symbols-outlined text-accent mt-1">handshake</span>
+                        <Handshake className="text-accent mt-1 shrink-0" size={22} />
                         <div>
                           <strong className="block text-primary font-bold font-display text-lg">Dignity</strong>
                           <span className="text-muted-foreground text-sm">Empowerment is cultivated, not given.</span>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
-                        <span className="material-symbols-outlined text-accent mt-1">diversity_3</span>
+                        <Users className="text-accent mt-1 shrink-0" size={22} />
                         <div>
                           <strong className="block text-primary font-bold font-display text-lg">Heritage</strong>
                           <span className="text-muted-foreground text-sm">Deep respect for the culture of the Brij region.</span>

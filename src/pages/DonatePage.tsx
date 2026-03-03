@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { ShieldCheck, Shield, QrCode, Copy } from "lucide-react";
 
 const DonatePage = () => {
   return (
@@ -39,11 +40,11 @@ const DonatePage = () => {
               </div>
               <div className="mt-12 flex items-center gap-6">
                 <div className="flex items-center gap-3 bg-card px-4 py-2 rounded-full border border-border shadow-sm">
-                  <span className="material-symbols-outlined text-green-600">verified_user</span>
+                  <ShieldCheck className="text-green-600" size={18} />
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">80G Certificate</span>
                 </div>
                 <div className="flex items-center gap-3 bg-card px-4 py-2 rounded-full border border-border shadow-sm">
-                  <span className="material-symbols-outlined text-blue-600">policy</span>
+                  <Shield className="text-blue-600" size={18} />
                   <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">12A Registered</span>
                 </div>
               </div>
@@ -52,7 +53,7 @@ const DonatePage = () => {
               <div className="bg-card p-8 rounded-2xl shadow-2xl border border-border max-w-sm w-full relative">
                 <div className="absolute -top-4 -right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide shadow-lg">Scan & Pay</div>
                 <div className="aspect-square bg-muted border-2 border-dashed border-border rounded-xl flex items-center justify-center mb-6 relative overflow-hidden group">
-                  <span className="material-symbols-outlined text-9xl text-muted-foreground/30 group-hover:scale-110 transition-transform duration-500">qr_code_2</span>
+                  <QrCode className="text-muted-foreground/30 group-hover:scale-110 transition-transform duration-500" size={120} />
                   <div className="absolute inset-0 bg-primary/5 flex items-center justify-center">
                     <p className="text-xs font-bold uppercase tracking-widest text-primary bg-card/80 px-4 py-2 rounded backdrop-blur-sm">Khajani Welfare Society</p>
                   </div>
@@ -61,7 +62,7 @@ const DonatePage = () => {
                   <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">UPI ID</p>
                   <div className="flex items-center justify-center gap-2 bg-muted p-2 rounded border border-border cursor-pointer hover:bg-muted/70 transition-colors">
                     <code className="text-sm font-mono font-bold text-primary">khajaniwelfare@upi</code>
-                    <span className="material-symbols-outlined text-muted-foreground text-sm">content_copy</span>
+                    <Copy className="text-muted-foreground" size={14} />
                   </div>
                   <p className="text-xs text-muted-foreground mt-4 italic">Accepts GPay, PhonePe, Paytm, BHIM</p>
                 </div>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { TreePine, Users, Flower2, ArrowUpRight, GraduationCap, Wrench } from "lucide-react";
 
 const BrijSurabhiPage = () => {
   return (
@@ -74,14 +75,14 @@ const BrijSurabhiPage = () => {
               </div>
               <div className="space-y-6 border-t border-border pt-8">
                 <div className="flex items-start gap-4">
-                  <span className="material-symbols-outlined text-secondary shrink-0">forest</span>
+                  <TreePine className="text-secondary shrink-0 mt-1" size={22} />
                   <div>
                     <h4 className="font-display font-bold text-primary">Eco-Friendly Fuel</h4>
                     <p className="text-sm text-muted-foreground">Reduces deforestation and carbon emissions significantly.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <span className="material-symbols-outlined text-secondary shrink-0">diversity_1</span>
+                  <Users className="text-secondary shrink-0 mt-1" size={22} />
                   <div>
                     <h4 className="font-display font-bold text-primary">Livelihood</h4>
                     <p className="text-sm text-muted-foreground">Generates employment for rural women in production units.</p>
@@ -110,7 +111,7 @@ const BrijSurabhiPage = () => {
               <div className="relative z-10 shadow-2xl overflow-hidden">
                 <img alt="Temple Flowers Processing" className="w-full aspect-[4/3] object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtz9-gfRy133bW4G_GuQA4k095cjYxPEEjYTjhxTmKpqwWS9QKz3L36jgLvLtGMHvylGeD6QdBs6Q8sS2ym-VihFuk3G_LPwWbyTPDJrcSwZHjetpOSsEbPrhmcaEtvuU5oDYWadb5zYIwqreUdYAolj1_i_YDDb87URjUzgxmpxWNYiuWye5utmw2C1Nl1rv4RFXhqCt_6zN1C0lE88l8NBg6Q2MG7w-TxP0c0e3621duggwG9NjI4ZX4wKi7740heInursxKjQY" />
                 <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-card opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-12 text-center">
-                  <span className="material-symbols-outlined text-4xl mb-4 text-secondary">local_florist</span>
+                  <Flower2 className="text-secondary mb-4" size={40} />
                   <h3 className="font-display text-3xl italic">From Waste to Fragrance</h3>
                 </div>
               </div>

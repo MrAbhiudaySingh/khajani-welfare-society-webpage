@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { ArrowUpRight, GraduationCap, Wrench } from "lucide-react";
 
 const BrijHunarPage = () => {
   return (
@@ -30,7 +31,7 @@ const BrijHunarPage = () => {
                 <img alt="Vocational training session" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKvGlYjpEeKctCyTLWUUZugCYE0j1Qft8SF2pCMN9hXCbM1WzeORo4yKbU3pU4xFnBOknhdrY7lzQFlqiLJEmqgSHLK-YpWqhFnvCDoAfybVFtqWTWRrYm9RUOn4we-LrEcuuCF_cqkkbi-QedqUbx4r905ZBJIh39tlUQ92srTh15PPWB2823Xc99a-uqUd1ustBjuB9EA-h1fPHdDMTUAscpahKSCyrjufvfTanaYFu8h7CcNf9MYgPlL6K_okiZjK_Khu-pRh0" />
               </div>
               <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-accent rounded-full flex items-center justify-center text-accent-foreground shadow-xl z-10">
-                <span className="material-symbols-outlined text-4xl transform rotate-45">arrow_upward</span>
+                <ArrowUpRight size={36} className="transform rotate-0" />
               </div>
             </Reveal>
           </div>
@@ -59,14 +60,14 @@ const BrijHunarPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 pt-8 border-t border-border">
               <div>
                 <div className="w-12 h-12 bg-card border border-border flex items-center justify-center mb-4 text-accent shadow-sm">
-                  <span className="material-symbols-outlined">school</span>
+                  <GraduationCap size={22} />
                 </div>
                 <h4 className="font-display font-bold text-xl text-primary mb-2">NSQF Aligned</h4>
                 <p className="text-sm text-muted-foreground">Curriculum compliant with National Skills Qualifications Framework standards.</p>
               </div>
               <div>
                 <div className="w-12 h-12 bg-card border border-border flex items-center justify-center mb-4 text-accent shadow-sm">
-                  <span className="material-symbols-outlined">engineering</span>
+                  <Wrench size={22} />
                 </div>
                 <h4 className="font-display font-bold text-xl text-primary mb-2">Industry Labs</h4>
                 <p className="text-sm text-muted-foreground">State-of-the-art workshops mimicking real factory environments.</p>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { ArrowRight } from "lucide-react";
 
 const CampaignsPage = () => {
   return (
@@ -43,7 +44,7 @@ const CampaignsPage = () => {
               <div className="mt-10 pt-8 border-t border-border">
                 <a className="group/link inline-flex items-center gap-3 text-primary font-display text-xl italic hover:text-accent transition-colors" href="#">
                   Explore the Narrative
-                  <span className="material-symbols-outlined transition-transform group-hover/link:translate-x-1 text-accent">arrow_right_alt</span>
+                  <ArrowRight className="transition-transform group-hover/link:translate-x-1 text-accent" size={20} />
                 </a>
               </div>
             </Reveal>
