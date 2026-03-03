@@ -21,7 +21,7 @@ const AboutPage = () => {
             </Reveal>
             <Reveal variant="fade-right" delay={200} className="lg:col-span-5 relative">
               <div className="relative aspect-[4/5] overflow-hidden group">
-                <img alt="Woman looking forward" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" />
+                <img alt="Khajani Welfare Society women training" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="/images/about/hero-women-training.jpg" />
                 <div className="absolute bottom-0 left-0 bg-card p-4 max-w-[80%] border-t-4 border-accent">
                   <p className="font-display text-primary italic text-lg leading-tight">Since 2006, bridging rural potential and modern opportunity.</p>
                 </div>
@@ -45,7 +45,7 @@ const AboutPage = () => {
             <div className="lg:col-span-9">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                 <Reveal variant="fade-up">
-                  <img alt="Empowering women in rural India" className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700 mb-6" src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&q=80" />
+                  <img alt="Empowering women in rural India" className="w-full h-[400px] object-cover grayscale hover:grayscale-0 transition-all duration-700 mb-6" src="/images/about/apparel-beauty-lab.jpg" />
                 </Reveal>
                 <Reveal variant="fade-up" delay={150} className="flex flex-col justify-center">
                   <p className="text-lg text-foreground leading-relaxed drop-cap font-serif">
@@ -141,9 +141,9 @@ const AboutPage = () => {
             <div className="lg:col-span-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {[
-                  { name: "Dr. Anjali Sharma", role: "Founder & President", desc: "A PhD in Sociology with 25 years of field experience.", img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&q=80" },
-                  { name: "Mr. Rajesh Verma", role: "Director of Ops", desc: "Former civil servant bringing administrative rigor.", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" },
-                  { name: "Mrs. Sunita Gupta", role: "Head of Training", desc: "Expert in textile design and skill development.", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" },
+                  { name: "Mrs. Abha Maheshwari", role: "President", desc: "A lawyer and social reformer with 45 years of experience in empowering women and providing skill training.", img: "/images/about/team-leadership.jpg" },
+                  { name: "Mrs. Shipra Rathi", role: "Secretary", desc: "Known as 'Rozgaar Didi', 22+ years of experience in vocational and educational training. Gold medalist in M.A. Sociology.", img: "/images/about/hero-women-training.jpg" },
+                  { name: "Dr. Hari Mohan Maheshwari", role: "Chairman, Advisory Board", desc: "Retired Chief Veterinary Officer with 50 years of experience in public service.", img: "/images/about/accomplishments.jpg" },
                 ].map((person, i) => (
                   <Reveal key={person.name} variant="fade-up" delay={i * 150}>
                     <div className="text-center group">
@@ -177,7 +177,7 @@ const AboutPage = () => {
           <Reveal variant="scale">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-border bg-card shadow-xl">
               <div className="relative h-[600px] w-full bg-muted overflow-hidden group">
-                <img alt="Map of Brij Region presence" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105" src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" />
+                <img alt="Map of Brij Region presence" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105" src="/images/about/presence-map.jpg" />
                 <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                   <div className="w-4 h-4 bg-accent rounded-full animate-ping absolute"></div>
                   <div className="w-4 h-4 bg-accent rounded-full border-2 border-card shadow-md relative z-10"></div>

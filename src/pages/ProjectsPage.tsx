@@ -20,14 +20,14 @@ const projects: Project[] = [
     title: "Project Brij-Hunar",
     description: "Empowering rural women through advanced pottery and rural training, connecting local artisans directly to urban markets to ensure…",
     category: "Vocational",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80",
+    image: "/images/projects/brij-hunar-training.jpg",
     link: "/projects/brij-hunar",
   },
   {
     title: "Brij-Surabhi",
     description: "Preserving and promoting the cultural heritage of Brij through traditional arts, music, and craftsmanship programs across villages.",
     category: "Culture",
-    image: "https://images.unsplash.com/photo-1604881991720-f91add269bed?w=600&q=80",
+    image: "/images/projects/brij-surabhi-cow.jpg",
     link: "/projects/brij-surabhi",
   },
   {
@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: "EDUDAKSH",
     description: "Tailored remedial learning for government school girls aged 10-14, addressing educational disparities through targeted interventions.",
     category: "Education",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBXql9RdkitHOHeAujlfYawEDA9h4wgmTtI6NssP9RrRCxla34gE5kyqIKkW2VRN9i-eB5IKtYefXyihheR73R2I1dcSv_Oyzol1MWqXi_rB2UcAh66nIdukJcTZIU1WL12LOEr5hZBahNe7uTCB4I2mqFiMS8SN7aTZf9VXFqkgzjYtLzdAjb_F1qGaFr3MaQ0VeuO77UywmCP87EJmB8MV3XkJNiNUgfwXj5snOCZkTJLOuWy9su8yY5V44L6wT2dd213bmPGv_c",
+    image: "/images/projects/edudaksh-classroom.jpg",
     link: "/projects/edudaksh",
   },
   {

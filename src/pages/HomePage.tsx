@@ -48,7 +48,7 @@ const HomePage = () => {
                   <img
                     alt="Women working on pottery"
                     className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
-                    src="https://images.unsplash.com/photo-1604881991720-f91add269bed?w=800&q=80"
+                    src="/images/about/hero-women-training.jpg"
                   />
                 </div>
                 <div className="absolute bottom-8 -left-4 lg:-left-12 bg-card p-6 rounded-2xl shadow-xl border border-border z-20 flex items-center gap-4 animate-bounce" style={{ animationDuration: '3s' }}>
