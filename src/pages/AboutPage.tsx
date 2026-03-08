@@ -172,13 +172,18 @@ const AboutPage = () => {
           </Reveal>
           <Reveal variant="scale">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 border border-border bg-card shadow-xl">
-              <div className="relative h-[600px] w-full bg-muted overflow-hidden group">
-                <img alt="Map of Brij Region presence" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105" src="/images/about/presence-map.jpg" />
-                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                  <div className="w-4 h-4 bg-accent rounded-full animate-ping absolute"></div>
-                  <div className="w-4 h-4 bg-accent rounded-full border-2 border-card shadow-md relative z-10"></div>
-                  <span className="bg-card text-primary text-[10px] font-bold px-2 py-0.5 mt-2 uppercase tracking-wide border border-border shadow-sm">Mathura HQ</span>
-                </div>
+              <div className="relative h-[600px] w-full bg-muted overflow-hidden">
+                <iframe
+                  title="Khajani Welfare Society - Mathura HQ"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.5!2d77.6737!3d27.4924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z64%2F128%2C%20Gali%20Sales%20Tax%2C%20Dampier%20Nagar%2C%20Mathura%20281001!5e0!3m2!1sen!2sin!4v1700000000000"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                />
               </div>
               <div className="p-12 flex flex-col justify-center bg-card relative">
                 <div className="space-y-10">
