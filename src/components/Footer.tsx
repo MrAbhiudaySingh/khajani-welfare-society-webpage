@@ -13,11 +13,17 @@ const Footer = () => {
             <p className="text-sm opacity-70 leading-relaxed max-w-sm font-serif italic">
               A chronicle of change, a legacy of welfare. Documenting our journey towards a sustainable and healthy Braj since 2007.
             </p>
-            <div className="pt-4 border-t border-primary-foreground/10">
+            <div className="pt-4 border-t border-primary-foreground/10 space-y-2">
               <p className="text-xs uppercase tracking-wide opacity-50">
                 64/128, Gali Sales Tax, Dampier Nagar,<br />
                 Mathura – 281001, Uttar Pradesh
               </p>
+              <div className="flex flex-col gap-1 text-xs opacity-70">
+                <a href="tel:+918373990809" className="hover:text-accent transition">📞 +91-8373990809</a>
+                <a href="tel:+919868518738" className="hover:text-accent transition">📞 +91-9868518738</a>
+                <a href="mailto:info@khajaniwelfaresociety.com" className="hover:text-accent transition">✉️ info@khajaniwelfaresociety.com</a>
+                <a href="mailto:khajaniwelfaresociety@gmail.com" className="hover:text-accent transition">✉️ khajaniwelfaresociety@gmail.com</a>
+              </div>
             </div>
           </div>
 
@@ -45,7 +51,8 @@ const Footer = () => {
             <ul className="space-y-4">
               <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://www.facebook.com/KhajaniWelfareSociety" target="_blank" rel="noopener noreferrer">Facebook</a></li>
               <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://www.instagram.com/khajaniwelfaresociety/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://www.youtube.com/@KHAJANIWELFARESOCIETY" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+              <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://x.com/Khajani_society" target="_blank" rel="noopener noreferrer">X (Twitter)</a></li>
+              <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://www.linkedin.com/company/khajani-welfare-society/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             </ul>
           </div>
         </div>

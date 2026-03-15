@@ -50,7 +50,12 @@ npm run test
 - `src/components/` - Reusable components
 - `src/components/ui/` - shadcn/ui components
 - `public/` - Static assets
+- `gas/` - Google Apps Script for volunteer form integration
 
 ## About Khajani Welfare Society
 
 Khajani Welfare Society has been serving the Brij region since 2007, working across 152 villages to empower women and girls through education, vocational training, and community development initiatives.
+
+## Volunteer Form Integration
+
+The volunteer form submits to a Google Sheet. See `GOOGLE_SHEETS_SETUP.md` for setup instructions.
