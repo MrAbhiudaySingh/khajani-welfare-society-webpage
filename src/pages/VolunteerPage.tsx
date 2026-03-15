@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { GraduationCap, Code, Megaphone, Building2, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 
 // Replace this with your Google Apps Script Web App URL after deploying
-const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzIVUDtt7Cc2gOUkvzS0xvoJ4RV-d-UF_3pju59pzzrn8oqHSnvXqZ1NSMvsF36R-42BQ/exec';
 
 const VolunteerPage = () => {
   const [formData, setFormData] = useState({
