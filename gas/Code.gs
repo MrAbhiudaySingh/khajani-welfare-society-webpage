@@ -1,19 +1,26 @@
 // Google Apps Script for Khajani Welfare Society Volunteer Form
-// Copy this entire code into Google Apps Script (script.google.com)
-// Then deploy as a web app
+// Deploy as Web App with Execute as: Me, Access: Anyone
 
 const SHEET_ID = '1K11sm6gUg-R120Djk5yarQhT75XoY5ny8TiJMHYgJeM';
 const SHEET_NAME = 'Sheet1';
 
 function doPost(e) {
-  // Handle CORS preflight
-  if (e.parameter.method === 'OPTIONS') {
-    return handleCORS();
-  }
-
+  const lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+  
   try {
-    // Parse the request data
-    const data = JSON.parse(e.postData.contents);
+    // Parse data from POST body (handles both JSON and form-encoded)
+    let data = {};
+    if (e.postData && e.postData.contents) {
+      try {
+        data = JSON.parse(e.postData.contents);
+      } catch (err) {
+        // If not JSON, try form data
+        data = e.parameter;
+      }
+    } else {
+      data = e.parameter;
+    }
     
     // Open the spreadsheet
     const ss = SpreadsheetApp.openById(SHEET_ID);
@@ -27,7 +34,6 @@ function doPost(e) {
     });
     
     // Append data to sheet
-    // Column order: Timestamp, Full Name, Email, Interest, Available From, Motivation
     sheet.appendRow([
       timestamp,
       data.name || '',
@@ -37,49 +43,43 @@ function doPost(e) {
       data.motivation || ''
     ]);
     
-    // Return success response
+    lock.releaseLock();
+    
+    // Return success with CORS headers
     return ContentService
       .createTextOutput(JSON.stringify({ 
         success: true, 
         message: 'Thank you for your application! We will reach out to schedule an orientation.' 
       }))
       .setMimeType(ContentService.MimeType.JSON)
-      .setHeaders({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type'
-      });
+      .setHeaders(getCORSHeaders());
       
   } catch (error) {
+    lock.releaseLock();
     return ContentService
       .createTextOutput(JSON.stringify({ 
         success: false, 
         message: 'Something went wrong. Please try again later.' 
       }))
       .setMimeType(ContentService.MimeType.JSON)
-      .setHeaders({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type'
-      });
+      .setHeaders(getCORSHeaders());
   }
 }
 
 function doGet(e) {
   return ContentService
-    .createTextOutput(JSON.stringify({ status: 'OK', message: 'Volunteer form API is running' }))
+    .createTextOutput(JSON.stringify({ 
+      status: 'OK', 
+      message: 'Volunteer form API is running' 
+    }))
     .setMimeType(ContentService.MimeType.JSON)
-    .setHeaders({
-      'Access-Control-Allow-Origin': '*'
-    });
+    .setHeaders(getCORSHeaders());
 }
 
-function handleCORS() {
-  return ContentService
-    .createTextOutput('')
-    .setHeaders({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    });
+function getCORSHeaders() {
+  return {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  };
 }

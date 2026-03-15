@@ -31,11 +31,19 @@ const VolunteerPage = () => {
     setSubmitStatus('idle');
 
     try {
+      // Use URLSearchParams for better compatibility with Google Apps Script
+      const formParams = new URLSearchParams();
+      formParams.append('name', formData.name);
+      formParams.append('email', formData.email);
+      formParams.append('interest', formData.interest);
+      formParams.append('availableFrom', formData.availableFrom);
+      formParams.append('motivation', formData.motivation);
+
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        body: JSON.stringify(formData),
+        body: formParams,
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         mode: 'cors',
       });
