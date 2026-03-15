@@ -25,7 +25,7 @@ const AboutPage = () => {
               <div className="relative aspect-[4/5] overflow-hidden group">
                 <img alt="Khajani Welfare Society women training" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="/images/about/hero-women-training.jpg" />
                 <div className="absolute bottom-0 left-0 bg-card p-4 max-w-[80%] border-t-4 border-accent">
-                  <p className="font-display text-primary italic text-lg leading-tight">Since 2007, bridging rural potential and modern opportunity.</p>
+                  <p className="font-display text-primary italic text-lg leading-tight">Since 2006, bridging rural potential and modern opportunity.</p>
                 </div>
               </div>
             </Reveal>
@@ -83,7 +83,7 @@ const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="fade-up">
             <div className="text-center mb-24 max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-7xl font-display font-medium text-primary mb-6">18+ Years of Impact</h2>
+              <h2 className="text-5xl md:text-7xl font-display font-medium text-primary mb-6">17 Years of Impact</h2>
               <p className="text-muted-foreground italic font-serif text-xl">"A chronicle of change, a legacy of welfare."</p>
             </div>
           </Reveal>
@@ -91,7 +91,7 @@ const AboutPage = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-border hidden md:block"></div>
             <div className="space-y-24">
               {[
-                { year: "2007", title: "The Foundation", desc: "Khajani Welfare Society is registered in Mathura with a focus on basic literacy and hygiene for rural families.", side: "left" },
+                { year: "2006", title: "The Foundation", desc: "Khajani Welfare Society is registered in Mathura with a focus on basic literacy and hygiene for rural families.", side: "left" },
                 { year: "2010", title: "Vocational Expansion", desc: "Launch of the first dedicated Sewing & Tailoring center. 500 women trained in the first year.", side: "right" },
                 { year: "2015", title: "UPSDM Partnership", desc: "Became an official training partner for Uttar Pradesh Skill Development Mission, scaling operations to 5 districts.", side: "left" },
                 { year: "2023", title: "Global Recognition", desc: "Received ISO 9001:2015 certification and partnered with World Bank initiatives for pro-poor tourism.", side: "right" },

@@ -102,7 +102,7 @@ const HomePage = () => {
               { num: "152+", label: "Villages Served" },
               { num: "8K+", label: "Lives Touched Yearly" },
               { num: "20K+", label: "Women Empowered" },
-              { num: "18+", label: "Years of Legacy" },
+              { num: "12+", label: "Years of Legacy" },
             ].map((stat, i) => (
               <Reveal key={stat.label} variant="fade-up" delay={i * 100}>
                 <div className="text-center group">
@@ -121,16 +121,16 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal variant="fade-up">
             <div className="text-center mb-16">
-              <h2 className="text-xs font-bold tracking-[0.2em] text-accent uppercase mb-3">Collaborators in Progress</h2>
-              <p className="text-4xl md:text-5xl font-display font-bold text-primary italic">The strategic network behind our impact</p>
+              <h2 className="text-xs font-bold tracking-[0.2em] text-accent uppercase mb-3">Collaborators in Impact</h2>
+              <p className="text-4xl md:text-5xl font-display font-bold text-primary italic">The Strategic Network Behind Our Mission</p>
             </div>
           </Reveal>
           <Reveal variant="scale" delay={150}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border border-border bg-card shadow-xl">
               {[
-                { num: "1", title: "Gov Outreach", desc: "Strategic alignment for health infrastructure and rural medical licensing." },
-                { num: "2", title: "Eco-Systems Inc", desc: "Technical partnership for sustainable water filtration across 50 villages." },
-                { num: "3", title: "Health Trust", desc: "Direct funding for essential medicine distribution and specialist fees." },
+                { num: "1", title: "Government & Institutional Partnerships", desc: "Government partnerships enabling skill development and vocational training programs that empower young women and girls." },
+                { num: "2", title: "Educational & Skill Development Partners", desc: "Educational support for remedial learning, personality development, and vocational training opportunities." },
+                { num: "3", title: "Community & Social Organizations", desc: "Local community groups and women's organizations helping identify beneficiaries and mobilize communities across Mathura." },
               ].map((item) => (
                 <div key={item.num} className="p-10 border-b lg:border-b-0 lg:border-r border-border hover:bg-muted transition duration-300 text-center flex flex-col items-center">
                   <div className="w-12 h-12 bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold font-serif mb-6 shadow-lg rounded-sm">{item.num}</div>
@@ -142,7 +142,7 @@ const HomePage = () => {
                 <div className="absolute inset-0 bg-accent opacity-0 group-hover:opacity-100 transition duration-500"></div>
                 <div className="relative z-10">
                   <h4 className="font-display italic text-3xl mb-4">Join the Network</h4>
-                  <a href="mailto:khajaniwelfaresociety@gmail.com" className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary group-hover:text-primary-foreground transition flex items-center justify-center gap-2">
+                  <a href="/partner" className="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary group-hover:text-primary-foreground transition flex items-center justify-center gap-2">
                     Apply for Partnership <ArrowRight size={14} />
                   </a>
                 </div>

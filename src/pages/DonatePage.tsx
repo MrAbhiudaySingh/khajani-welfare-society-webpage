@@ -111,7 +111,7 @@ const DonatePage = () => {
             {[
               { num: "92%", label: "Program Spending", sub: "Directly reaches beneficiaries" },
               { num: "100%", label: "Tax Exempt", sub: "For Indian Citizens (80G)" },
-              { num: "18+", label: "Years of Service", sub: "Consistent community impact" },
+              { num: "15+", label: "Years of Service", sub: "Consistent community impact" },
             ].map((s, i) => (
               <Reveal key={s.label} variant="fade-up" delay={i * 100}>
                 <div className="p-6">
