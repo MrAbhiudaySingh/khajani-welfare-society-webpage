@@ -1,7 +1,10 @@
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
-import { GraduationCap, Code, Megaphone, Building2 } from "lucide-react";
+import { GraduationCap, Code, Megaphone, Building2, CheckCircle, Loader2, AlertCircle } from "lucide-react";
+
+// Replace this with your Google Apps Script Web App URL after deploying
+const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
 
 const VolunteerPage = () => {
   const [formData, setFormData] = useState({
@@ -11,11 +14,55 @@ const VolunteerPage = () => {
     availableFrom: "",
     motivation: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your application! We will reach out to schedule an orientation.");
-    setFormData({ name: "", email: "", interest: "Volunteer (Educational)", availableFrom: "", motivation: "" });
+    
+    // Check if Google Script URL is configured
+    if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+      alert("Form not yet configured. Please set up the Google Sheets integration first.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setStatusMessage(result.message);
+        // Reset form
+        setFormData({ 
+          name: "", 
+          email: "", 
+          interest: "Volunteer (Educational)", 
+          availableFrom: "", 
+          motivation: "" 
+        });
+      } else {
+        setSubmitStatus('error');
+        setStatusMessage(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setStatusMessage('Network error. Please check your connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const opportunities = [
@@ -127,6 +174,21 @@ const VolunteerPage = () => {
               <p className="text-muted-foreground">Please provide your details and we'll reach out to schedule an orientation.</p>
             </div>
           </Reveal>
+
+          {/* Status Messages */}
+          {submitStatus === 'success' && (
+            <div className="mb-8 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center gap-3">
+              <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+              <p className="text-green-800">{statusMessage}</p>
+            </div>
+          )}
+          {submitStatus === 'error' && (
+            <div className="mb-8 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-3">
+              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+              <p className="text-red-800">{statusMessage}</p>
+            </div>
+          )}
+
           <form className="space-y-8" onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-2">
@@ -138,6 +200,7 @@ const VolunteerPage = () => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  disabled={isSubmitting}
                 />
               </div>
               <div className="space-y-2">
@@ -149,6 +212,7 @@ const VolunteerPage = () => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  disabled={isSubmitting}
                 />
               </div>
             </div>
@@ -159,6 +223,7 @@ const VolunteerPage = () => {
                   className="w-full border-0 border-b-2 border-border bg-background focus:ring-0 focus:border-accent py-3 outline-none text-foreground"
                   value={formData.interest}
                   onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                  disabled={isSubmitting}
                 >
                   <option>Volunteer (Educational)</option>
                   <option>Volunteer (Vocational)</option>
@@ -173,6 +238,7 @@ const VolunteerPage = () => {
                   type="date"
                   value={formData.availableFrom}
                   onChange={(e) => setFormData({ ...formData, availableFrom: e.target.value })}
+                  disabled={isSubmitting}
                 />
               </div>
             </div>
@@ -184,14 +250,23 @@ const VolunteerPage = () => {
                 rows={4}
                 value={formData.motivation}
                 onChange={(e) => setFormData({ ...formData, motivation: e.target.value })}
+                disabled={isSubmitting}
               />
             </div>
             <div className="pt-6">
               <button
                 type="submit"
-                className="w-full bg-accent text-accent-foreground py-5 text-lg font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all"
+                disabled={isSubmitting}
+                className="w-full bg-accent text-accent-foreground py-5 text-lg font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
-                Submit Application
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  'Submit Application'
+                )}
               </button>
             </div>
           </form>
