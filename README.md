@@ -20,10 +20,10 @@ Follow these steps to run the project locally:
 
 ```sh
 # Step 1: Clone the repository
-git clone <YOUR_GIT_URL>
+git clone https://github.com/MrAbhiudaySingh/khajani-welfare-society-webpage.git
 
 # Step 2: Navigate to the project directory
-cd khajani-welfare-society
+cd khajani-welfare-society-webpage
 
 # Step 3: Install dependencies
 npm install
@@ -43,3 +43,14 @@ npm run build
 ```sh
 npm run test
 ```
+
+## Project Structure
+
+- `src/pages/` - Page components
+- `src/components/` - Reusable components
+- `src/components/ui/` - shadcn/ui components
+- `public/` - Static assets
+
+## About Khajani Welfare Society
+
+Khajani Welfare Society has been serving the Brij region since 2007, working across 152 villages to empower women and girls through education, vocational training, and community development initiatives.

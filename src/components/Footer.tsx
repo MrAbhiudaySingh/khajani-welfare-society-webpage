@@ -15,8 +15,8 @@ const Footer = () => {
             </p>
             <div className="pt-4 border-t border-primary-foreground/10">
               <p className="text-xs uppercase tracking-wide opacity-50">
-                123 Braj Vihar, Near ISKCON Temple,<br />
-                Mathura, Uttar Pradesh, India - 281001
+                64/128, Gali Sales Tax, Dampier Nagar,<br />
+                Mathura – 281001, Uttar Pradesh
               </p>
             </div>
           </div>
@@ -43,9 +43,9 @@ const Footer = () => {
           <div>
             <h3 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-8 text-accent">Connect</h3>
             <ul className="space-y-4">
-              <li><a className="text-sm opacity-70 hover:text-accent transition" href="#">Instagram</a></li>
-              <li><a className="text-sm opacity-70 hover:text-accent transition" href="#">Facebook</a></li>
-              <li><a className="text-sm opacity-70 hover:text-accent transition" href="#">Twitter</a></li>
+              <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://www.facebook.com/KhajaniWelfareSociety" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+              <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://www.instagram.com/khajaniwelfaresociety/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a className="text-sm opacity-70 hover:text-accent transition" href="https://www.youtube.com/@KHAJANIWELFARESOCIETY" target="_blank" rel="noopener noreferrer">YouTube</a></li>
             </ul>
           </div>
         </div>

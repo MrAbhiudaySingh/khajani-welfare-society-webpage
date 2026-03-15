@@ -14,6 +14,7 @@ const Navbar = () => {
     { to: "/campaigns", label: "Campaigns" },
     { to: "/collaborations", label: "Collaborations" },
     { to: "/media", label: "Media" },
+    { to: "/volunteer", label: "Join Us" },
   ];
 
   return (
