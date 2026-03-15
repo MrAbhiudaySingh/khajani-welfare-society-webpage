@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
-import { ShieldCheck, Shield, QrCode, Copy } from "lucide-react";
+import { ShieldCheck, Shield, Copy } from "lucide-react";
 
 const DonatePage = () => {
   return (
@@ -22,17 +22,18 @@ const DonatePage = () => {
               </div>
               <div className="mt-12 space-y-6">
                 <h3 className="text-sm font-bold tracking-widest uppercase text-muted-foreground">Your Impact Today</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
                   {[
-                    { amount: "₹1,000", desc: "Provides School Uniforms" },
-                    { amount: "₹2,500", desc: "Medical Kit for a Family" },
-                    { amount: "₹5,000", desc: "Skill Training for One Woman" },
-                    { amount: "₹10,000", desc: "Water Filtration Unit" },
+                    { amount: "₹200", desc: "Hygiene Kit" },
+                    { amount: "₹500", desc: "Stationery Kit" },
+                    { amount: "₹750", desc: "Dry Ration Kit" },
+                    { amount: "₹1,000", desc: "School Uniforms" },
+                    { amount: "₹6,100", desc: "Educational Support" },
                   ].map((item, i) => (
                     <Reveal key={item.amount} variant="fade-up" delay={i * 80}>
-                      <div className="p-6 bg-card shadow-sm border border-border rounded-lg group hover:border-accent transition-colors">
-                        <div className="text-2xl font-bold text-primary mb-1">{item.amount}</div>
-                        <p className="text-sm text-muted-foreground font-serif italic">{item.desc}</p>
+                      <div className="p-4 bg-card shadow-sm border border-border rounded-lg group hover:border-accent transition-colors h-full flex flex-col justify-center min-h-[100px]">
+                        <div className="text-xl font-bold text-primary mb-1">{item.amount}</div>
+                        <p className="text-xs text-muted-foreground font-serif italic leading-tight">{item.desc}</p>
                       </div>
                     </Reveal>
                   ))}
@@ -83,7 +84,7 @@ const DonatePage = () => {
               <p className="mt-4 text-muted-foreground text-sm font-serif italic">For direct NEFT/RTGS transfers</p>
             </div>
           </Reveal>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { label: "Account Name", value: "Khajani Welfare Society", mono: false },
               { label: "Bank", value: "Yes Bank, Dampier Nagar, Mathura", mono: false },
@@ -91,9 +92,9 @@ const DonatePage = () => {
               { label: "IFSC Code", value: "YESB0000072", mono: true },
             ].map((item, i) => (
               <Reveal key={item.label} variant="fade-up" delay={i * 100}>
-                <div className="p-8 border border-border text-center rounded-xl bg-muted">
+                <div className="p-6 border border-border text-center rounded-xl bg-muted h-full flex flex-col justify-center">
                   <h3 className="text-xs font-bold tracking-widest uppercase text-muted-foreground mb-2">{item.label}</h3>
-                  <p className={`text-lg font-bold text-primary ${item.mono ? "font-mono" : "font-display"}`}>{item.value}</p>
+                  <p className={`text-base font-bold text-primary ${item.mono ? "font-mono" : "font-display"}`}>{item.value}</p>
                 </div>
               </Reveal>
             ))}
@@ -111,7 +112,7 @@ const DonatePage = () => {
             {[
               { num: "92%", label: "Program Spending", sub: "Directly reaches beneficiaries" },
               { num: "100%", label: "Tax Exempt", sub: "For Indian Citizens (80G)" },
-              { num: "15+", label: "Years of Service", sub: "Consistent community impact" },
+              { num: "18+", label: "Years of Service", sub: "Consistent community impact" },
             ].map((s, i) => (
               <Reveal key={s.label} variant="fade-up" delay={i * 100}>
                 <div className="p-6">
