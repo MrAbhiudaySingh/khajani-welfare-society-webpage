@@ -91,7 +91,7 @@ const AboutPage = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-border hidden md:block"></div>
             <div className="space-y-24">
               {[
-                { year: "2006", title: "The Foundation", desc: "Khajani Welfare Society is registered in Mathura with a focus on basic literacy and hygiene for rural families.", side: "left" },
+                { year: "2007", title: "The Foundation", desc: "Khajani Welfare Society is registered in Mathura with a focus on basic literacy and hygiene for rural families.", side: "left" },
                 { year: "2010", title: "Vocational Expansion", desc: "Launch of the first dedicated Sewing & Tailoring center. 500 women trained in the first year.", side: "right" },
                 { year: "2015", title: "UPSDM Partnership", desc: "Became an official training partner for Uttar Pradesh Skill Development Mission, scaling operations to 5 districts.", side: "left" },
                 { year: "2023", title: "Global Recognition", desc: "Received ISO 9001:2015 certification and partnered with World Bank initiatives for pro-poor tourism.", side: "right" },
