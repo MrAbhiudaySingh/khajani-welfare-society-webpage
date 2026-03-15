@@ -104,48 +104,44 @@ const CampaignsPage = () => {
           </div>
         </section>
 
-        {/* Chapter III: Business Directory */}
+        {/* Chapter III: Brij Women Business Directory */}
         <section className="group">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <Reveal variant="fade-right" className="lg:col-span-7 relative order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-[3/4] relative overflow-hidden mt-12">
-                  <img alt="Artisan" className="absolute inset-0 w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition duration-500" src="/images/projects/brij-hunar-tailoring.jpg" />
+                  <img alt="Women Entrepreneurs" className="absolute inset-0 w-full h-full object-cover grayscale-[50%] hover:grayscale-0 transition duration-500" src="/images/projects/shg-federation.jpg" />
                 </div>
-                <div className="aspect-[3/4] relative overflow-hidden bg-muted flex items-center justify-center p-8 text-center">
-                  <div className="border border-border p-8 h-full w-full flex flex-col items-center justify-center">
-                    <span className="text-4xl font-display font-bold text-primary mb-2">500+</span>
-                    <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Businesses Listed</span>
+                <div className="aspect-[3/4] relative overflow-hidden bg-muted flex items-center justify-center p-8 text-center border border-dashed border-border">
+                  <div className="p-8 h-full w-full flex flex-col items-center justify-center">
+                    <span className="text-sm font-bold uppercase tracking-widest text-accent mb-2">Coming Soon</span>
+                    <span className="text-xs text-muted-foreground">Under Development</span>
                   </div>
                 </div>
               </div>
             </Reveal>
             <Reveal variant="fade-left" delay={150} className="lg:col-span-5 lg:pl-12 order-1 lg:order-2">
               <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-                Brij Business<br />Women Directory
+                Brij Women<br />Business Directory
               </h2>
-              <p className="text-muted-foreground text-lg font-serif leading-relaxed mb-8">
-                Creating a digital ecosystem for women entrepreneurs in the Brij region. This directory connects local artisans, small business owners, and service providers with a wider market, fostering financial independence.
+              <p className="text-muted-foreground text-lg font-serif leading-relaxed mb-6">
+                Khajani Welfare Society is developing a digital directory of women entrepreneurs across the Braj region to promote women-owned businesses and connect artisans with wider markets.
               </p>
-              <div className="space-y-6">
+              <div className="space-y-4 mb-6">
                 {[
-                  { num: "01", title: "Digital Listing", desc: "A curated database of local talent." },
-                  { num: "02", title: "Market Linkage", desc: "Direct access to buyers and fairs." },
-                ].map((item) => (
-                  <div key={item.num} className="flex items-start gap-4 group/item">
-                    <div className="w-12 h-12 flex items-center justify-center bg-muted text-accent font-display text-xl italic group-hover/item:bg-accent group-hover/item:text-accent-foreground transition-colors">{item.num}</div>
-                    <div>
-                      <h4 className="font-bold text-foreground uppercase text-sm tracking-wide">{item.title}</h4>
-                      <p className="text-sm text-muted-foreground mt-1">{item.desc}</p>
-                    </div>
+                  { title: "Promote women-owned businesses" },
+                  { title: "Connect artisans with wider markets" },
+                  { title: "Support entrepreneurship among women" },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3">
+                    <span className="text-accent mt-1">•</span>
+                    <span className="text-sm text-muted-foreground">{item.title}</span>
                   </div>
                 ))}
               </div>
-              {/* <div className="mt-12">
-                <a className="inline-block border border-foreground text-foreground px-8 py-3 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300" href="#">
-                  Access Directory
-                </a>
-              </div> */}
+              <span className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-bold uppercase tracking-wider rounded-full">
+                Currently Under Development
+              </span>
             </Reveal>
           </div>
         </section>

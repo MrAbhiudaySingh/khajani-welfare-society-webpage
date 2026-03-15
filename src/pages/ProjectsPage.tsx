@@ -128,13 +128,6 @@ const projects: Project[] = [
     image: "/images/projects/upsdm-sewing.jpg",
     link: "/projects/upsdm-training",
   },
-  {
-    title: "Brij Women Business Directory",
-    description: "Digital directory of Braj women entrepreneurs. Promoting women-owned businesses and connecting artisans to markets. Coming Soon.",
-    category: "Vocational",
-    image: "/images/projects/shg-federation.jpg",
-    link: undefined,
-  },
 ];
 
 const ProjectsPage = () => {
