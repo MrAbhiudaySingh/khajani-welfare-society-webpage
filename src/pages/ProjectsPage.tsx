@@ -1,253 +1,341 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import { GraduationCap, Heart, Users, Sparkles, Calendar, Store, ArrowRight, TrendingUp } from "lucide-react";
 
-const categories = ["All Projects", "Vocational", "Education", "Health", "Environment", "Culture"] as const;
+const ImpactBox = ({ number, label, icon: Icon }: { number: string; label: string; icon: any }) => (
+  <div className="bg-card border border-border p-6 rounded-lg text-center hover:border-accent transition-colors">
+    <Icon className="w-8 h-8 text-accent mx-auto mb-3" />
+    <div className="text-3xl font-bold text-primary font-display mb-1">{number}</div>
+    <div className="text-xs text-muted-foreground uppercase tracking-wider">{label}</div>
+  </div>
+);
 
-type Category = typeof categories[number];
-
-interface Project {
-  title: string;
-  description: string;
-  category: Category;
-  image: string;
+const ProgramCard = ({ 
+  title, 
+  tagline, 
+  description, 
+  items, 
+  impact,
+  link,
+  image 
+}: { 
+  title: string; 
+  tagline?: string;
+  description: string; 
+  items?: { label: string; value: string }[];
+  impact?: { number: string; label: string }[];
   link?: string;
-}
+  image?: string;
+}) => (
+  <Reveal variant="fade-up">
+    <div className="bg-card border border-border rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+      {image && (
+        <div className="aspect-video overflow-hidden">
+          <img src={image} alt={title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+      )}
+      <div className="p-6">
+        <h3 className="text-2xl font-display font-bold text-primary mb-1">{title}</h3>
+        {tagline && <p className="text-accent text-sm font-medium italic mb-3">{tagline}</p>}
+        <p className="text-muted-foreground text-sm leading-relaxed mb-4">{description}</p>
+        
+        {items && items.length > 0 && (
+          <div className="space-y-2 mb-4">
+            {items.map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <span className="text-accent mt-1">•</span>
+                <span className="text-sm text-muted-foreground"><strong className="text-primary">{item.label}:</strong> {item.value}</span>
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {impact && impact.length > 0 && (
+          <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-border">
+            {impact.map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="text-2xl font-bold text-accent font-display">{item.number}</div>
+                <div className="text-xs text-muted-foreground">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {link && (
+          <Link to={link} className="inline-flex items-center gap-2 text-accent text-sm font-bold uppercase tracking-wider mt-4 hover:gap-3 transition-all">
+            Learn More <ArrowRight size={16} />
+          </Link>
+        )}
+      </div>
+    </div>
+  </Reveal>
+);
 
-const projects: Project[] = [
-  {
-    title: "Project Brij-Hunar",
-    description: "Empowering rural women through advanced pottery and rural training, connecting local artisans directly to urban markets to ensure…",
-    category: "Vocational",
-    image: "/images/projects/brij-hunar-icon.jpg",
-    link: "/projects/brij-hunar",
-  },
-  {
-    title: "Brij-Surabhi",
-    description: "Preserving and promoting the cultural heritage of Brij through traditional arts, music, and craftsmanship programs across villages.",
-    category: "Culture",
-    image: "/images/projects/brij-surabhi-cow.jpg",
-    link: "/projects/brij-surabhi",
-  },
-  {
-    title: "Khajani Learning Academy",
-    description: "Bridging the educational gap for girls from marginalized communities through remedial support, English classes, digital literacy, and life skills.",
-    category: "Education",
-    image: "/images/projects/kla-students.jpg",
-    link: "/projects/kla",
-  },
-  {
-    title: "Digi-Shala",
-    description: "Bridging the digital divide by providing rural women with knowledge and tools to navigate the digital landscape confidently and securely.",
-    category: "Education",
-    image: "/images/projects/digi-shala-icon.jpg",
-    link: "/projects/digi-shala",
-  },
-  {
-    title: "EDUDAKSH",
-    description: "Tailored remedial learning for government school girls aged 10-14, addressing educational disparities through targeted interventions.",
-    category: "Education",
-    image: "/images/projects/edudaksh-icon.jpg",
-    link: "/projects/edudaksh",
-  },
-  {
-    title: "Brij-Anshuman",
-    description: "Empowering inmates at Mathura Central Jail through intensive skill development in garment construction, tailoring, and traditional crafts.",
-    category: "Vocational",
-    image: "/images/projects/brij-anshuman-icon.jpg",
-    link: "/projects/brij-anshuman",
-  },
-  {
-    title: "Brij-Surabhi Cow Welfare",
-    description: "Harmonious blend of animal welfare and rural empowerment, transforming waste into eco-friendly Panchagavya commodities.",
-    category: "Environment",
-    image: "/images/projects/brij-surabhi-cow-craft.jpg",
-    link: "/projects/brij-surabhi-cow-welfare",
-  },
-  {
-    title: "Brij-Surabhi Temple Waste",
-    description: "Transforming temple floral offerings into sustainable luxury products like incense, perfumes, and handmade paper.",
-    category: "Environment",
-    image: "/images/projects/brij-surabhi-cow.jpg",
-    link: "/projects/brij-surabhi-temple-waste",
-  },
-  {
-    title: "Brij-Sangini",
-    description: "Holistic community health program empowering women through dedicated medical care, health checkup camps, and blood donation drives.",
-    category: "Health",
-    image: "/images/projects/brij-sangini-icon.jpg",
-    link: "/projects/brij-sangini",
-  },
-  {
-    title: "Brij-Seva",
-    description: "Uplifting communities through essential services including Jal Seva, plantation drives, and Daan Utsav giving campaigns.",
-    category: "Environment",
-    image: "/images/projects/brij-seva-icon.jpg",
-    link: "/projects/brij-seva",
-  },
-  {
-    title: "Shakti Ek Adhaar",
-    description: "Flagship International Women's Day event honoring feminine strength, resilience, and outstanding societal contributions.",
-    category: "Culture",
-    image: "/images/projects/shakti-ek-adhaar-1.jpg",
-    link: "/projects/shakti-ek-adhaar",
-  },
-  {
-    title: "Radha Krishna Poshak Training",
-    description: "Preserving the sacred art of deity garment making through specialized artisan training in partnership with the World Bank aided UP Pro-Poor Tourism project.",
-    category: "Culture",
-    image: "/images/projects/poshak-sanjhi.jpg",
-    link: "/projects/radha-krishna-poshak",
-  },
-  {
-    title: "Royal Sanjhi Art Training",
-    description: "Reviving the royal heritage of Brij stencil art through specialized MSME training programs in fashion, apparel, and interior design.",
-    category: "Culture",
-    image: "/images/projects/royal-sanjhi-training.jpg",
-    link: "/projects/royal-sanjhi",
-  },
-  {
-    title: "SHGs & Brij Surbhi Federation",
-    description: "Empowering women through organized Self Help Groups, building sustainable livelihoods across 10 active SHGs with 120 women.",
-    category: "Vocational",
-    image: "/images/projects/shg-federation.jpg",
-    link: "/projects/shg-federation",
-  },
-  {
-    title: "UPSDM Certified Training",
-    description: "Government-backed skill development programs in tailoring and beauty therapy, producing industry-ready professionals.",
-    category: "Vocational",
-    image: "/images/projects/upsdm-sewing.jpg",
-    link: "/projects/upsdm-training",
-  },
-  {
-    title: "Sanitary Napkin Initiative",
-    description: "Ensuring dignity in education through sanitary napkin vending machines, health education, and safe disposal across 152 villages.",
-    category: "Health",
-    image: "/images/projects/sanitary-napkin.jpg",
-    link: "/projects/sanitary-napkin",
-  },
-];
+const SectionTitle = ({ title, subtitle }: { title: string; subtitle?: string }) => (
+  <div className="text-center mb-12">
+    <h2 className="text-3xl md:text-4xl font-display font-bold text-primary mb-3">{title}</h2>
+    {subtitle && <p className="text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>}
+  </div>
+);
 
 const ProjectsPage = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>("All Projects");
-
-  const filtered = activeCategory === "All Projects"
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
-
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-background pt-20 pb-16 text-center">
-        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4">
-          <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
-            Our Impact Portfolio
-          </span>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-primary mb-2 leading-tight">
-            Core Initiatives <span className="font-serif italic">&</span>
-          </h1>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-accent italic leading-tight mb-6">
-            Projects
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Exploring our cornerstone initiatives dedicated to fostering sustainable growth, preserving cultural heritage, and empowering the communities of the Brij region.
-          </p>
-        </Reveal>
+      <section className="bg-primary text-primary-foreground py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal variant="fade-up" className="text-center max-w-4xl mx-auto">
+            <span className="text-accent text-xs font-bold tracking-[0.3em] uppercase mb-4 block">
+              Working Since 2007
+            </span>
+            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+              Our Programs <span className="italic">&</span> Initiatives
+            </h1>
+            <p className="text-primary-foreground/70 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+              Khajani Welfare Society empowers girls and women from marginalized communities 
+              in the Braj region through vocational training, education, health awareness, 
+              and community welfare programs.
+            </p>
+          </Reveal>
+          
+          {/* Key Impact Numbers */}
+          <Reveal variant="fade-up" delay={200}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+              <ImpactBox number="20K+" label="Women Trained" icon={Users} />
+              <ImpactBox number="400+" label="Women/Year" icon={TrendingUp} />
+              <ImpactBox number="100+" label="Girls in KLA" icon={GraduationCap} />
+              <ImpactBox number="18+" label="Years of Impact" icon={Heart} />
+            </div>
+          </Reveal>
+        </div>
       </section>
 
-      {/* Category Tabs */}
-      <Reveal variant="fade-up" delay={100}>
-        <section className="bg-background pb-8">
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full transition-all border ${
-                  activeCategory === cat
-                    ? "bg-accent text-accent-foreground border-accent shadow-md"
-                    : "bg-card text-muted-foreground border-border hover:border-accent hover:text-accent"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </section>
-      </Reveal>
-
-      {/* Project Grid */}
-      <section className="bg-background pb-24">
+      {/* Core Programs */}
+      <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((project, i) => (
-              <Reveal key={project.title} variant="fade-up" delay={i % 3 * 100}>
-                <div className="bg-card border border-border group hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-4 left-4 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest px-3 py-1">
-                      {project.category}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-display font-bold text-primary mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
-                      {project.description}
-                    </p>
-                    {project.link ? (
-                      <Link
-                        to={project.link}
-                        className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all gap-1"
-                      >
-                        View Project
-                      </Link>
-                    ) : (
-                      <span className="inline-flex items-center text-muted-foreground text-xs font-bold uppercase tracking-widest gap-1 cursor-default">
-                        Coming Soon
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
+          <SectionTitle 
+            title="1. Women Skill Training & Livelihood Programs" 
+            subtitle="Empowering women through vocational skill training and livelihood opportunities since 2007"
+          />
+          
+          <div className="mb-8 p-6 bg-muted rounded-lg border border-border">
+            <p className="text-muted-foreground leading-relaxed">
+              Khajani Welfare Society focuses primarily on women from marginalized communities in the Braj region, 
+              enabling them to develop practical skills that lead to employment, entrepreneurship, and financial independence. 
+              Training programs are implemented through UPSDM, MSME initiatives, and ProPoor livelihood programs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Brij-Hunar */}
+            <ProgramCard
+              title="Brij-Hunar"
+              description="Vocational skill training program focused on employable skills and self-employment opportunities for women."
+              items={[
+                { label: "Courses", value: "Assistant Beauty Therapist, Self Employed Tailor" }
+              ]}
+              impact={[
+                { number: "400+", label: "Women Trained Annually" },
+                { number: "20,000+", label: "Women Since 2007" }
+              ]}
+              link="/projects/brij-hunar"
+              image="/images/projects/brij-hunar-icon.jpg"
+            />
+            
+            {/* Brij-Nipun */}
+            <ProgramCard
+              title="Brij-Nipun"
+              description="Short-term skill and activity-based training camps designed to build awareness, practical exposure, and confidence among women."
+              impact={[
+                { number: "750+", label: "Women Participate Annually" }
+              ]}
+              link="/projects/brij-nipun"
+              image="/images/projects/brij-nipun-icon.jpg"
+            />
+            
+            {/* Brij-Anshuman */}
+            <ProgramCard
+              title="Brij-Anshuman"
+              description="Vocational skill training programs conducted for women inmates of Mathura Jail, supporting rehabilitation and livelihood opportunities after release."
+              impact={[
+                { number: "Regular", label: "Training Batches" }
+              ]}
+              link="/projects/brij-anshuman"
+              image="/images/projects/brij-anshuman-icon.jpg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="py-20 bg-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            title="2. Education & Youth Development" 
+          />
+          
+          <div className="max-w-4xl mx-auto">
+            <ProgramCard
+              title="Khajani Learning Academy (KLA)"
+              tagline="Learn Today, Lead Tomorrow"
+              description="Provides academic support and holistic development opportunities for girls from marginalized communities studying in Classes 6 to 10. The academy focuses on strengthening academic foundations while building confidence and personality development."
+              items={[
+                { label: "Subjects", value: "Mathematics, Science, Social Science, English Communication" },
+                { label: "Activities", value: "Personality development, educational trips, cultural learning" }
+              ]}
+              impact={[
+                { number: "100+", label: "Girls Supported" },
+                { number: "120", label: "Target 2026-27" }
+              ]}
+              link="/projects/kla"
+              image="/images/projects/kla-students.jpg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Community Health */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            title="3. Community Health & Social Awareness" 
+          />
+          
+          <div className="max-w-3xl mx-auto">
+            <ProgramCard
+              title="Brij-Sangini"
+              description="A community initiative focusing on women's health awareness and hygiene education."
+              items={[
+                { label: "Activities", value: "Women health check-up camps" },
+                { label: "", value: "Menstrual hygiene awareness sessions" },
+                { label: "", value: "Blood donation camps with district hospitals" }
+              ]}
+              link="/projects/brij-sangini"
+              image="/images/projects/brij-sangini-icon.jpg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Community Service */}
+      <section className="py-20 bg-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            title="4. Community Service & Braj Welfare" 
+          />
+          
+          <div className="max-w-3xl mx-auto">
+            <ProgramCard
+              title="Brij-Seva"
+              description="Community welfare initiative dedicated to supporting people through seasonal and emergency support programs."
+              items={[
+                { label: "Jal Seva", value: "Running continuously for the past 5 years" },
+                { label: "Summer Relief", value: "Distribution of drinking water, sharbat and buttermilk" },
+                { label: "Daan Utsav", value: "Blanket and essential distribution during Makar Sankranti" },
+                { label: "Environment", value: "Plantation drives and relief support activities" }
+              ]}
+              link="/projects/brij-seva"
+              image="/images/projects/brij-seva-icon.jpg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Entrepreneurship */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            title="5. Women Entrepreneurship Promotion" 
+          />
+          
+          <div className="max-w-3xl mx-auto">
+            <ProgramCard
+              title="Brij-Surabhi"
+              description="Livelihood initiative supporting Self Help Group (SHG) women through promotion of Braj art, craft, devotional products, and eco-friendly items. The program aims to strengthen local women-led enterprises and preserve traditional Braj craftsmanship."
+              link="/projects/brij-surabhi"
+              image="/images/projects/brij-surabhi-cow.jpg"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Initiative */}
+      <section className="py-20 bg-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            title="6. Upcoming Initiative" 
+          />
+          
+          <Reveal variant="fade-up">
+            <div className="max-w-3xl mx-auto bg-card border border-border border-dashed rounded-xl p-8 text-center">
+              <Store className="w-12 h-12 text-accent mx-auto mb-4" />
+              <h3 className="text-2xl font-display font-bold text-primary mb-3">Brij Women Business Directory</h3>
+              <p className="text-muted-foreground mb-6">
+                Khajani Welfare Society is developing a digital directory of women entrepreneurs across the Braj region. 
+                The objective is to promote women-owned businesses, connect artisans with wider markets, and support entrepreneurship among women.
+              </p>
+              <span className="inline-block px-4 py-2 bg-accent/10 text-accent text-sm font-bold uppercase tracking-wider rounded-full">
+                Currently Under Development
+              </span>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Annual Event */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <Reveal variant="fade-up">
+              <Calendar className="w-12 h-12 text-accent mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+                7. Annual Event: Shakti Ek Adhaar
+              </h2>
+              <p className="text-primary-foreground/70 text-lg leading-relaxed max-w-3xl mx-auto mb-8">
+                The Annual Day celebration of Khajani Welfare Society, where women from different fields are recognized 
+                for their contributions to society. The event honors women leaders, educators, entrepreneurs, and social 
+                contributors who inspire change and strengthen communities.
+              </p>
+              <Link 
+                to="/projects/shakti-ek-adhaar" 
+                className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-accent/90 transition-colors"
+              >
+                Learn About Shakti Ek Adhaar <ArrowRight size={18} />
+              </Link>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="bg-primary py-24 text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
-        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground mb-4 leading-tight">
-            Want to partner on a<br />
-            <span className="text-secondary italic">Specific Initiative?</span>
-          </h2>
-          <p className="text-primary-foreground/70 text-lg mb-10 max-w-2xl mx-auto">
-            We welcome corporate partnerships and individual sponsorships for specific projects. Let's build a tailored impact plan together.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/collaborations"
-              className="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full uppercase tracking-widest text-sm shadow-xl transition-all"
-            >
-              Partner With Us
-            </Link>
-            <Link
-              to="/about"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-bold rounded-full uppercase tracking-widest text-sm hover:border-primary-foreground/60 transition-all"
-            >
-              Download Project Brochure
-            </Link>
-          </div>
-        </Reveal>
+      <section className="py-20 bg-background text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal variant="fade-up">
+            <Sparkles className="w-12 h-12 text-accent mx-auto mb-6" />
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
+              Support Our <span className="italic">Initiatives</span>
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
+              Partner with us to expand the reach of these programs and create lasting impact 
+              in the lives of women and girls across the Braj region.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/partner"
+                className="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full uppercase tracking-widest text-sm shadow-xl transition-all"
+              >
+                Partner With Us
+              </Link>
+              <Link
+                to="/donate"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-primary font-bold rounded-full uppercase tracking-widest text-sm hover:bg-primary hover:text-primary-foreground transition-all"
+              >
+                Make a Donation
+              </Link>
+            </div>
+          </Reveal>
+        </div>
       </section>
     </Layout>
   );
