@@ -17,116 +17,123 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Project Brij-Hunar",
-    description: "Empowering rural women through advanced pottery and rural training, connecting local artisans directly to urban markets to ensure…",
+    title: "Brij-Hunar",
+    description: "Vocational skill training in Beauty Therapy and Tailoring. 400+ women trained annually, 20,000+ since 2007.",
     category: "Vocational",
     image: "/images/projects/brij-hunar-icon.jpg",
     link: "/projects/brij-hunar",
   },
   {
-    title: "Brij-Surabhi",
-    description: "Preserving and promoting the cultural heritage of Brij through traditional arts, music, and craftsmanship programs across villages.",
-    category: "Culture",
-    image: "/images/projects/brij-surabhi-cow.jpg",
-    link: "/projects/brij-surabhi",
+    title: "Brij-Nipun",
+    description: "Short-term skill camps building awareness and confidence. 750+ women participate annually in training programs.",
+    category: "Vocational",
+    image: "/images/projects/brij-nipun-icon.jpg",
+    link: "/projects/brij-nipun",
+  },
+  {
+    title: "Brij-Anshuman",
+    description: "Vocational training for women inmates at Mathura Jail, supporting rehabilitation and livelihood opportunities after release.",
+    category: "Vocational",
+    image: "/images/projects/brij-anshuman-icon.jpg",
+    link: "/projects/brij-anshuman",
   },
   {
     title: "Khajani Learning Academy",
-    description: "Bridging the educational gap for girls from marginalized communities through remedial support, English classes, digital literacy, and life skills.",
+    description: "Academic support for girls Classes 6-10. 100+ girls supported with goal of 120 for 2026-27. Learn Today, Lead Tomorrow.",
     category: "Education",
     image: "/images/projects/kla-students.jpg",
     link: "/projects/kla",
   },
   {
     title: "Digi-Shala",
-    description: "Bridging the digital divide by providing rural women with knowledge and tools to navigate the digital landscape confidently and securely.",
+    description: "Digital literacy and computer training for women, bridging the digital divide through practical skill development.",
     category: "Education",
     image: "/images/projects/digi-shala-icon.jpg",
     link: "/projects/digi-shala",
   },
   {
     title: "EDUDAKSH",
-    description: "Tailored remedial learning for government school girls aged 10-14, addressing educational disparities through targeted interventions.",
+    description: "Remedial learning for government school girls aged 10-14, strengthening academic foundations in core subjects.",
     category: "Education",
     image: "/images/projects/edudaksh-icon.jpg",
     link: "/projects/edudaksh",
   },
   {
-    title: "Brij-Anshuman",
-    description: "Empowering inmates at Mathura Central Jail through intensive skill development in garment construction, tailoring, and traditional crafts.",
-    category: "Vocational",
-    image: "/images/projects/brij-anshuman-icon.jpg",
-    link: "/projects/brij-anshuman",
-  },
-  {
-    title: "Brij-Surabhi Cow Welfare",
-    description: "Harmonious blend of animal welfare and rural empowerment, transforming waste into eco-friendly Panchagavya commodities.",
-    category: "Environment",
-    image: "/images/projects/brij-surabhi-cow-craft.jpg",
-    link: "/projects/brij-surabhi-cow-welfare",
-  },
-  {
-    title: "Brij-Surabhi Temple Waste",
-    description: "Transforming temple floral offerings into sustainable luxury products like incense, perfumes, and handmade paper.",
-    category: "Environment",
-    image: "/images/projects/brij-surabhi-cow.jpg",
-    link: "/projects/brij-surabhi-temple-waste",
-  },
-  {
     title: "Brij-Sangini",
-    description: "Holistic community health program empowering women through dedicated medical care, health checkup camps, and blood donation drives.",
+    description: "Women's health awareness and hygiene education. Health check-up camps, menstrual hygiene sessions, and blood donation drives.",
     category: "Health",
     image: "/images/projects/brij-sangini-icon.jpg",
     link: "/projects/brij-sangini",
   },
   {
+    title: "Sanitary Napkin Initiative",
+    description: "Ensuring dignity in education through vending machines, health education, and safe disposal facilities.",
+    category: "Health",
+    image: "/images/projects/sanitary-napkin.jpg",
+    link: "/projects/sanitary-napkin",
+  },
+  {
     title: "Brij-Seva",
-    description: "Uplifting communities through essential services including Jal Seva, plantation drives, and Daan Utsav giving campaigns.",
+    description: "Community welfare through Jal Seva (5+ years running), Daan Utsav during Makar Sankranti, and plantation drives.",
     category: "Environment",
     image: "/images/projects/brij-seva-icon.jpg",
     link: "/projects/brij-seva",
   },
   {
+    title: "Brij-Surabhi",
+    description: "Supporting SHG women through Braj art, craft, and eco-friendly products. Strengthening women-led enterprises since 2007.",
+    category: "Culture",
+    image: "/images/projects/brij-surabhi-cow.jpg",
+    link: "/projects/brij-surabhi",
+  },
+  {
+    title: "Brij-Surabhi Cow Welfare",
+    description: "Transforming cow waste into eco-friendly Panchagavya commodities. Sustainable rural empowerment initiative.",
+    category: "Environment",
+    image: "/images/projects/brij-surabhi-cow-craft.jpg",
+    link: "/projects/brij-surabhi-cow-welfare",
+  },
+  {
     title: "Shakti Ek Adhaar",
-    description: "Flagship International Women's Day event honoring feminine strength, resilience, and outstanding societal contributions.",
+    description: "Annual Day celebration honoring women leaders, educators, and entrepreneurs who inspire change in communities.",
     category: "Culture",
     image: "/images/projects/shakti-ek-adhaar-1.jpg",
     link: "/projects/shakti-ek-adhaar",
   },
   {
     title: "Radha Krishna Poshak Training",
-    description: "Preserving the sacred art of deity garment making through specialized artisan training in partnership with the World Bank aided UP Pro-Poor Tourism project.",
+    description: "Preserving sacred deity garment making through World Bank Pro-Poor Tourism project partnership.",
     category: "Culture",
     image: "/images/projects/poshak-sanjhi.jpg",
     link: "/projects/radha-krishna-poshak",
   },
   {
     title: "Royal Sanjhi Art Training",
-    description: "Reviving the royal heritage of Brij stencil art through specialized MSME training programs in fashion, apparel, and interior design.",
+    description: "Reviving Brij stencil art heritage through MSME training programs in fashion, apparel, and interior design.",
     category: "Culture",
     image: "/images/projects/royal-sanjhi-training.jpg",
     link: "/projects/royal-sanjhi",
   },
   {
-    title: "SHGs & Brij Surbhi Federation",
-    description: "Empowering women through organized Self Help Groups, building sustainable livelihoods across 10 active SHGs with 120 women.",
+    title: "SHGs & Brij Surabhi Federation",
+    description: "Organized Self Help Groups building sustainable livelihoods. 10 active SHGs empowering women entrepreneurs.",
     category: "Vocational",
     image: "/images/projects/shg-federation.jpg",
     link: "/projects/shg-federation",
   },
   {
     title: "UPSDM Certified Training",
-    description: "Government-backed skill development programs in tailoring and beauty therapy, producing industry-ready professionals.",
+    description: "Government-backed skill development under Uttar Pradesh Skill Development Mission. Industry-ready professionals.",
     category: "Vocational",
     image: "/images/projects/upsdm-sewing.jpg",
     link: "/projects/upsdm-training",
   },
   {
-    title: "Sanitary Napkin Initiative",
-    description: "Ensuring dignity in education through sanitary napkin vending machines, health education, and safe disposal across 152 villages.",
-    category: "Health",
-    image: "/images/projects/sanitary-napkin.jpg",
-    link: "/projects/sanitary-napkin",
+    title: "Brij Women Business Directory",
+    description: "Digital directory of Braj women entrepreneurs. Promoting women-owned businesses and connecting artisans to markets. Coming Soon.",
+    category: "Vocational",
+    image: "/images/projects/shg-federation.jpg",
+    link: undefined,
   },
 ];
 
@@ -143,16 +150,16 @@ const ProjectsPage = () => {
       <section className="bg-background pt-20 pb-16 text-center">
         <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4">
           <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
-            Our Impact Portfolio
+            Working Since 2007
           </span>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-primary mb-2 leading-tight">
-            Core Initiatives <span className="font-serif italic">&</span>
+            Our Programs <span className="font-serif italic">&</span>
           </h1>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-accent italic leading-tight mb-6">
-            Projects
+            Initiatives
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Exploring our cornerstone initiatives dedicated to fostering sustainable growth, preserving cultural heritage, and empowering the communities of the Brij region.
+            Empowering girls and women from marginalized communities in the Braj region through vocational training, education, health awareness, and community welfare programs.
           </p>
         </Reveal>
       </section>
