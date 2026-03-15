@@ -124,7 +124,7 @@ const VolunteerPage = () => {
             <p className="uppercase tracking-widest text-sm font-semibold opacity-90 mt-2">Villages Served</p>
           </Reveal>
           <Reveal variant="fade-up" delay={200}>
-            <p className="text-5xl md:text-6xl font-bold text-secondary font-display">12+</p>
+            <p className="text-5xl md:text-6xl font-bold text-secondary font-display">18+</p>
             <p className="uppercase tracking-widest text-sm font-semibold opacity-90 mt-2">Years of Legacy</p>
           </Reveal>
         </div>
