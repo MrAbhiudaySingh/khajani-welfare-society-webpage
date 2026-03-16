@@ -238,10 +238,10 @@ const CampaignsPage = () => {
             <Reveal variant="fade-right" delay={200} className="lg:w-7/12 w-full">
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-[3/4] overflow-hidden rounded-tr-[50px]">
-                  <img alt="Plantation Drive 1" className="w-full h-full object-cover hover:scale-110 transition duration-700" src="/images/projects/brij-seva-plantation.jpg" />
+                  <img alt="Plantation Drive 1" className="w-full h-full object-cover hover:scale-110 transition duration-700" src="/images/projects/plantation-drive.jpg" />
                 </div>
                 <div className="aspect-[3/4] overflow-hidden rounded-bl-[50px] mt-12">
-                  <img alt="Plantation Drive 2" className="w-full h-full object-cover hover:scale-110 transition duration-700" src="/images/projects/brij-seva-plantation.jpg" />
+                  <img alt="Plantation Drive 2" className="w-full h-full object-cover hover:scale-110 transition duration-700" src="/images/projects/plantation-drive.jpg" />
                 </div>
               </div>
             </Reveal>

@@ -9,7 +9,7 @@ const BrijSevaPage = () => {
       <section className="w-full bg-primary text-primary-foreground min-h-[80vh] flex flex-col items-center justify-center p-8 relative overflow-hidden">
         <div className="absolute inset-0 grid grid-cols-3 z-0 opacity-40 mix-blend-luminosity grayscale">
           <div className="bg-cover bg-center border-r border-primary-foreground/20" style={{ backgroundImage: "url('/images/projects/brij-seva-jal.jpg')" }} />
-          <div className="bg-cover bg-center border-r border-primary-foreground/20" style={{ backgroundImage: "url('/images/projects/brij-seva-plantation.jpg')" }} />
+          <div className="bg-cover bg-center border-r border-primary-foreground/20" style={{ backgroundImage: "url('/images/projects/plantation-drive.jpg')" }} />
           <div className="bg-cover bg-center" style={{ backgroundImage: "url('/images/projects/daan-utsav.jpg')" }} />
           <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent" />
         </div>
@@ -74,7 +74,7 @@ const BrijSevaPage = () => {
             <div className="absolute inset-0 bg-primary -translate-x-4 translate-y-4" />
             <div
               className="w-full aspect-[4/3] bg-cover bg-center relative z-10 border-2 border-primary grayscale hover:grayscale-0 transition-all duration-700"
-              style={{ backgroundImage: "url('/images/projects/brij-seva-plantation.jpg')" }}
+              style={{ backgroundImage: "url('/images/projects/plantation-drive.jpg')" }}
             />
           </Reveal>
           <Reveal variant="fade-left" delay={150} className="lg:col-span-5 flex flex-col gap-6 order-1 lg:order-2">

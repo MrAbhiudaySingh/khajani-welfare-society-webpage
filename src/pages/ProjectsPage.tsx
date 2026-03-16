@@ -321,7 +321,7 @@ const ProjectsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Reveal variant="fade-up">
               <PhotoCard
-                img="/images/projects/brij-seva-plantation.jpg"
+                img="/images/projects/plantation-drive.jpg"
                 title="Plantation Drives"
                 desc="Community-led tree planting and green initiatives across the Braj region."
                 link="/projects/brij-seva"
