@@ -1,250 +1,521 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import { Reveal } from "@/components/Reveal";
+import {
+  GraduationCap, Scissors, Users, Heart, TreePine, Flower2,
+  HandHeart, Building2, ShieldAlert, Calendar, ArrowRight,
+  BookOpen, Sparkles, Award, Droplets, Leaf, Rocket,
+  ShoppingBag, Stethoscope, Umbrella
+} from "lucide-react";
 
-const categories = ["All Projects", "Vocational", "Education", "Health", "Environment", "Culture"] as const;
-
-type Category = typeof categories[number];
-
-interface Project {
+/* ── Section Header ── */
+const SectionHeader = ({
+  label, title, description, icon: Icon,
+}: {
+  label: string;
   title: string;
-  description: string;
-  category: Category;
-  image: string;
-  link?: string;
-}
+  description?: string;
+  icon: React.ElementType;
+}) => (
+  <Reveal variant="fade-up" className="flex flex-col gap-4 max-w-3xl mb-10">
+    <div className="flex items-center gap-3">
+      <div className="w-10 h-10 bg-accent/10 text-accent flex items-center justify-center rounded-md">
+        <Icon size={20} />
+      </div>
+      <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">{label}</span>
+    </div>
+    <h2 className="text-3xl md:text-4xl font-display font-bold text-primary leading-tight tracking-tight">{title}</h2>
+    {description && <p className="text-muted-foreground text-lg leading-relaxed">{description}</p>}
+  </Reveal>
+);
 
-const projects: Project[] = [
-  {
-    title: "Brij-Hunar",
-    description: "Vocational skill training in Beauty Therapy and Tailoring. 400+ women trained annually, 20,000+ since 2007.",
-    category: "Vocational",
-    image: "/images/projects/brij-hunar-icon.jpg",
-    link: "/projects/brij-hunar",
-  },
-  {
-    title: "Brij-Nipun",
-    description: "Short-term skill camps building awareness and confidence. 750+ women participate annually in training programs.",
-    category: "Vocational",
-    image: "/images/projects/brij-nipun-icon.jpg",
-    link: "/projects/brij-nipun",
-  },
-  {
-    title: "Brij-Anshuman",
-    description: "Vocational training for women inmates at Mathura Jail, supporting rehabilitation and livelihood opportunities after release.",
-    category: "Vocational",
-    image: "/images/projects/brij-anshuman-icon.jpg",
-    link: "/projects/brij-anshuman",
-  },
-  {
-    title: "Khajani Learning Academy",
-    description: "Academic support for girls Classes 6-10. 100+ girls supported with goal of 120 for 2026-27. Learn Today, Lead Tomorrow.",
-    category: "Education",
-    image: "/images/projects/kla-students.jpg",
-    link: "/projects/kla",
-  },
-  {
-    title: "Digi-Shala",
-    description: "Digital literacy and computer training for women, bridging the digital divide through practical skill development.",
-    category: "Education",
-    image: "/images/projects/digi-shala-icon.jpg",
-    link: "/projects/digi-shala",
-  },
-  {
-    title: "EDUDAKSH",
-    description: "Remedial learning for government school girls aged 10-14, strengthening academic foundations in core subjects.",
-    category: "Education",
-    image: "/images/projects/edudaksh-icon.jpg",
-    link: "/projects/edudaksh",
-  },
-  {
-    title: "Brij-Sangini",
-    description: "Women's health awareness and hygiene education. Health check-up camps, menstrual hygiene sessions, and blood donation drives.",
-    category: "Health",
-    image: "/images/projects/brij-sangini-icon.jpg",
-    link: "/projects/brij-sangini",
-  },
-  {
-    title: "Sanitary Napkin Initiative",
-    description: "Ensuring dignity in education through vending machines, health education, and safe disposal facilities.",
-    category: "Health",
-    image: "/images/projects/sanitary-napkin.jpg",
-    link: "/projects/sanitary-napkin",
-  },
-  {
-    title: "Brij-Seva",
-    description: "Community welfare through Jal Seva (5+ years running), Daan Utsav during Makar Sankranti, and plantation drives.",
-    category: "Environment",
-    image: "/images/projects/brij-seva-icon.jpg",
-    link: "/projects/brij-seva",
-  },
-  {
-    title: "Brij-Surabhi",
-    description: "Supporting SHG women through Braj art, craft, and eco-friendly products. Strengthening women-led enterprises since 2007.",
-    category: "Culture",
-    image: "/images/projects/brij-surabhi-cow.jpg",
-    link: "/projects/brij-surabhi",
-  },
-  {
-    title: "Brij-Surabhi Cow Welfare",
-    description: "Transforming cow waste into eco-friendly Panchagavya commodities. Sustainable rural empowerment initiative.",
-    category: "Environment",
-    image: "/images/projects/brij-surabhi-cow-craft.jpg",
-    link: "/projects/brij-surabhi-cow-welfare",
-  },
-  {
-    title: "Shakti Ek Adhaar",
-    description: "Annual Day celebration honoring women leaders, educators, and entrepreneurs who inspire change in communities.",
-    category: "Culture",
-    image: "/images/projects/shakti-ek-adhaar-1.jpg",
-    link: "/projects/shakti-ek-adhaar",
-  },
-  {
-    title: "Radha Krishna Poshak Training",
-    description: "Preserving sacred deity garment making through World Bank Pro-Poor Tourism project partnership.",
-    category: "Culture",
-    image: "/images/projects/poshak-sanjhi.jpg",
-    link: "/projects/radha-krishna-poshak",
-  },
-  {
-    title: "Royal Sanjhi Art Training",
-    description: "Reviving Brij stencil art heritage through MSME training programs in fashion, apparel, and interior design.",
-    category: "Culture",
-    image: "/images/projects/royal-sanjhi-training.jpg",
-    link: "/projects/royal-sanjhi",
-  },
-  {
-    title: "SHGs & Brij Surabhi Federation",
-    description: "Organized Self Help Groups building sustainable livelihoods. 10 active SHGs empowering women entrepreneurs.",
-    category: "Vocational",
-    image: "/images/projects/shg-federation.jpg",
-    link: "/projects/shg-federation",
-  },
-  {
-    title: "UPSDM Certified Training",
-    description: "Government-backed skill development under Uttar Pradesh Skill Development Mission. Industry-ready professionals.",
-    category: "Vocational",
-    image: "/images/projects/upsdm-sewing.jpg",
-    link: "/projects/upsdm-training",
-  },
-];
+/* ── Impact Stat ── */
+const ImpactStat = ({ value, label }: { value: string; label: string }) => (
+  <div className="flex flex-col items-center text-center p-4 bg-accent/10 border border-accent/20 rounded-lg">
+    <span className="text-2xl md:text-3xl font-display font-bold text-accent">{value}</span>
+    <span className="text-xs text-muted-foreground font-semibold uppercase tracking-wider mt-1">{label}</span>
+  </div>
+);
+
+/* ── Photo Card with overlay ── */
+const PhotoCard = ({
+  img, title, desc, link, badge,
+}: {
+  img: string;
+  title: string;
+  desc: string;
+  link?: string;
+  badge?: string;
+}) => {
+  const content = (
+    <div className="group relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+      <img src={img} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
+      {badge && (
+        <span className="absolute top-4 left-4 px-3 py-1 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest rounded-full">
+          {badge}
+        </span>
+      )}
+      <div className="absolute bottom-4 left-4 right-4">
+        <h3 className="text-primary-foreground text-lg font-display font-bold leading-tight">{title}</h3>
+        <p className="text-primary-foreground/80 text-xs mt-1 leading-relaxed line-clamp-2">{desc}</p>
+        {link && (
+          <span className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest mt-2 gap-1 group-hover:gap-2 transition-all">
+            Learn More <ArrowRight size={12} />
+          </span>
+        )}
+      </div>
+    </div>
+  );
+  if (link) return <Link to={link} className="block">{content}</Link>;
+  return content;
+};
+
+/* ── Mini Card ── */
+const MiniCard = ({
+  icon: Icon, title, desc, link,
+}: {
+  icon: React.ElementType;
+  title: string;
+  desc: string;
+  link?: string;
+}) => {
+  const content = (
+    <div className="group flex flex-col gap-3 bg-card p-6 border border-border hover:border-accent/50 transition-all h-full shadow-sm">
+      <div className="flex items-center justify-between">
+        <Icon size={24} className="text-accent" />
+        {link && <ArrowRight size={16} className="text-muted-foreground group-hover:text-accent transition-colors" />}
+      </div>
+      <h3 className="text-base font-display font-bold text-primary">{title}</h3>
+      <p className="text-xs text-muted-foreground leading-relaxed">{desc}</p>
+    </div>
+  );
+  if (link) return <Link to={link} className="block h-full">{content}</Link>;
+  return content;
+};
 
 const ProjectsPage = () => {
-  const [activeCategory, setActiveCategory] = useState<Category>("All Projects");
-
-  const filtered = activeCategory === "All Projects"
-    ? projects
-    : projects.filter((p) => p.category === activeCategory);
-
   return (
     <Layout>
-      {/* Hero */}
-      <section className="bg-background pt-20 pb-16 text-center">
-        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4">
-          <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
-            Working Since 2007
-          </span>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-primary mb-2 leading-tight">
-            Our Programs <span className="font-serif italic">&</span>
-          </h1>
-          <h1 className="text-5xl md:text-7xl font-display font-bold text-accent italic leading-tight mb-6">
-            Initiatives
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Empowering girls and women from marginalized communities in the Braj region through vocational training, education, health awareness, and community welfare programs.
-          </p>
-        </Reveal>
+      {/* ── Hero ── */}
+      <section className="relative bg-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
+          <img src="/images/projects/brij-hunar-sewing-hall.jpg" alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/80 to-primary" />
+        <div className="relative pt-24 pb-20 text-center">
+          <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4">
+            <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-4 block">
+              Since 2007 • Transforming Lives
+            </span>
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground mb-2 leading-tight">
+              Our Programs <span className="font-serif italic">&</span>
+            </h1>
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-accent italic leading-tight mb-6">
+              Initiatives
+            </h1>
+            <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto leading-relaxed">
+              Khajani Welfare Society has been working since 2007 to empower women and communities in the Braj region through skill development, education, health, cultural preservation, and community service.
+            </p>
+          </Reveal>
+        </div>
       </section>
 
-      {/* Category Tabs */}
-      <Reveal variant="fade-up" delay={100}>
-        <section className="bg-background pb-8">
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center gap-2">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-2 text-xs font-bold uppercase tracking-widest rounded-full transition-all border ${
-                  activeCategory === cat
-                    ? "bg-accent text-accent-foreground border-accent shadow-md"
-                    : "bg-card text-muted-foreground border-border hover:border-accent hover:text-accent"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-        </section>
-      </Reveal>
-
-      {/* Project Grid */}
-      <section className="bg-background pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filtered.map((project, i) => (
-              <Reveal key={project.title} variant="fade-up" delay={i % 3 * 100}>
-                <div className="bg-card border border-border group hover:shadow-xl transition-all duration-300 overflow-hidden h-full">
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <span className="absolute top-4 left-4 bg-accent text-accent-foreground text-[10px] font-bold uppercase tracking-widest px-3 py-1">
-                      {project.category}
-                    </span>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-display font-bold text-primary mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4 line-clamp-3">
-                      {project.description}
-                    </p>
-                    {project.link ? (
-                      <Link
-                        to={project.link}
-                        className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all gap-1"
-                      >
-                        View Project
-                      </Link>
-                    ) : (
-                      <span className="inline-flex items-center text-muted-foreground text-xs font-bold uppercase tracking-widest gap-1 cursor-default">
-                        Coming Soon
-                      </span>
-                    )}
-                  </div>
+      {/* ── 1. Education ── */}
+      <section className="bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+          <SectionHeader
+            icon={GraduationCap}
+            label="Education"
+            title="Education & Youth Development"
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <Reveal variant="fade-right">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-xl">
+                <img src="/images/projects/kla-students.jpg" alt="Khajani Learning Academy students" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="text-accent text-xs font-bold tracking-widest uppercase">Learn Today, Lead Tomorrow</span>
+                  <h3 className="text-primary-foreground text-2xl font-display font-bold mt-1">Khajani Learning Academy</h3>
+                  <p className="text-primary-foreground/80 text-sm mt-1">Classes 6–10</p>
                 </div>
-              </Reveal>
-            ))}
+              </div>
+            </Reveal>
+            <Reveal variant="fade-left" delay={100}>
+              <div className="flex flex-col gap-6">
+                <p className="text-muted-foreground text-lg leading-relaxed">
+                  Providing academic support and holistic development for girls from marginalized communities — strengthening foundations while building confidence.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {["Mathematics", "Science", "Social Science", "English"].map((s) => (
+                    <div key={s} className="flex items-center gap-2 bg-background border border-border px-4 py-3 rounded-md">
+                      <BookOpen size={16} className="text-accent" />
+                      <span className="text-sm font-semibold text-primary">{s}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {["Personality Development", "Exposure Trips", "Cultural Activities"].map((a) => (
+                    <span key={a} className="px-3 py-1.5 bg-accent/10 text-accent text-xs font-bold rounded-full border border-accent/20">{a}</span>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <ImpactStat value="100+" label="Girls Supported" />
+                  <ImpactStat value="120" label="Target 2026-27" />
+                </div>
+                <Link to="/projects/kla" className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest hover:gap-2 transition-all gap-1">
+                  Learn More <ArrowRight size={14} />
+                </Link>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary py-24 text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }}></div>
-        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground mb-4 leading-tight">
+      {/* ── 2. Skill Development ── */}
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+        <SectionHeader
+          icon={Scissors}
+          label="Skill Development"
+          title="Women Skill Training & Livelihood Programs"
+          description="Empowering girls and women from marginalized communities through vocational skill training — enabling employment, entrepreneurship, and financial independence."
+        />
+        {/* Image strip */}
+        <Reveal variant="fade-up" className="mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <PhotoCard img="/images/projects/upsdm-beauty.jpg" title="Beauty Therapy" desc="Professional beauty & salon training" link="/projects/brij-hunar" />
+            <PhotoCard img="/images/projects/upsdm-tailor.jpg" title="Tailoring Program" desc="Self-employment through stitching" link="/projects/brij-hunar" />
+          </div>
+        </Reveal>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Reveal variant="fade-up">
+            <MiniCard
+              icon={Scissors}
+              title="Women Skill Programs"
+              desc="Brij-Hunar: Vocational training in Beauty Therapy, Tailoring, and more. Brij-Nipun: Short-term skill camps for awareness and confidence."
+              link="/projects/brij-hunar"
+            />
+          </Reveal>
+          <Reveal variant="fade-up" delay={80}>
+            <MiniCard
+              icon={Award}
+              title="UPSDM Training Programs"
+              desc="Government-backed certified programs — Self Employed Tailor and Assistant Beauty Therapist courses."
+              link="/projects/upsdm-training"
+            />
+          </Reveal>
+          <Reveal variant="fade-up" delay={160}>
+            <MiniCard
+              icon={Sparkles}
+              title="MSME Skill Programs"
+              desc="Specialized skill initiatives in partnership with MSME for art, craft, fashion, and design applications."
+            />
+          </Reveal>
+          <Reveal variant="fade-up" delay={240}>
+            <MiniCard
+              icon={ShoppingBag}
+              title="ProPoor Livelihood Initiatives"
+              desc="World Bank aided UP Pro-Poor Tourism livelihood programs for women artisans in the Braj region."
+            />
+          </Reveal>
+        </div>
+        <Reveal variant="fade-up" delay={300}>
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-lg">
+            <ImpactStat value="400+" label="Trained Annually" />
+            <ImpactStat value="20,000+" label="Since 2007" />
+            <ImpactStat value="750+" label="Nipun Camps/Year" />
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ── 3. Women Community Development ── */}
+      <section className="bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+          <SectionHeader
+            icon={Users}
+            label="Women Community Development"
+            title="Women Community Development"
+            description="Building sustainable livelihoods and community-driven enterprises through organized women's groups."
+          />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start mb-8">
+            <Reveal variant="fade-right">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-xl">
+                <img src="/images/projects/shg-federation.jpg" alt="Self Help Groups" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="text-accent text-xs font-bold tracking-widest uppercase">Community Power</span>
+                  <h3 className="text-primary-foreground text-2xl font-display font-bold mt-1">Self Help Group Federation</h3>
+                  <p className="text-primary-foreground/80 text-sm mt-1">10 active SHGs • 120 women</p>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal variant="fade-left" delay={100}>
+              <div className="flex flex-col gap-6">
+                <div className="grid grid-cols-1 gap-4">
+                  <MiniCard
+                    icon={Users}
+                    title="Self Help Groups (SHGs)"
+                    desc="10 active SHGs with 120 women — building savings, credit access, and micro-enterprise opportunities."
+                    link="/projects/shg-federation"
+                  />
+                  <MiniCard
+                    icon={ShoppingBag}
+                    title="Braj Surabhi Area Level Federation"
+                    desc="Federation of SHGs promoting Braj art, craft, devotional products, and eco-friendly items through women-led enterprises."
+                    link="/projects/brij-surabhi"
+                  />
+                </div>
+                <div className="flex flex-col gap-3 bg-accent/5 border-2 border-dashed border-accent/30 p-6 rounded-sm">
+                  <div className="flex items-center justify-between">
+                    <Rocket size={24} className="text-accent" />
+                    <span className="text-[10px] font-bold text-accent uppercase tracking-widest bg-accent/10 px-2 py-1 rounded-full">In Progress</span>
+                  </div>
+                  <h3 className="text-base font-display font-bold text-primary">Brij Business Women's Directory</h3>
+                  <p className="text-xs text-muted-foreground leading-relaxed">Digital directory connecting women entrepreneurs across Braj — promoting women-owned businesses and artisan markets.</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. Community Health ── */}
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+        <SectionHeader
+          icon={Heart}
+          label="Community Health"
+          title="Community Health & Social Awareness"
+          description="Brij-Sangini — focusing on women's health awareness, hygiene education, and community medical support."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Reveal variant="fade-up">
+            <PhotoCard
+              img="/images/projects/sanitary-napkin-vending.jpg"
+              title="Menstrual Hygiene Initiative"
+              desc="Health check-up camps, menstrual hygiene awareness, sanitary product distribution across 152 villages."
+              link="/projects/sanitary-napkin"
+              badge="Brij-Sangini"
+            />
+          </Reveal>
+          <Reveal variant="fade-up" delay={100}>
+            <PhotoCard
+              img="/images/projects/blood-donation-camp.jpg"
+              title="Blood Donation Camps"
+              desc="Community blood donation events partnering with district hospitals for reliable, safe blood supply."
+              link="/projects/brij-sangini"
+              badge="Health"
+            />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── 5. Environment ── */}
+      <section className="bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+          <SectionHeader
+            icon={TreePine}
+            label="Environment"
+            title="Environment & Sustainability"
+            description="Eco-friendly initiatives transforming waste into sustainable products and promoting environmental conservation."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Reveal variant="fade-up">
+              <PhotoCard
+                img="/images/projects/brij-seva-plantation.jpg"
+                title="Plantation Drives"
+                desc="Community-led tree planting and green initiatives across the Braj region."
+                link="/projects/brij-seva"
+                badge="Green"
+              />
+            </Reveal>
+            <Reveal variant="fade-up" delay={100}>
+              <PhotoCard
+                img="/images/projects/brij-surabhi-flower-recycling.jpg"
+                title="Waste Flower Management"
+                desc="Transforming temple floral offerings into incense, perfumes, and handmade paper."
+                link="/projects/brij-surabhi-temple-waste"
+                badge="Eco"
+              />
+            </Reveal>
+            <Reveal variant="fade-up" delay={200}>
+              <PhotoCard
+                img="/images/projects/brij-surabhi-cow-craft.jpg"
+                title="Panchgavya Initiatives"
+                desc="Eco-friendly Panchagavya commodities — blending animal welfare with rural empowerment."
+                link="/projects/brij-surabhi-cow-welfare"
+                badge="Sustainable"
+              />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 6. Cultural Heritage ── */}
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+        <SectionHeader
+          icon={Flower2}
+          label="Cultural Heritage"
+          title="Cultural Heritage Preservation"
+          description="Preserving and promoting the rich cultural traditions of the Braj region through specialized training."
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Reveal variant="fade-up">
+            <PhotoCard
+              img="/images/projects/poshak-sanjhi.jpg"
+              title="Sanjhi Art Promotion"
+              desc="Reviving royal heritage of Brij stencil art through MSME training in fashion, apparel, and interior design."
+              link="/projects/royal-sanjhi"
+              badge="Art"
+            />
+          </Reveal>
+          <Reveal variant="fade-up" delay={100}>
+            <PhotoCard
+              img="/images/projects/poshak-zari.jpg"
+              title="Mathura Zari Poshak (GI) Promotion"
+              desc="Preserving the sacred art of deity garment making through artisan training — World Bank aided project."
+              link="/projects/radha-krishna-poshak"
+              badge="Heritage"
+            />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── 7. Community Service ── */}
+      <section className="bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+          <SectionHeader
+            icon={HandHeart}
+            label="Community Service"
+            title="Community Service & Braj Welfare"
+            description="Brij-Seva — dedicated to supporting communities through seasonal and essential services."
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Reveal variant="fade-up">
+              <PhotoCard
+                img="/images/projects/daan-utsav.jpg"
+                title="Daan Utsav"
+                desc="Blanket and essential distribution during Makar Sankranti — serving the most vulnerable communities."
+                link="/projects/brij-seva"
+                badge="Seva"
+              />
+            </Reveal>
+            <Reveal variant="fade-up" delay={100}>
+              <PhotoCard
+                img="/images/projects/brij-seva-jal.jpg"
+                title="Jal Seva Campaign"
+                desc="Running continuously for 5 years — drinking water, sharbat, and buttermilk for travelers during summer."
+                link="/projects/brij-seva"
+                badge="5 Years"
+              />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. Institutional Programs ── */}
+      <section className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+        <SectionHeader
+          icon={Building2}
+          label="Institutional Programs"
+          title="Institutional Programs"
+        />
+        <Reveal variant="fade-up">
+          <div className="max-w-2xl">
+            <MiniCard
+              icon={Building2}
+              title="Skill Training for Women Inmates – District Jail Mathura"
+              desc="Brij-Anshuman: Vocational skill training for women inmates, supporting rehabilitation and livelihood opportunities after release. Regular training batches conducted."
+              link="/projects/brij-anshuman"
+            />
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ── 9. Relief Work ── */}
+      <section className="bg-card border-y border-border">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20">
+          <SectionHeader
+            icon={ShieldAlert}
+            label="Relief Work"
+            title="Relief & Emergency Response"
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Reveal variant="fade-up">
+              <MiniCard
+                icon={ShieldAlert}
+                title="COVID Relief"
+                desc="Emergency relief distribution including food, medical supplies, and essential support during the COVID-19 pandemic."
+              />
+            </Reveal>
+            <Reveal variant="fade-up" delay={100}>
+              <MiniCard
+                icon={Heart}
+                title="Disaster / Emergency Relief"
+                desc="Rapid response activities for flood, fire, and other natural disaster relief — supporting affected families and communities."
+              />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 10. Events ── */}
+      <section className="bg-primary py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 relative z-10">
+          <Reveal variant="fade-up" className="mb-10">
+            <div className="flex items-center gap-3 mb-4">
+              <Calendar size={20} className="text-accent" />
+              <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase">Events</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground leading-tight">Annual Events & Celebrations</h2>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <Reveal variant="fade-up">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-2xl group">
+                <img src="/images/projects/shakti-ek-adhaar-1.jpg" alt="Shakti Ek Adhaar" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="text-accent text-xs font-bold tracking-widest uppercase">Annual Day</span>
+                  <h3 className="text-primary-foreground text-2xl font-display font-bold mt-1">Shakti Ek Adhaar</h3>
+                  <p className="text-primary-foreground/80 text-sm mt-2 leading-relaxed">
+                    Annual Day of Khajani Welfare Society — honoring women leaders, educators, entrepreneurs, and social contributors.
+                  </p>
+                  <Link to="/projects/shakti-ek-adhaar" className="inline-flex items-center text-accent text-xs font-bold uppercase tracking-widest mt-3 hover:gap-2 transition-all gap-1">
+                    Learn More <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal variant="fade-up" delay={100}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-2xl bg-primary-foreground/10 flex flex-col items-center justify-center text-center p-10 border border-primary-foreground/20">
+                <Umbrella size={48} className="text-accent mb-4" />
+                <span className="text-accent text-xs font-bold tracking-widest uppercase">Community Festival</span>
+                <h3 className="text-primary-foreground text-2xl font-display font-bold mt-2">Umbrella Fest</h3>
+                <p className="text-primary-foreground/70 text-sm mt-3 leading-relaxed max-w-sm">
+                  A vibrant community festival celebrating culture, creativity, and togetherness in the Braj region.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="bg-background py-24 text-center">
+        <Reveal variant="fade-up" className="max-w-4xl mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-primary mb-4 leading-tight">
             Want to partner on a<br />
-            <span className="text-secondary italic">Specific Initiative?</span>
+            <span className="text-accent italic">Specific Initiative?</span>
           </h2>
-          <p className="text-primary-foreground/70 text-lg mb-10 max-w-2xl mx-auto">
-            We welcome corporate partnerships and individual sponsorships for specific projects. Let's build a tailored impact plan together.
+          <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto">
+            We welcome corporate partnerships and individual sponsorships. Let's build a tailored impact plan together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/collaborations"
-              className="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full uppercase tracking-widest text-sm shadow-xl transition-all"
-            >
+            <Link to="/collaborations" className="inline-flex items-center justify-center px-8 py-4 bg-accent hover:bg-accent/90 text-accent-foreground font-bold rounded-full uppercase tracking-widest text-sm shadow-xl transition-all">
               Partner With Us
             </Link>
-            <Link
-              to="/about"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary-foreground/30 text-primary-foreground font-bold rounded-full uppercase tracking-widest text-sm hover:border-primary-foreground/60 transition-all"
-            >
-              Download Project Brochure
+            <Link to="/donate" className="inline-flex items-center justify-center px-8 py-4 border-2 border-border text-primary font-bold rounded-full uppercase tracking-widest text-sm hover:border-accent hover:text-accent transition-all">
+              Donate Now
             </Link>
           </div>
         </Reveal>
